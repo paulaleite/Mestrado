@@ -51,6 +51,9 @@
 		64943A9D2A53323100585CA1 /* Mestrado */ = {
 			isa = PBXGroup;
 			children = (
+				64943AAC2A535F2F00585CA1 /* Model */,
+				64943AAD2A535F3800585CA1 /* View */,
+				64943AAE2A535F5300585CA1 /* Controller */,
 				64943A9E2A53323100585CA1 /* MestradoApp.swift */,
 				64943AA02A53323100585CA1 /* ContentView.swift */,
 				64943AA22A53323300585CA1 /* Assets.xcassets */,
@@ -65,6 +68,27 @@
 				64943AA52A53323300585CA1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		64943AAC2A535F2F00585CA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64943AAD2A535F3800585CA1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		64943AAE2A535F5300585CA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
