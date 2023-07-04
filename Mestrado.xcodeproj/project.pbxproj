@@ -17,6 +17,11 @@
 		64943AB92A53643200585CA1 /* +Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64943AB82A53643200585CA1 /* +Localizable.swift */; };
 		64943ABB2A53695400585CA1 /* ReflexaoListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64943ABA2A53695400585CA1 /* ReflexaoListaView.swift */; };
 		649E1B4B2A54B02500DE4664 /* Rubrica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B4A2A54B02500DE4664 /* Rubrica.swift */; };
+		649E1B4D2A54B54200DE4664 /* Estudante.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B4C2A54B54200DE4664 /* Estudante.swift */; };
+		649E1B4F2A54B80D00DE4664 /* EstudanteFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B4E2A54B80D00DE4664 /* EstudanteFetcher.swift */; };
+		649E1B512A54BA6100DE4664 /* APIServicoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B502A54BA6100DE4664 /* APIServicoProtocol.swift */; };
+		649E1B532A54BB7000DE4664 /* APIServico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B522A54BB7000DE4664 /* APIServico.swift */; };
+		649E1B572A54C11900DE4664 /* +URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B562A54C11900DE4664 /* +URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		64943AB82A53643200585CA1 /* +Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Localizable.swift"; sourceTree = "<group>"; };
 		64943ABA2A53695400585CA1 /* ReflexaoListaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflexaoListaView.swift; sourceTree = "<group>"; };
 		649E1B4A2A54B02500DE4664 /* Rubrica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rubrica.swift; sourceTree = "<group>"; };
+		649E1B4C2A54B54200DE4664 /* Estudante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estudante.swift; sourceTree = "<group>"; };
+		649E1B4E2A54B80D00DE4664 /* EstudanteFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstudanteFetcher.swift; sourceTree = "<group>"; };
+		649E1B502A54BA6100DE4664 /* APIServicoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServicoProtocol.swift; sourceTree = "<group>"; };
+		649E1B522A54BB7000DE4664 /* APIServico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServico.swift; sourceTree = "<group>"; };
+		649E1B562A54C11900DE4664 /* +URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+URL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +99,7 @@
 				64943AB72A53642900585CA1 /* Extensions */,
 				64943AB12A53625400585CA1 /* Sentimento.swift */,
 				649E1B4A2A54B02500DE4664 /* Rubrica.swift */,
+				649E1B4C2A54B54200DE4664 /* Estudante.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +116,9 @@
 		64943AAE2A535F5300585CA1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				649E1B4E2A54B80D00DE4664 /* EstudanteFetcher.swift */,
+				649E1B502A54BA6100DE4664 /* APIServicoProtocol.swift */,
+				649E1B522A54BB7000DE4664 /* APIServico.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -113,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				64943AB82A53643200585CA1 /* +Localizable.swift */,
+				649E1B562A54C11900DE4664 /* +URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -188,12 +203,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649E1B4F2A54B80D00DE4664 /* EstudanteFetcher.swift in Sources */,
+				649E1B4D2A54B54200DE4664 /* Estudante.swift in Sources */,
+				649E1B572A54C11900DE4664 /* +URL.swift in Sources */,
 				64943ABB2A53695400585CA1 /* ReflexaoListaView.swift in Sources */,
 				64943AB92A53643200585CA1 /* +Localizable.swift in Sources */,
+				649E1B532A54BB7000DE4664 /* APIServico.swift in Sources */,
 				64943AA12A53323100585CA1 /* ContentView.swift in Sources */,
 				64943AB22A53625400585CA1 /* Sentimento.swift in Sources */,
 				64943A9F2A53323100585CA1 /* MestradoApp.swift in Sources */,
 				64943AB02A53603D00585CA1 /* ReflexaoItemView.swift in Sources */,
+				649E1B512A54BA6100DE4664 /* APIServicoProtocol.swift in Sources */,
 				649E1B4B2A54B02500DE4664 /* Rubrica.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
