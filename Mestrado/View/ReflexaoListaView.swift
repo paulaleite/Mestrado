@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-/**
- Configura uma lista de Reflexões do Estudante
- */
+
+/// Configura uma lista de Reflexões do Estudante.
 struct ReflexaoListaView: View {
+    
     // MARK: - Body da View
     var body: some View {
         List {
