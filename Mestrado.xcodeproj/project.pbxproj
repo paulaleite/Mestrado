@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6459F3D02A55A48600A66AFD /* APIErro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3CF2A55A48600A66AFD /* APIErro.swift */; };
+		6459F3D22A55A9A600A66AFD /* Professor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3D12A55A9A600A66AFD /* Professor.swift */; };
+		6459F3D42A55AA4500A66AFD /* MomentoAvaliativo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3D32A55AA4500A66AFD /* MomentoAvaliativo.swift */; };
+		6459F3D62A55AAF900A66AFD /* Disciplina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3D52A55AAF900A66AFD /* Disciplina.swift */; };
+		6459F3D82A55AB7E00A66AFD /* Turma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3D72A55AB7D00A66AFD /* Turma.swift */; };
+		6459F3DA2A55B55400A66AFD /* ObjetivoDeAprendizado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3D92A55B55400A66AFD /* ObjetivoDeAprendizado.swift */; };
+		6459F3DC2A55B69200A66AFD /* Competencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3DB2A55B69200A66AFD /* Competencia.swift */; };
+		6459F3DE2A55B7C900A66AFD /* AutoAvaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3DD2A55B7C900A66AFD /* AutoAvaliacao.swift */; };
+		6459F3E02A55B8E000A66AFD /* ObjetivoDeAprendizadoAvaliado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3DF2A55B8E000A66AFD /* ObjetivoDeAprendizadoAvaliado.swift */; };
+		6459F3E22A55EB7B00A66AFD /* ProfessorFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459F3E12A55EB7B00A66AFD /* ProfessorFetcher.swift */; };
 		64943A9F2A53323100585CA1 /* MestradoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64943A9E2A53323100585CA1 /* MestradoApp.swift */; };
 		64943AA12A53323100585CA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64943AA02A53323100585CA1 /* ContentView.swift */; };
 		64943AA32A53323300585CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64943AA22A53323300585CA1 /* Assets.xcassets */; };
@@ -16,9 +26,25 @@
 		64943AB62A5363B900585CA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64943AB52A5363B900585CA1 /* Localizable.strings */; };
 		64943AB92A53643200585CA1 /* +Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64943AB82A53643200585CA1 /* +Localizable.swift */; };
 		64943ABB2A53695400585CA1 /* ReflexaoListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64943ABA2A53695400585CA1 /* ReflexaoListaView.swift */; };
+		649E1B4B2A54B02500DE4664 /* Rubrica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B4A2A54B02500DE4664 /* Rubrica.swift */; };
+		649E1B4D2A54B54200DE4664 /* Estudante.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B4C2A54B54200DE4664 /* Estudante.swift */; };
+		649E1B4F2A54B80D00DE4664 /* EstudanteFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B4E2A54B80D00DE4664 /* EstudanteFetcher.swift */; };
+		649E1B512A54BA6100DE4664 /* APIServicoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B502A54BA6100DE4664 /* APIServicoProtocol.swift */; };
+		649E1B532A54BB7000DE4664 /* APIServico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B522A54BB7000DE4664 /* APIServico.swift */; };
+		649E1B572A54C11900DE4664 /* +URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B562A54C11900DE4664 /* +URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6459F3CF2A55A48600A66AFD /* APIErro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErro.swift; sourceTree = "<group>"; };
+		6459F3D12A55A9A600A66AFD /* Professor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professor.swift; sourceTree = "<group>"; };
+		6459F3D32A55AA4500A66AFD /* MomentoAvaliativo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentoAvaliativo.swift; sourceTree = "<group>"; };
+		6459F3D52A55AAF900A66AFD /* Disciplina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disciplina.swift; sourceTree = "<group>"; };
+		6459F3D72A55AB7D00A66AFD /* Turma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turma.swift; sourceTree = "<group>"; };
+		6459F3D92A55B55400A66AFD /* ObjetivoDeAprendizado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetivoDeAprendizado.swift; sourceTree = "<group>"; };
+		6459F3DB2A55B69200A66AFD /* Competencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competencia.swift; sourceTree = "<group>"; };
+		6459F3DD2A55B7C900A66AFD /* AutoAvaliacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoAvaliacao.swift; sourceTree = "<group>"; };
+		6459F3DF2A55B8E000A66AFD /* ObjetivoDeAprendizadoAvaliado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetivoDeAprendizadoAvaliado.swift; sourceTree = "<group>"; };
+		6459F3E12A55EB7B00A66AFD /* ProfessorFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorFetcher.swift; sourceTree = "<group>"; };
 		64943A9B2A53323100585CA1 /* Mestrado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mestrado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64943A9E2A53323100585CA1 /* MestradoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MestradoApp.swift; sourceTree = "<group>"; };
 		64943AA02A53323100585CA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,6 +55,12 @@
 		64943AB52A5363B900585CA1 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		64943AB82A53643200585CA1 /* +Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Localizable.swift"; sourceTree = "<group>"; };
 		64943ABA2A53695400585CA1 /* ReflexaoListaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflexaoListaView.swift; sourceTree = "<group>"; };
+		649E1B4A2A54B02500DE4664 /* Rubrica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rubrica.swift; sourceTree = "<group>"; };
+		649E1B4C2A54B54200DE4664 /* Estudante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estudante.swift; sourceTree = "<group>"; };
+		649E1B4E2A54B80D00DE4664 /* EstudanteFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstudanteFetcher.swift; sourceTree = "<group>"; };
+		649E1B502A54BA6100DE4664 /* APIServicoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServicoProtocol.swift; sourceTree = "<group>"; };
+		649E1B522A54BB7000DE4664 /* APIServico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServico.swift; sourceTree = "<group>"; };
+		649E1B562A54C11900DE4664 /* +URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+URL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +117,18 @@
 			isa = PBXGroup;
 			children = (
 				64943AB72A53642900585CA1 /* Extensions */,
+				6459F3CF2A55A48600A66AFD /* APIErro.swift */,
 				64943AB12A53625400585CA1 /* Sentimento.swift */,
+				649E1B4A2A54B02500DE4664 /* Rubrica.swift */,
+				649E1B4C2A54B54200DE4664 /* Estudante.swift */,
+				6459F3D12A55A9A600A66AFD /* Professor.swift */,
+				6459F3D32A55AA4500A66AFD /* MomentoAvaliativo.swift */,
+				6459F3D52A55AAF900A66AFD /* Disciplina.swift */,
+				6459F3D72A55AB7D00A66AFD /* Turma.swift */,
+				6459F3D92A55B55400A66AFD /* ObjetivoDeAprendizado.swift */,
+				6459F3DB2A55B69200A66AFD /* Competencia.swift */,
+				6459F3DD2A55B7C900A66AFD /* AutoAvaliacao.swift */,
+				6459F3DF2A55B8E000A66AFD /* ObjetivoDeAprendizadoAvaliado.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +145,10 @@
 		64943AAE2A535F5300585CA1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				649E1B4E2A54B80D00DE4664 /* EstudanteFetcher.swift */,
+				6459F3E12A55EB7B00A66AFD /* ProfessorFetcher.swift */,
+				649E1B502A54BA6100DE4664 /* APIServicoProtocol.swift */,
+				649E1B522A54BB7000DE4664 /* APIServico.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -110,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				64943AB82A53643200585CA1 /* +Localizable.swift */,
+				649E1B562A54C11900DE4664 /* +URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,12 +233,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6459F3E02A55B8E000A66AFD /* ObjetivoDeAprendizadoAvaliado.swift in Sources */,
+				649E1B4F2A54B80D00DE4664 /* EstudanteFetcher.swift in Sources */,
+				649E1B4D2A54B54200DE4664 /* Estudante.swift in Sources */,
+				649E1B572A54C11900DE4664 /* +URL.swift in Sources */,
 				64943ABB2A53695400585CA1 /* ReflexaoListaView.swift in Sources */,
+				6459F3D42A55AA4500A66AFD /* MomentoAvaliativo.swift in Sources */,
+				6459F3D82A55AB7E00A66AFD /* Turma.swift in Sources */,
 				64943AB92A53643200585CA1 /* +Localizable.swift in Sources */,
+				649E1B532A54BB7000DE4664 /* APIServico.swift in Sources */,
+				6459F3D02A55A48600A66AFD /* APIErro.swift in Sources */,
+				6459F3D22A55A9A600A66AFD /* Professor.swift in Sources */,
 				64943AA12A53323100585CA1 /* ContentView.swift in Sources */,
 				64943AB22A53625400585CA1 /* Sentimento.swift in Sources */,
+				6459F3D62A55AAF900A66AFD /* Disciplina.swift in Sources */,
 				64943A9F2A53323100585CA1 /* MestradoApp.swift in Sources */,
+				6459F3DA2A55B55400A66AFD /* ObjetivoDeAprendizado.swift in Sources */,
+				6459F3DC2A55B69200A66AFD /* Competencia.swift in Sources */,
+				6459F3DE2A55B7C900A66AFD /* AutoAvaliacao.swift in Sources */,
 				64943AB02A53603D00585CA1 /* ReflexaoItemView.swift in Sources */,
+				6459F3E22A55EB7B00A66AFD /* ProfessorFetcher.swift in Sources */,
+				649E1B512A54BA6100DE4664 /* APIServicoProtocol.swift in Sources */,
+				649E1B4B2A54B02500DE4664 /* Rubrica.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

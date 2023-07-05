@@ -8,23 +8,20 @@
 import Foundation
 import SwiftUI
 
-/**
- Configura uma lista de Reflexões do Estudante
- */
+
+/// Configura uma lista de Reflexões do Estudante.
 struct ReflexaoListaView: View {
+    // MARK: - Variáveis e Constantes
+    @EnvironmentObject var estudanteFetcher: EstudanteFetcher
+    
     // MARK: - Body da View
     var body: some View {
-        List {
-            ReflexaoItemView(sentimento: .amei, reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.")
-            ReflexaoItemView(sentimento: .amei, reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.")
-            ReflexaoItemView(sentimento: .amei, reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.")
+        if let avaliacoes = estudanteFetcher.estudante?.autoavaliacoes {
+            List(avaliacoes) { avaliacao in
+                ReflexaoItemView(sentimento: avaliacao.sentimentoSelecionado, data: avaliacao.data, reflexaoTexto: avaliacao.reflexaoTextual)
+            }
+        } else {
+            Text("Nenhuma autoavaliação realizada...")
         }
-    }
-}
-
-struct ReflexaoListaView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        ReflexaoListaView()
     }
 }

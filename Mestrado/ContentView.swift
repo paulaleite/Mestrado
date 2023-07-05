@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        ReflexaoItemView(sentimento: .amei, reflexaoTexto: "Texte")
+        Text("Testando ainda")
     }
 }
 

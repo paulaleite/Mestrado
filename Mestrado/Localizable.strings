@@ -6,8 +6,24 @@
   
 */
 
-"amei" = "😄";
-"gostei" = "🙂";
-"indiferente" = "😐";
-"naoGostei" = "😖";
-"odiei" = "😩";
+// MARK: Títulos
+// Rubricas
+"Titulo.Rubricas.NãoEstudado" = "Não Estudado";
+"Titulo.Rubricas.MuitoSatisfeito" = "Muito Satisfeito(a)";
+"Titulo.Rubricas.ParcialmenteSatisfeito" = "Parcialmente Satisfeito(a)";
+"Titulo.Rubricas.NemSatisfeitoNemInsatisfeito" = "Nem Satisfeito(a), nem insatisfeito(a)";
+"Titulo.Rubricas.ParcialmenteInsatisfeito" = "Parcialmente Insatisfeito(a)";
+"Titulo.Rubricas.MuitoInsatisfeito" = "Muito Insatisfeito(a)";
+
+
+// MARK: Descrições
+// Sentimentos
+"Descricao.Sentimentos.Amei" = "😄";
+"Descricao.Sentimentos.Gostei" = "🙂";
+"Descricao.Sentimentos.Indiferente" = "😐";
+"Descricao.Sentimentos.NaoGostei" = "😖";
+"Descricao.Sentimentos.Odiei" = "😩";
+// Erro API
+"Descricao.Erro.URLInvalida" = "A URL de consulta está inválida";
+"Descricao.Erro.RespostaInvalida" = "A resposta fornecida pela consulta está inválida";
+"Descricao.Erro.DadoInvalido" = "Os dados convertidos estão inválidos";
