@@ -11,6 +11,7 @@ import Foundation
 class EstudanteFetcher: ObservableObject {
     
     // MARK: Variáveis e Constantes
+    
     /// Source of Truth do Estudante que está acessando o sistema.
     @Published var estudante: Estudante?
     
@@ -27,11 +28,27 @@ class EstudanteFetcher: ObservableObject {
     let servico: APIServicoProtocol
     
     // MARK: Inicializadores
+    
     /// Inicializador do EstudanteFetcher.
     /// - Parameter servico: Conexão com o serviço de acesso aos dados da API.
     init(servico: APIServicoProtocol = APIServico()) {
         self.servico = servico
     }
     
+    // MARK: - Functions
     
+    /// Essa função vai buscar no servidor, um Estudante específico, de acordo com seu ID.
+    /// - Parameter id: a String que possui o ID do Estudante.
+    internal func getUserByID(user id: String) {
+        estaBuscando = true
+        mensagemDeErro = nil
+        
+        Task {
+            do {
+                estudante = try await servico.getEstudantePorID(estudante: id)
+            } catch APIErro.URLInvalida {
+                mensagemDeErro = APIErro.URLInvalida.descricao
+            }
+        }
+    }
 }

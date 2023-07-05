@@ -23,3 +23,7 @@
 "Descricao.Sentimentos.Indiferente" = "😐";
 "Descricao.Sentimentos.NaoGostei" = "😖";
 "Descricao.Sentimentos.Odiei" = "😩";
+
+"Descricao.Erro.URLInvalida" = "A URL de consulta está inválida";
+"Descricao.Erro.RespostaInvalida" = "A resposta fornecida pela consulta está inválida";
+"Descricao.Erro.DadoInvalido" = "Os dados convertidos estão inválidos";
