@@ -28,8 +28,31 @@ struct APIServico: APIServicoProtocol {
         
         do {
             let decodificador = JSONDecoder()
-            decodificador.keyDecodingStrategy = .convertFromSnakeCase
             return try decodificador.decode(Estudante.self, from: dado)
+        } catch {
+            throw APIErro.dadoInvalido
+        }
+    }
+    
+    /// Essa função pega do servidor, um Professor específico, de acordo com seu ID.
+    /// - Parameter id: a String do ID do Professor.
+    /// - returns: um Professor.
+    func getProfessorPorID(professor id: String) async throws -> Professor {
+        let URLString: String = .getProfessor + "\(id)"
+        
+        guard let url = URL(string: URLString) else {
+            throw APIErro.URLInvalida
+        }
+        
+        let (dado, resposta) = try await URLSession.shared.data(from: url)
+        
+        guard let resposta = resposta as? HTTPURLResponse, resposta.statusCode == 200 else {
+            throw APIErro.respostaInvalida
+        }
+        
+        do {
+            let decodificador = JSONDecoder()
+            return try decodificador.decode(Professor.self, from: dado)
         } catch {
             throw APIErro.dadoInvalido
         }

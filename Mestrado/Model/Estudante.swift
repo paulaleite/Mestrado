@@ -18,4 +18,7 @@ struct Estudante: Codable, Identifiable {
     
     /// Nome do Estudante.
     let nome: String
+    
+    /// As autoavaliações que um Estudante já realizou.
+    var autoavaliacoes: [AutoAvaliacao]
 }

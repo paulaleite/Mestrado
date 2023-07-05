@@ -13,9 +13,6 @@ struct AutoAvaliacao: Codable, Identifiable {
     /// Identificador único da Autoavaliação.
     var id: String
     
-    /// O Estudante que é o criador, e dono, da Autoavaliação.
-    var estudante: Estudante
-    
     /// Os Objetivos de Aprendizado que o Estudante avaliou.
     var objetivosDeAprendizadoSendoAvaliados: [ObjetivoDeAprendizadoAvaliado]
     

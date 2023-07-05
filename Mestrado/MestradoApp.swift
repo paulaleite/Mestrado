@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MestradoApp: App {
+    @StateObject var estudanteFetcher = EstudanteFetcher()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(estudanteFetcher)
         }
     }
 }

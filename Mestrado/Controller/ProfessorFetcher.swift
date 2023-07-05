@@ -1,22 +1,22 @@
 //
-//  EstudanteFetcher.swift
+//  ProfessorFetcher.swift
 //  Mestrado
 //
-//  Created by Paula Leite on 04/07/23.
+//  Created by Paula Leite on 05/07/23.
 //
 
 import Foundation
 
-/// Classe que possibilita a manipulação dos dados do Estudante, possibilitando acesso a todos os estudantes de uma disciplina, ou apenas ao estudante que está acessando o sistema.
-class EstudanteFetcher: ObservableObject {
+/// Classe que possibilita a manipulação dos dados do Professor, possibilitando acesso a todos os professores de uma disciplina, ou apenas ao professor que está acessando o sistema.
+class ProfessorFetcher: ObservableObject {
     
     // MARK: Variáveis e Constantes
     
-    /// Source of Truth do Estudante que está acessando o sistema.
-    @Published var estudante: Estudante?
+    /// Source of Truth do Professor que está acessando o sistema.
+    @Published var professor: Professor?
     
-    /// Source of Truth de todos os Estudantes que participam de uma disciplina, utilizado pelo Professor.
-    @Published var estudantes: [Estudante]?
+    /// Source of Truth de todos os Professores.
+    @Published var professores: [Professor]?
     
     /// Source of Truth de se os dados estando sendo buscados no Servidor.
     @Published var estaBuscando: Bool = false
@@ -37,15 +37,15 @@ class EstudanteFetcher: ObservableObject {
     
     // MARK: - Funções
     
-    /// Essa função vai buscar no servidor, um Estudante específico, de acordo com seu ID.
-    /// - Parameter id: a String que possui o ID do Estudante.
-    internal func getEstudantePorID(estudante id: String) {
+    /// Essa função vai buscar no servidor, um Professor específico, de acordo com seu ID.
+    /// - Parameter id: a String que possui o ID do Professor.
+    internal func getProfessorPorID(professor id: String) {
         estaBuscando = true
         mensagemDeErro = nil
         
         Task {
             do {
-                estudante = try await servico.getEstudantePorID(estudante: id)
+                professor = try await servico.getProfessorPorID(professor: id)
             } catch APIErro.URLInvalida {
                 mensagemDeErro = APIErro.URLInvalida.descricao
             } catch APIErro.dadoInvalido {

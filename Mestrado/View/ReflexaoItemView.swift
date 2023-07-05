@@ -16,18 +16,16 @@ import SwiftUI
 struct ReflexaoItemView: View {
     
     // MARK: - Variáveis e Constantes
-    
     let sentimento: Sentimento
-    let data: Date = Date(timeIntervalSinceReferenceDate: -123456789.0)
+    let data: Date
     let reflexaoTexto: String
     
     // MARK: - Body da View
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             HStack(alignment: .bottom) {
                 Text(sentimento.description)
                     .font(.title3)
-                    .padding(.top, 16)
                 
                 Spacer()
                 
@@ -37,16 +35,17 @@ struct ReflexaoItemView: View {
             
             Text(reflexaoTexto)
                 .font(.body)
-                .padding(.top, 16)
         }
-        .padding(.horizontal, 16)
-        .padding(.bottom, 16)
     }
 }
 
 struct ReflectionCellView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ReflexaoItemView(sentimento: .amei, reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.")
+        List {
+            ReflexaoItemView(sentimento: .amei, data: Date(timeIntervalSinceReferenceDate: -123456789.0), reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.")
+            ReflexaoItemView(sentimento: .amei, data: Date(timeIntervalSinceReferenceDate: -123456789.0), reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.")
+            ReflexaoItemView(sentimento: .amei, data: Date(timeIntervalSinceReferenceDate: -123456789.0), reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.")
+        }
     }
 }
