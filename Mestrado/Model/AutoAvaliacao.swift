@@ -10,8 +10,11 @@ import Foundation
 /// Entidade que representa a Auto Avaliação que o Estudante realiza em um determinado Momento Avaliativo.
 struct AutoAvaliacao: Codable, Identifiable {
     
-    /// Identificador único da Auto Avaliação.
+    /// Identificador único da Autoavaliação.
     var id: String
+    
+    /// O Estudante que é o criador, e dono, da Autoavaliação.
+    var estudante: Estudante
     
     /// Os Objetivos de Aprendizado que o Estudante avaliou.
     var objetivosDeAprendizadoSendoAvaliados: [ObjetivoDeAprendizadoAvaliado]
@@ -22,11 +25,9 @@ struct AutoAvaliacao: Codable, Identifiable {
     /// A reflexão textual que o Estudante fez.
     var reflexaoTextual: String
     
-    /// O Momento Avaliativo em que a Auto Avaliação está acontecendo.
+    /// O Momento Avaliativo em que a Autoavaliação está acontecendo.
     var momentoAvaliativo: MomentoAvaliativo
     
-    /// A data em que o Estudante está realizando a Auto Avaliação.
+    /// A data em que o Estudante está realizando a Autoavaliação.
     var data: Date
-    
-    
 }
