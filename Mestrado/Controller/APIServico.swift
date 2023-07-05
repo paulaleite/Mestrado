@@ -35,10 +35,3 @@ struct APIServico: APIServicoProtocol {
         }
     }
 }
-
-/// Enumerador que representa os Erros potenciais da consulta de API.
-enum APIErro: Error {
-    case URLInvalida
-    case respostaInvalida
-    case dadoInvalido
-}
