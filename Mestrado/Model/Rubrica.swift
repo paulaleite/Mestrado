@@ -8,7 +8,7 @@
 import Foundation
 
 /// Entidade das Rubricas Avaliativas, as quais são configuradas durante Momentos Avaliativos.
-enum Rubric: String, Codable {
+enum Rubrica: String, Codable {
     /// A rubrica quando o estudante não estudou um objetivo de aprendizado.
     case naoEstudado = "Não Estudado"
     

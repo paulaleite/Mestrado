@@ -18,7 +18,4 @@ struct Estudante: Codable, Identifiable {
     
     /// Nome do Estudante.
     let nome: String
-    
-    /// Turma em que o Estudante está, a qual advém de uma lista de Turmas, forneceisadas pela Universidade.
-    let turma: String?
 }
