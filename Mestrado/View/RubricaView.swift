@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 
+/// A Rubrica View constroi a visualização do nível em que um Estudante se encontra em um Objetivo de Aprendizado. Isso é feito com o uso de Retângulos, os quais representam cada um dos seis níveis possíveis. Também existe um Triângulo logo acima do conjunto de Retângulos, que representa o nível esperado do Professor, daquele Objetivo de Aprendizado.
 struct RubricaView: View {
+    /// Representa a cor da Competência do Objetivo de Aprendizado
     var cor: Color
     var objetivoNivel: Int
     var nivelEsperado: Int
