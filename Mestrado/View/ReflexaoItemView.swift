@@ -26,15 +26,18 @@ struct ReflexaoItemView: View {
             HStack(alignment: .bottom) {
                 Text(sentimento.description)
                     .font(.title3)
+                    .foregroundColor(Color("Texto1"))
                 
                 Spacer()
                 
                 Text(data, format: .dateTime.day().month().year())
                     .font(.caption2)
+                    .foregroundColor(Color("Texto2"))
             }
             
             Text(reflexaoTexto)
                 .font(.body)
+                .foregroundColor(Color("Texto1"))
         }
     }
 }
