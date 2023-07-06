@@ -18,7 +18,7 @@ struct ReflexaoListaView: View {
     var body: some View {
         if let avaliacoes = estudanteFetcher.estudante?.autoavaliacoes {
             List(avaliacoes) { avaliacao in
-                ReflexaoItemView(sentimento: avaliacao.sentimentoSelecionado, data: avaliacao.data, reflexaoTexto: avaliacao.reflexaoTextual)
+                ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: avaliacao.sentimentoSelecionado, data: avaliacao.data, reflexaoTexto: avaliacao.reflexaoTextual))
             }
         } else {
             Text("Nenhuma autoavaliação realizada...")
