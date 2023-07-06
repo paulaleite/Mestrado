@@ -10,14 +10,14 @@ import SwiftUI
 
 
 /// Configura o Item específico de uma Reflexão.
-/// - Parameter sentimento: O sentimento configurado pelo estudante, do tipo Sentimento.
-/// - Parameter data: A data configurada pelo estudante, do tipo Date.
-/// - Parameter reflexaoTexto: A reflexão configurada pelo estudante, do tipo String.
 struct ReflexaoItemView: View {
     
     // MARK: - Variáveis e Constantes
+    /// O sentimento configurado pelo estudante, do tipo Sentimento.
     let sentimento: Sentimento
+    /// A data configurada pelo estudante, do tipo Date.
     let data: Date
+    /// A reflexão configurada pelo estudante, do tipo String.
     let reflexaoTexto: String
     
     // MARK: - Body da View
