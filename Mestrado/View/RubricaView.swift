@@ -46,7 +46,7 @@ struct RubricaView: View {
     }
     
     var body: some View {
-        let corBase = Color("Fundo3")
+        let corBase = Color("Fundo4")
         let corEsperada = corBase
         
         ZStack {
@@ -73,5 +73,6 @@ struct LevelView_Previews: PreviewProvider {
             RubricaView(cor: Color("Competencia1"), objetivoNivel: 5, nivelEsperado: -1, tamanho: [30, 10])
             RubricaView(cor: Color("Competencia1"), objetivoNivel: 5, nivelEsperado: 5, tamanho: [30, 10])
         }
+        .background(Color("Fundo1"))
     }
 }
