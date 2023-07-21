@@ -41,42 +41,45 @@ extension Color {
     // MARK: - Variáveis e Constantes
     
     /// Cor de ação primária do aplicativo.
-    static var corDeAcao: Color? = {
+    static var corDeAcao: Color = {
         Color("Acao1")
     }()
     
     /// Cor que representa a primeira competência dos objetivos de aprendizado.
-    static var competencia1: Color? = {
+    static var competencia1: Color = {
        Color("Competencia1")
     }()
     
     /// Cor que representa a segunda competência dos objetivos de aprendizado.
-    static var competencia2: Color? = {
+    static var competencia2: Color = {
        Color("Competencia2")
     }()
     
     /// Cor que representa a terceira competência dos objetivos de aprendizado.
-    static var competencia3: Color? = {
+    static var competencia3: Color = {
        Color("Competencia3")
     }()
     
     /// Cor que representa a quarta competência dos objetivos de aprendizado.
-    static var competencia4: Color? = {
+    static var competencia4: Color = {
        Color("Competencia4")
     }()
     
     /// Cor que representa o fundo primário do aplicativo.
-    static var fundo1: Color? = {
+    /// Utilizado como cor de fundo das visualizações principais.
+    static var fundo1: Color = {
        Color("Fundo1")
     }()
     
     /// Cor que representa o fundo secundário do aplicativo.
-    static var fundo2: Color? = {
+    /// Utilizado como cor de fundo nos elementos das listas.
+    static var fundo2: Color = {
        Color("Fundo2")
     }()
     
     /// Cor que representa o fundo terciário do aplicativo.
-    static var fundo3: Color? = {
+    /// Utilizado como cor de fundo do elemento da Visualização da Rubrica, quando não existe um nível configurado.
+    static var fundo3: Color = {
        Color("Fundo3")
     }()
     

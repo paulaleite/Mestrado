@@ -10,17 +10,26 @@ import SwiftUI
 
 /// A Rubrica View constroi a visualização do nível em que um Estudante se encontra em um Objetivo de Aprendizado. Isso é feito com o uso de Retângulos, os quais representam cada um dos seis níveis possíveis. Também existe um Triângulo logo acima do conjunto de Retângulos, que representa o nível esperado do Professor, daquele Objetivo de Aprendizado.
 struct RubricaView: View {
+    // MARK: - Variáveis e Constantes
     /// Representa a cor da Competência do Objetivo de Aprendizado
-    var cor: Color
+    var corCompetencia: Color
+    /// A Rubrica escolhida pelo Estudante para o Objetivo de Aprendizado que está sendo aprensetado no elemento da lista, representada por um Int entre 0 e 5.
     var objetivoNivel: Int
+    /// A Rubrica escolhida pelo Professor, que o Estudante precisa atingir até o final da Disciplina, representada por um Int entre 0 e 5.
     var nivelEsperado: Int
+    /// Representa o tamanho do elemento retangular customizado de cada Rubrica.
     var tamanho: [CGFloat]
+    /// Representa a cor que é colocada no elemento retangular customizado de cada Rubrica, quando não existe um nível configurado pelo Estudante.
+    let corFundoSemRubrica: Color = .fundo3
     
-    let corBase = Color("Fundo3")
-    
-    init(cor: Color, objetivoNivel: Rubrica, nivelEsperado: Rubrica, tamanho: [CGFloat]) {
-        self.cor = cor
-        self.tamanho = tamanho
+    // MARK: - Inicializadores
+    /// Inicializador que converte as variáveis de objetivoNivel e nivelEsperado, de Rubrica para Int.
+    /// - Parameter corCompetencia: Representa a cor da Competência do Objetivo de Aprendizado.
+    /// - Parameter objetivoNivel: A Rubrica escolhida pelo Estudante para o Objetivo de Aprendizado que está sendo aprensetado no elemento da lista.
+    /// - Parameter nivelEsperado: A Rubrica escolhida pelo Professor, que o Estudante precisa atingir até o final da Disciplina.
+    /// - Parameter tamanho: Representa o tamanho do elemento retangular customizado de cada Rubrica.
+    init(corCompetencia: Color, objetivoNivel: Rubrica, nivelEsperado: Rubrica, tamanho: [CGFloat]) {
+        self.corCompetencia = corCompetencia
         
         switch objetivoNivel {
             case .naoEstudado: self.objetivoNivel = 0
@@ -39,17 +48,21 @@ struct RubricaView: View {
             case .parcialmenteSatisfeito: self.nivelEsperado = 4
             case .muitoSatisfeito: self.nivelEsperado = 5
         }
+        
+        self.tamanho = tamanho
     }
     
     var body: some View {
         
         ZStack {
             HStack(spacing: 4) {
-                RetanguloArrendado(dto: RetanguloDTO(cor: objetivoNivel > 0 ? cor : corBase, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: 1), retanguloEsquerda: FormaBordaArrendondadoEsquerda(raio: 4))
-                ForEach(2..<5) { i in
-                    RetanguloMeio(dto: RetanguloDTO(cor: objetivoNivel > i-1 ? cor : corBase, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: i))
+                RetanguloArrendado(dto: RetanguloDTO(cor: objetivoNivel > 0 ? corCompetencia : corFundoSemRubrica, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: 1), retanguloEsquerda: FormaBordaArrendondadoEsquerda(raio: 4))
+                
+                ForEach(2 ..< 5) { i in
+                    RetanguloMeio(dto: RetanguloDTO(cor: objetivoNivel > (i - 1) ? corCompetencia : corFundoSemRubrica, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: i))
                 }
-                RetanguloArrendado(dto: RetanguloDTO(cor: objetivoNivel > 4 ? cor : corBase, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: 5), retanguloDireita: FormaBordaArrendondadoDireita(raio: 4))
+                
+                RetanguloArrendado(dto: RetanguloDTO(cor: objetivoNivel > 4 ? corCompetencia : corFundoSemRubrica, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: 5), retanguloDireita: FormaBordaArrendondadoDireita(raio: 4))
             }
         }
     }
@@ -58,8 +71,8 @@ struct RubricaView: View {
 struct LevelView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            RubricaView(cor: Color("Competencia1"), objetivoNivel: .muitoInsatisfeito, nivelEsperado: .muitoSatisfeito, tamanho: [30, 10])
+            RubricaView(corCompetencia: Color.competencia1, objetivoNivel: .muitoInsatisfeito, nivelEsperado: .muitoSatisfeito, tamanho: [30, 10])
         }
-        .background(Color("Fundo1"))
+        .background(Color.fundo2)
     }
 }

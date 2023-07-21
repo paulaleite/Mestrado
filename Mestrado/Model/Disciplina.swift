@@ -7,7 +7,7 @@
 
 import Foundation
 
-//. Entidade da Disciplina.
+/// Entidade da Disciplina.
 struct Disciplina: Codable, Identifiable {
     
     /// Identificador único da Disciplina.

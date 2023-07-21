@@ -8,9 +8,15 @@
 import Foundation
 import SwiftUI
 
+/// Elemento do tipo Shape que constroi um Retângulo com as duas pontas da esquerda arrendondados.
 struct FormaBordaArrendondadoEsquerda: Shape {
+    // MARK: - Variáveis e Constantes
     let raio: CGFloat
     
+    // MARK: - Funcões
+    /// Função que cria um elemento com as duas pontas da esquerda arrendondados.
+    /// - Parameter rect: Representa o CGRect que será recebido.
+    /// - Returns: A Path construída.
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
@@ -34,9 +40,15 @@ struct FormaBordaArrendondadoEsquerda: Shape {
     }
 }
 
+/// Elemento do tipo Shape que constroi um Retângulo com as duas pontas da direita arrendondados.
 struct FormaBordaArrendondadoDireita: Shape {
+    // MARK: - Variáveis e Constantes
     let raio: CGFloat
     
+    // MARK: - Funcões
+    /// Função que cria um elemento com as duas pontas da direita arrendondados.
+    /// - Parameter rect: Representa o CGRect que será recebido.
+    /// - Returns: A Path construída.
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
