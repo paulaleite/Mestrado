@@ -56,13 +56,13 @@ struct RubricaView: View {
         
         ZStack {
             HStack(spacing: 4) {
-                RetanguloArrendado(dto: RetanguloDTO(cor: objetivoNivel > 0 ? corCompetencia : corFundoSemRubrica, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: 1), retanguloEsquerda: FormaBordaArrendondadoEsquerda(raio: 4))
+                RetanguloArrendado(retanguloDTO: RetanguloDTO(corCompetencia: objetivoNivel > 0 ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: 1), retanguloEsquerda: FormaBordaArrendondadoEsquerda(raio: 4))
                 
                 ForEach(2 ..< 5) { i in
-                    RetanguloMeio(dto: RetanguloDTO(cor: objetivoNivel > (i - 1) ? corCompetencia : corFundoSemRubrica, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: i))
+                    RetanguloMeio(retanguloDTO: RetanguloDTO(corCompetencia: objetivoNivel > (i - 1) ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: i))
                 }
                 
-                RetanguloArrendado(dto: RetanguloDTO(cor: objetivoNivel > 4 ? corCompetencia : corFundoSemRubrica, tamanho: tamanho, nivelEsperado: nivelEsperado, qualRetangulo: 5), retanguloDireita: FormaBordaArrendondadoDireita(raio: 4))
+                RetanguloArrendado(retanguloDTO: RetanguloDTO(corCompetencia: objetivoNivel > 4 ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: 5), retanguloDireita: FormaBordaArrendondadoDireita(raio: 4))
             }
         }
     }

@@ -13,8 +13,6 @@ struct RetanguloDTO {
     var corCompetencia: Color
     /// Cor da borda do elemente deve ser .clear, para que não apareça a cor.
     var corBorda: Color = Color.clear
-    /// A Rubrica escolhida pelo Estudante para o Objetivo de Aprendizado que está sendo aprensetado no elemento da lista, representada por um Int entre 0 e 5.
-    var objetivoNivel: Int
     /// A Rubrica escolhida pelo Professor, que o Estudante precisa atingir até o final da Disciplina, representada por um Int entre 0 e 5.
     var nivelEsperado: Int
     /// Representa o tamanho do elemento retangular customizado de cada Rubrica.
