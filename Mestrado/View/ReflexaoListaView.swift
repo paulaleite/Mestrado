@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 /// Configura uma lista de Reflexões do Estudante.
 struct ReflexaoListaView: View {
     // MARK: - Variáveis e Constantes
