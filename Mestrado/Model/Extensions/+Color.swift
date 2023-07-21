@@ -33,4 +33,52 @@ extension Color {
             opacity: Double(alpha) / 255
         )
     }
+    
+    static var corDeAcao: Color? = {
+        Color("Acao1")
+    }()
+    
+    static var competencia1: Color? = {
+       Color("Competencia1")
+    }()
+    
+    static var competencia2: Color? = {
+       Color("Competencia2")
+    }()
+    
+    static var competencia3: Color? = {
+       Color("Competencia3")
+    }()
+    
+    static var competencia4: Color? = {
+       Color("Competencia4")
+    }()
+    
+    static var fundo1: Color? = {
+       Color("Fundo1")
+    }()
+    
+    static var fundo2: Color? = {
+       Color("Fundo2")
+    }()
+    
+    static var fundo3: Color? = {
+       Color("Fundo3")
+    }()
+    
+    static var fundo4: Color? = {
+       Color("Fundo4")
+    }()
+    
+    static var texto1: Color? = {
+       Color("Texto1")
+    }()
+    
+    static var texto2: Color? = {
+       Color("Texto2")
+    }()
+    
+    static var texto3: Color? = {
+       Color("Texto3")
+    }()
 }
