@@ -1,7 +1,8 @@
+# URL.getTodasAutoavaliacoesPorEstudante/?estudante-id=1
+
 {
     "objetivos": [
         {
-            "id": "1",
             "descricao": "sdofn",
             "cor": "red",
             "nivelEsperado": 2,
@@ -9,7 +10,6 @@
             "autoAvaliacao": 3
         },
         {
-            "id": "2",
             "descricao": "sdofn",
             "cor": "green",
             "nivelEsperado": 2,

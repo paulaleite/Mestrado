@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E7EB6E22A980F5A003415AE /* getDisciplinas.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 1E7EB6E12A980F5A003415AE /* getDisciplinas.geojson */; };
 		64388C3B2A5725AF00FDC452 /* RubricaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64388C3A2A5725AF00FDC452 /* RubricaView.swift */; };
 		64388C3D2A5726DF00FDC452 /* Cor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64388C3C2A5726DF00FDC452 /* Cor.xcassets */; };
 		64388C3F2A572F7000FDC452 /* RetangulosCustomizados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64388C3E2A572F7000FDC452 /* RetangulosCustomizados.swift */; };
@@ -46,6 +47,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E7EB6E12A980F5A003415AE /* getDisciplinas.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getDisciplinas.geojson; sourceTree = "<group>"; };
+		1E7EB6E32A9810E4003415AE /* getCriacaoAutoavaliacao.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getCriacaoAutoavaliacao.geojson; sourceTree = "<group>"; };
+		1E7EB6E42A981262003415AE /* postCriacaoAutoavaliacao.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = postCriacaoAutoavaliacao.geojson; sourceTree = "<group>"; };
+		1E7EB6E52A981598003415AE /* getMomentosPorDisciplina.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getMomentosPorDisciplina.geojson; sourceTree = "<group>"; };
+		1E7EB6E62A98169B003415AE /* getObjetivos.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getObjetivos.geojson; sourceTree = "<group>"; };
+		1E7EB6E72A9817CF003415AE /* postCriacaoDisciplina.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = postCriacaoDisciplina.geojson; sourceTree = "<group>"; };
+		1E7EB6E82A981997003415AE /* getTodosEstudantesPorDisciplina.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getTodosEstudantesPorDisciplina.geojson; sourceTree = "<group>"; };
+		1E7EB6E92A981A76003415AE /* getDadosGraficoProfessor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getDadosGraficoProfessor.geojson; sourceTree = "<group>"; };
+		1E7EB6EA2A981C68003415AE /* getInfoEstudante.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getInfoEstudante.geojson; sourceTree = "<group>"; };
 		64388C3A2A5725AF00FDC452 /* RubricaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubricaView.swift; sourceTree = "<group>"; };
 		64388C3C2A5726DF00FDC452 /* Cor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Cor.xcassets; sourceTree = "<group>"; };
 		64388C3E2A572F7000FDC452 /* RetangulosCustomizados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetangulosCustomizados.swift; sourceTree = "<group>"; };
@@ -83,8 +93,8 @@
 		64C9CD852A9792940083B13F /* FiltroMomentos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroMomentos.swift; sourceTree = "<group>"; };
 		64C9CD872A97A8DE0083B13F /* AutoavaliacaoEstudanteInfoTituloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoavaliacaoEstudanteInfoTituloView.swift; sourceTree = "<group>"; };
 		64C9CD892A97D1F90083B13F /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
-		64C9CD8B2A97E1EE0083B13F /* autoavaliacoesEstudante.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = autoavaliacoesEstudante.json; sourceTree = "<group>"; };
-		64C9CD8C2A97E22E0083B13F /* estudante.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = estudante.json; sourceTree = "<group>"; };
+		64C9CD8B2A97E1EE0083B13F /* getAutoavaliacoesEstudante.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getAutoavaliacoesEstudante.json; sourceTree = "<group>"; };
+		64C9CD8C2A97E22E0083B13F /* getEstudante.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getEstudante.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +219,17 @@
 		64C9CD8F2A97EC660083B13F /* BFF */ = {
 			isa = PBXGroup;
 			children = (
-				64C9CD8B2A97E1EE0083B13F /* autoavaliacoesEstudante.json */,
-				64C9CD8C2A97E22E0083B13F /* estudante.json */,
+				64C9CD8B2A97E1EE0083B13F /* getAutoavaliacoesEstudante.json */,
+				64C9CD8C2A97E22E0083B13F /* getEstudante.json */,
+				1E7EB6E12A980F5A003415AE /* getDisciplinas.geojson */,
+				1E7EB6E32A9810E4003415AE /* getCriacaoAutoavaliacao.geojson */,
+				1E7EB6E52A981598003415AE /* getMomentosPorDisciplina.geojson */,
+				1E7EB6E42A981262003415AE /* postCriacaoAutoavaliacao.geojson */,
+				1E7EB6E62A98169B003415AE /* getObjetivos.geojson */,
+				1E7EB6E72A9817CF003415AE /* postCriacaoDisciplina.geojson */,
+				1E7EB6E82A981997003415AE /* getTodosEstudantesPorDisciplina.geojson */,
+				1E7EB6E92A981A76003415AE /* getDadosGraficoProfessor.geojson */,
+				1E7EB6EA2A981C68003415AE /* getInfoEstudante.geojson */,
 			);
 			path = BFF;
 			sourceTree = "<group>";
@@ -273,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7EB6E22A980F5A003415AE /* getDisciplinas.geojson in Resources */,
 				64388C3D2A5726DF00FDC452 /* Cor.xcassets in Resources */,
 				64943AA62A53323300585CA1 /* Preview Assets.xcassets in Resources */,
 				64943AB62A5363B900585CA1 /* Localizable.strings in Resources */,

@@ -1,0 +1,18 @@
+# URL.getTodosObjetivos/
+
+{
+    "objetivos": [
+        {
+            "id": "1"
+            "descricao": "sdofn",
+            "cor": "red",
+            "nomeCompetencia": "dsffsdf"
+        },
+        {
+            "id": "2"
+            "descricao": "sdofn",
+            "cor": "green",
+            "nomeCompetencia": "sdfas"
+        }
+    ],
+}

@@ -1,0 +1,18 @@
+# URL.postAutoavaliacao
+
+
+#body
+{
+    "estudante-id": "1",
+    "momentoAvaliativoID": "1",
+    "data": "2023-08-24",
+    "sentimento": 1,
+    "reflexaoTextual": "a;sldfjajkdf",
+    "objetivosAvaliados": [
+        "id": 2,
+        "rubricaSelecionada": 3
+    ]
+}
+
+
+#response status 201
