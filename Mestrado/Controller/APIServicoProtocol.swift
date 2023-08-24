@@ -12,4 +12,6 @@ protocol APIServicoProtocol {
     func getEstudantePorID(estudante id: String) async throws -> Estudante
     
     func getProfessorPorID(professor id: String) async throws -> Professor
+    
+    func getTodosObjetivosPorID() async throws -> [ObjetivoDeAprendizado]
 }

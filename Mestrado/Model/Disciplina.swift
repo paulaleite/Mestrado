@@ -19,6 +19,6 @@ struct Disciplina: Codable, Identifiable {
     /// Lista de Momentos Avaliativos que acontecerão durante a Disciplina.
     var momentosAvaliativos: [MomentoAvaliativo]
     
-    /// Lista da turma que participará da Disciplina.
-    var turma: Turma
+    /// Lista dos estudantes que participarão da Disciplina.
+    var estudantes: [Estudante]
 }

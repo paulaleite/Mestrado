@@ -55,4 +55,14 @@ class EstudanteFetcher: ObservableObject {
             }
         }
     }
+    
+    internal func getObjetivos() {
+        
+    }
+    
+    internal func getObjetivosEstudante(estudante id: String, objetivos id: String) {
+        let estudante = getEstudantePorID(estudante: id)
+        let objetivos =
+        
+    }
 }

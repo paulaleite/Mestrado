@@ -57,5 +57,26 @@ struct APIServico: APIServicoProtocol {
             throw APIErro.dadoInvalido
         }
     }
+    
+    func getTodosObjetivosPorID() async throws -> [ObjetivoDeAprendizado] {
+        let URLString: String = .getObjetivos
+        
+        guard let url = URL(string: URLString) else {
+            throw APIErro.URLInvalida
+        }
+        
+        let (dado, resposta) = try await URLSession.shared.data(from: url)
+        
+        guard let resposta = resposta as? HTTPURLResponse, resposta.statusCode == 200 else {
+            throw APIErro.respostaInvalida
+        }
+        
+        do {
+            let decodificador = JSONDecoder()
+            return try decodificador.decode([ObjetivoDeAprendizado].self, from: dado)
+        } catch {
+            throw APIErro.dadoInvalido
+        }
+    }
 }
 

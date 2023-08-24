@@ -44,7 +44,8 @@ struct ReflexaoItemView: View {
                 .font(.body)
                 .foregroundColor(Color("Texto1"))
         }
-        .listRowBackground(Color("Fundo2"))
+        .background(Color.fundo2)
+//        .listRowBackground(Color("Fundo2"))
     }
 }
 

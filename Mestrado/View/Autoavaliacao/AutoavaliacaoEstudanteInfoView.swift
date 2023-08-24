@@ -10,6 +10,8 @@ import SwiftUI
 struct AutoavaliacaoEstudanteInfoDTO {
     /// Lista de Momentos Avaliativos da Disciplina do Estudante.
     var momentosAvaliativos: [MomentoAvaliativo]
+    
+    var autoavaliacoes: [AutoAvaliacao]
 }
 
 struct AutoavaliacaoEstudanteInfoView: View {
@@ -28,6 +30,9 @@ struct AutoavaliacaoEstudanteInfoView: View {
         return resultado
     }
     
+    @State var sectionReflexoesExpandida: Bool = true
+    @State var sectionObjetivosExpandida: Bool = true
+    
     /// Estado que informa qual momento avaliativo está selecionado
     @State var momentoAvaliativoSelecionado = "Titulo.Momentos.Todos".localized()
     
@@ -36,14 +41,61 @@ struct AutoavaliacaoEstudanteInfoView: View {
         NavigationStack {
             VStack {
                 AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+//                SectionHeaderView(titulo: "Reflexões", sectionExpandida: $sectionReflexoesExpandida)
+//                
+//                List {
+//                    if sectionReflexoesExpandida {
+//                        ForEach(dto.autoavaliacoes) { autoavaliacao in
+//                            
+//                            ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: autoavaliacao.sentimentoSelecionado, data: autoavaliacao.data, reflexaoTexto: autoavaliacao.reflexaoTextual))
+//                        }
+//                    }
+//                }
+                List {
+//                    SectionHeaderView(titulo: "Reflexões", sectionExpandida: $sectionReflexoesExpandida)
+//
+//                    if sectionReflexoesExpandida {
+//                        ForEach(dto.autoavaliacoes) { autoavaliacao in
+//
+//                            ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: autoavaliacao.sentimentoSelecionado, data: autoavaliacao.data, reflexaoTexto: autoavaliacao.reflexaoTextual))
+//                        }
+//                    }
+
+                    Section {
+                        if sectionReflexoesExpandida {
+                            ForEach(dto.autoavaliacoes) { autoavaliacao in
+
+                                ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: autoavaliacao.sentimentoSelecionado, data: autoavaliacao.data, reflexaoTexto: autoavaliacao.reflexaoTextual))
+                            }
+                        }
+                    } header: {
+                        SectionHeaderView(titulo: "Reflexões", sectionExpandida: $sectionReflexoesExpandida)
+                    }
+                    .headerProminence(.increased)
+                    
+                    Section {
+                        if sectionObjetivosExpandida {
+                            ForEach(dto.autoavaliacoes) { autoavaliacao in
+                                ForEach(autoavaliacao.objetivosDeAprendizadoSendoAvaliados) { objetivo in
+                                    ObjetivoDeAprendizadoItemView(dto: ObjetivoDeAprendizadoItemDTO(corCompetencia: Color(objetivo.objetivoDeAprendizado.corCompetencia ?? "Competencia1"), descricaoObjetivoDeAprendizado: objetivo.objetivoDeAprendizado.descricao, nivelRubricaObjetivoDeAprendizadoAvaliado: objetivo.rubricaSelecionada, nivelRubricaEsperado: objetivo.objetivoDeAprendizado.nivelEsperado ?? Rubrica.naoEstudado))
+                                }
+                            }
+                        }
+                    } header: {
+                        SectionHeaderView(titulo: "Objetivos de Aprendizado", sectionExpandida: $sectionObjetivosExpandida)
+                    }
+                    .headerProminence(.increased)
+
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.fundo1)
         }
     }
 }
 
 struct AutoavaliacaoEstudanteView_Previews: PreviewProvider {
     static var previews: some View {
-        AutoavaliacaoEstudanteInfoView(dto: AutoavaliacaoEstudanteInfoDTO(momentosAvaliativos: [MomentoAvaliativo(id: "", titulo: "Momento 1", data: Date.now, objetivosDeAprendizado: []), MomentoAvaliativo(id: "", titulo: "Momento 2", data: Date.now, objetivosDeAprendizado: []), MomentoAvaliativo(id: "", titulo: "Momento 3", data: Date.now, objetivosDeAprendizado: []), MomentoAvaliativo(id: "", titulo: "Momento 4", data: Date.now, objetivosDeAprendizado: []), MomentoAvaliativo(id: "", titulo: "Momento 5", data: Date.now, objetivosDeAprendizado: [])]))
+        AutoavaliacaoEstudanteInfoView(dto: AutoavaliacaoEstudanteInfoDTO(momentosAvaliativos: [MomentoAvaliativo(id: "", titulo: "Momento 1", data: Date.now, objetivosDeAprendizado: []), MomentoAvaliativo(id: "", titulo: "Momento 2", data: Date.now, objetivosDeAprendizado: []), MomentoAvaliativo(id: "", titulo: "Momento 3", data: Date.now, objetivosDeAprendizado: []), MomentoAvaliativo(id: "", titulo: "Momento 4", data: Date.now, objetivosDeAprendizado: []), MomentoAvaliativo(id: "", titulo: "Momento 5", data: Date.now, objetivosDeAprendizado: [])], autoavaliacoes: [AutoAvaliacao(id: "", objetivosDeAprendizadoSendoAvaliados: [], sentimentoSelecionado: .amei, reflexaoTextual: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.", momentoAvaliativo: MomentoAvaliativo(id: "", titulo: "Momento 1", data: Date.now, objetivosDeAprendizado: []), data: Date.now), AutoAvaliacao(id: "", objetivosDeAprendizadoSendoAvaliados: [], sentimentoSelecionado: .amei, reflexaoTextual: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.", momentoAvaliativo: MomentoAvaliativo(id: "", titulo: "Momento 1", data: Date.now, objetivosDeAprendizado: []), data: Date.now), AutoAvaliacao(id: "", objetivosDeAprendizadoSendoAvaliados: [], sentimentoSelecionado: .amei, reflexaoTextual: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.", momentoAvaliativo: MomentoAvaliativo(id: "", titulo: "Momento 1", data: Date.now, objetivosDeAprendizado: []), data: Date.now), AutoAvaliacao(id: "", objetivosDeAprendizadoSendoAvaliados: [], sentimentoSelecionado: .amei, reflexaoTextual: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.", momentoAvaliativo: MomentoAvaliativo(id: "", titulo: "Momento 1", data: Date.now, objetivosDeAprendizado: []), data: Date.now)]))
     }
 }

@@ -27,6 +27,8 @@ enum Rubrica: String, Codable {
     /// A rubrica quando o estudante está muito satisfeito com o objetivo de aprendizado.
     case muitoInsatisfeito = "Muito Insatisfeito(a)"
     
+    
+    
     /// Representa o título da rubrica configurada pelo estudante.
     var titulo: String {
         switch self {
