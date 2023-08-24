@@ -15,10 +15,12 @@ struct ObjetivoDeAprendizadoListaView: View {
     
     // MARK: - Body da View
     var body: some View {
-        if let objetivos = estudanteFetcher.estudante? {
-            List(objetivos) { objetivo in
-                ObjetivoDeAprendizadoItemView(dto: ObjetivoDeAprendizadoItemDTO(corCompetencia: <#T##Color#>, descricaoObjetivoDeAprendizado: <#T##String#>, nivelRubricaObjetivoDeAprendizadoAvaliado: <#T##Rubrica#>, nivelRubricaEsperado: <#T##Rubrica#>))
-            }
+        // TODO: Preciso repensar o consumo dos dados para poder continuar isso.
+        if let objetivos = estudanteFetcher.estudante {
+            Text("To be done")
+//            List(objetivos) { objetivo in
+//                ObjetivoDeAprendizadoItemView(dto: ObjetivoDeAprendizadoItemDTO(corCompetencia: <#T##Color#>, descricaoObjetivoDeAprendizado: <#T##String#>, nivelRubricaObjetivoDeAprendizadoAvaliado: <#T##Rubrica#>, nivelRubricaEsperado: <#T##Rubrica#>))
+//            }
         } else {
             Text("Nenhuma autoavaliação realizada...")
         }
