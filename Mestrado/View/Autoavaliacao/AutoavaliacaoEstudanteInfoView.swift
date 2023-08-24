@@ -50,25 +50,8 @@ struct AutoavaliacaoEstudanteInfoView: View {
                     }
                     .padding(.trailing, 4)
                     
-                    Menu {
-                        Menu {
-                            Picker("Filtrar por", selection: $momentoAvaliativoSelecionado) {
-                                ForEach(momentos, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-                        } label: {
-                            HStack {
-                                Text("Titulo.Filtro".localized() + "\n" + momentoAvaliativoSelecionado)
-                                Image(systemName: "arrow.up.arrow.down")
-                            }
-                        }
-                    } label: {
-                        Image(systemName: "line.3.horizontal.decrease.circle")
-                            .font(.body.bold())
-                            .foregroundColor(Color.corDeAcao)
-                    }
-                    .padding(.trailing, 16)
+                    FiltroMomentos(dto: FiltroMomentosDTO(titulos: momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+                        .padding(.trailing, 16)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
