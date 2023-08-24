@@ -35,24 +35,7 @@ struct AutoavaliacaoEstudanteInfoView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HStack {
-                    Text("Titulo.Autoavaliacao".localized())
-                        .font(.largeTitle.bold())
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .padding([.vertical, .horizontal], 16)
-                    
-                    NavigationLink {
-                        AutoavaliacaoEstudanteCriacaoView()
-                    } label: {
-                        Image(systemName: "plus.circle")
-                            .font(.body.bold())
-                            .foregroundColor(Color.corDeAcao)
-                    }
-                    .padding(.trailing, 4)
-                    
-                    FiltroMomentos(dto: FiltroMomentosDTO(titulos: momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-                        .padding(.trailing, 16)
-                }
+                AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }

@@ -42,6 +42,7 @@
 		64C9CD822A9790370083B13F /* AutoavaliacaoEstudanteInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9CD812A9790360083B13F /* AutoavaliacaoEstudanteInfoView.swift */; };
 		64C9CD842A9791A90083B13F /* AutoavaliacaoEstudanteCriacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9CD832A9791A90083B13F /* AutoavaliacaoEstudanteCriacaoView.swift */; };
 		64C9CD862A9792940083B13F /* FiltroMomentos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9CD852A9792940083B13F /* FiltroMomentos.swift */; };
+		64C9CD882A97A8DE0083B13F /* AutoavaliacaoEstudanteInfoTituloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9CD872A97A8DE0083B13F /* AutoavaliacaoEstudanteInfoTituloView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		64C9CD812A9790360083B13F /* AutoavaliacaoEstudanteInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoavaliacaoEstudanteInfoView.swift; sourceTree = "<group>"; };
 		64C9CD832A9791A90083B13F /* AutoavaliacaoEstudanteCriacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoavaliacaoEstudanteCriacaoView.swift; sourceTree = "<group>"; };
 		64C9CD852A9792940083B13F /* FiltroMomentos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroMomentos.swift; sourceTree = "<group>"; };
+		64C9CD872A97A8DE0083B13F /* AutoavaliacaoEstudanteInfoTituloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoavaliacaoEstudanteInfoTituloView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				64C9CD812A9790360083B13F /* AutoavaliacaoEstudanteInfoView.swift */,
 				64C9CD832A9791A90083B13F /* AutoavaliacaoEstudanteCriacaoView.swift */,
 				64C9CD852A9792940083B13F /* FiltroMomentos.swift */,
+				64C9CD872A97A8DE0083B13F /* AutoavaliacaoEstudanteInfoTituloView.swift */,
 			);
 			path = Autoavaliacao;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				6459F3E42A560D0E00A66AFD /* ObjetivoDeAprendizadoItemView.swift in Sources */,
 				6459F3D62A55AAF900A66AFD /* Disciplina.swift in Sources */,
 				64943A9F2A53323100585CA1 /* MestradoApp.swift in Sources */,
+				64C9CD882A97A8DE0083B13F /* AutoavaliacaoEstudanteInfoTituloView.swift in Sources */,
 				6459F3DA2A55B55400A66AFD /* ObjetivoDeAprendizado.swift in Sources */,
 				64C9CD862A9792940083B13F /* FiltroMomentos.swift in Sources */,
 				6459F3E62A560DE800A66AFD /* +Color.swift in Sources */,
