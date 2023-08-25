@@ -20,6 +20,13 @@ struct AutoavaliacaoEstudanteInfoView: View {
     /// Conjunto de dados que são solicitados por essa struct, o qual são representados pela Autoavaliacao Estudante Info DTO.
     let dto: AutoavaliacaoEstudanteInfoDTO
     
+    @StateObject
+    var viewModel: AutoavaliacaoEstudanteInfoViewModel = .init()
+    
+    init(estudanteId: String, dto: AutoavaliacaoEstudanteInfoDTO) {
+        viewModel.estudanteId = estudanteId
+    }
+    
     /// Variável computável que configura adiciona no começo da lista de momentos avaliativos, a opção de filtro com todos os objetivos.
     var momentos: [String] {
         var resultado: [String] = []
