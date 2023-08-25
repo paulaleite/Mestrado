@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EstudanteInfosView: View {
-    @StateObject var viewModel: AutoavaliacaoEstudanteInfoViewModel = AutoavaliacaoEstudanteInfoViewModel()
+    @ObservedObject var viewModel: AutoavaliacaoEstudanteInfoViewModel = AutoavaliacaoEstudanteInfoViewModel()
     
     /// Estado que informa qual momento avaliativo está selecionado
     @State var momentoAvaliativoSelecionado = "Titulo.Momentos.Todos".localized()

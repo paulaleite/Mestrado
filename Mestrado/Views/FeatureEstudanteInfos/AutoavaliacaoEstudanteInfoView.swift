@@ -11,7 +11,7 @@ struct AutoavaliacaoEstudanteInfoView: View {
     
     // MARK: - Variáveis e Constantes
     
-    @StateObject var viewModel: AutoavaliacaoEstudanteInfoViewModel
+    @ObservedObject var viewModel: AutoavaliacaoEstudanteInfoViewModel
     
     var objetivos: [ObjetivoEstudanteInfoModel] {
         if momentoAvaliativoSelecionado == "Titulo.Momentos.Todos".localized() {
