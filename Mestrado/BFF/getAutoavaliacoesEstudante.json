@@ -1,6 +1,44 @@
 # URL.getTodasAutoavaliacoesPorEstudante/?estudante-id=1
 
 {
+    "qtdObjsPorCompetencia": [
+        {
+            "id": "1",
+            "titulo": "Visão Geral",
+            "qtdObjetivosConcluidos": 1,
+            "qtdObjetivosTotais": 7,
+            "mediaDaTurma": 6
+        },
+        {
+            "id": "2",
+            "titulo": "Impactos da Área",
+            "qtdObjetivosConcluidos": 1,
+            "qtdObjetivosTotais": 8,
+            "mediaDaTurma": 5
+        },
+        {
+            "id": "1",
+            "titulo": "Elementos Essenciais",
+            "qtdObjetivosConcluidos": 1,
+            "qtdObjetivosTotais": 11,
+            "mediaDaTurma": 2
+        },
+        {
+            "id": "1",
+            "titulo": "Elementos Técnicos",
+            "qtdObjetivosConcluidos": 0,
+            "qtdObjetivosTotais": 13,
+            "mediaDaTurma": 1
+        }
+    ]
+    "momentosAvaliativos": [
+        {
+            "titulo": "Momento 1"
+        },
+        {
+            "titulo": "Momento 2"
+        }
+    ],
     "objetivos": [
         {
             "descricao": "sdofn",

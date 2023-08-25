@@ -7,30 +7,29 @@
 
 import SwiftUI
 
-struct AutoavaliacaoEstudanteInfoDTO {
-    /// Lista de Momentos Avaliativos da Disciplina do Estudante.
-    var momentosAvaliativos: [MomentoAvaliativo]
-    
-    var autoavaliacoes: [AutoAvaliacao]
-}
+//struct AutoavaliacaoEstudanteInfoDTO {
+//    /// Lista de Momentos Avaliativos da Disciplina do Estudante.
+//    var momentosAvaliativos: [MomentoAvaliativo]
+//
+//    var autoavaliacoes: [AutoAvaliacao]
+//}
 
 struct AutoavaliacaoEstudanteInfoView: View {
     
     // MARK: - Variáveis e Constantes
     /// Conjunto de dados que são solicitados por essa struct, o qual são representados pela Autoavaliacao Estudante Info DTO.
-    let dto: AutoavaliacaoEstudanteInfoDTO
+//    let dto: AutoavaliacaoEstudanteInfoDTO
     
-    @StateObject
-    var viewModel: AutoavaliacaoEstudanteInfoViewModel = .init()
+    @StateObject var viewModel: AutoavaliacaoEstudanteInfoViewModel = AutoavaliacaoEstudanteInfoViewModel()
     
-    init(estudanteId: String, dto: AutoavaliacaoEstudanteInfoDTO) {
+    init(estudanteId: String) {
         viewModel.estudanteId = estudanteId
     }
     
     /// Variável computável que configura adiciona no começo da lista de momentos avaliativos, a opção de filtro com todos os objetivos.
     var momentos: [String] {
         var resultado: [String] = []
-        for momentoAvaliativo in dto.momentosAvaliativos {
+        for momentoAvaliativo in viewModel. {
             resultado.append(momentoAvaliativo.titulo)
         }
         resultado.insert("Titulo.Momentos.Todos".localized(), at: 0)
@@ -48,29 +47,11 @@ struct AutoavaliacaoEstudanteInfoView: View {
         NavigationStack {
             VStack {
                 AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-//                SectionHeaderView(titulo: "Reflexões", sectionExpandida: $sectionReflexoesExpandida)
-//                
-//                List {
-//                    if sectionReflexoesExpandida {
-//                        ForEach(dto.autoavaliacoes) { autoavaliacao in
-//                            
-//                            ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: autoavaliacao.sentimentoSelecionado, data: autoavaliacao.data, reflexaoTexto: autoavaliacao.reflexaoTextual))
-//                        }
-//                    }
-//                }
+                
                 List {
-//                    SectionHeaderView(titulo: "Reflexões", sectionExpandida: $sectionReflexoesExpandida)
-//
-//                    if sectionReflexoesExpandida {
-//                        ForEach(dto.autoavaliacoes) { autoavaliacao in
-//
-//                            ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: autoavaliacao.sentimentoSelecionado, data: autoavaliacao.data, reflexaoTexto: autoavaliacao.reflexaoTextual))
-//                        }
-//                    }
-
                     Section {
                         if sectionReflexoesExpandida {
-                            ForEach(dto.autoavaliacoes) { autoavaliacao in
+                            ForEach(viewModel.) { autoavaliacao in
 
                                 ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: autoavaliacao.sentimentoSelecionado, data: autoavaliacao.data, reflexaoTexto: autoavaliacao.reflexaoTextual))
                             }

@@ -10,14 +10,13 @@ import Combine
 
 class AutoavaliacaoEstudanteInfoViewModel: ObservableObject {
     
-    @Published
-    var reflexoes: [ReflexaoFeatureEstudanteInfo] = []
+    @Published var qtdObjsPorCompetencia: [GraficoEstudanteModel] = []
     
-    @Published
-    var objetivos: [ObjetivoFeatureEstudanteInfo] = []
+    @Published var reflexoes: [ReflexaoFeatureEstudanteInfo] = []
     
-    @Published
-    var estudanteId: String? = nil
+    @Published var objetivos: [ObjetivoFeatureEstudanteInfo] = []
+    
+    @Published var estudanteId: String? = nil
     
     // apaga
     @Published
