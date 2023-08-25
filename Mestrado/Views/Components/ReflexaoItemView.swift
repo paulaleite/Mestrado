@@ -13,7 +13,7 @@ struct ReflexaoItemDTO {
     /// O sentimento configurado pelo estudante, do tipo Sentimento.
     let sentimento: Sentimento
     /// A data configurada pelo estudante, do tipo Date.
-    let data: Date
+    let data: String
     /// A reflexão configurada pelo estudante, do tipo String.
     let reflexaoTexto: String
 }
@@ -25,6 +25,13 @@ struct ReflexaoItemView: View {
     /// Conjunto de dados que são solicitados por essa struct, o qual são representados pela Reflexao Item DTO.
     let dto: ReflexaoItemDTO
     
+    var data: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let resultado = dateFormatter.date(from: dto.data)!
+        return resultado
+    }
+    
     // MARK: - Body da View
     var body: some View {
         VStack(spacing: 8) {
@@ -35,7 +42,7 @@ struct ReflexaoItemView: View {
                 
                 Spacer()
                 
-                Text(dto.data, format: .dateTime.day().month().year())
+                Text(data, format: .dateTime.day().month().year())
                     .font(.caption2)
                     .foregroundColor(Color("Texto2"))
             }
@@ -45,16 +52,5 @@ struct ReflexaoItemView: View {
                 .foregroundColor(Color("Texto1"))
         }
         .background(Color.fundo2)
-//        .listRowBackground(Color("Fundo2"))
-    }
-}
-
-struct ReflectionCellView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        List {
-            ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: .amei, data: Date(timeIntervalSinceReferenceDate: -123456789.0), reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma."))
-            ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: .amei, data: Date(timeIntervalSinceReferenceDate: -123456789.0), reflexaoTexto: "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma."))
-        }
     }
 }

@@ -13,6 +13,8 @@ struct SectionHeaderView: View {
     /// Título do Header de um Section de uma View.
     var titulo: String
     
+    var quantidade: Int
+    
     /// Binding que permite informar se uma section precisa ser expandida ou não.
     @Binding var sectionExpandida: Bool
     
@@ -27,7 +29,7 @@ struct SectionHeaderView: View {
             
             Spacer()
             
-            Image(systemName: sectionExpandida ? "chevron.down" : "chevron.forward")
+            Image(systemName: sectionExpandida && quantidade > 0 ? "chevron.down" : "chevron.forward")
                 .fontWeight(.semibold)
                 .foregroundColor(Color.texto2)
                 .frame(width: 20, height: 20)

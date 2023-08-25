@@ -8,24 +8,24 @@
 import Foundation
 
 /// Entidade das Rubricas Avaliativas, as quais são configuradas durante Momentos Avaliativos.
-enum Rubrica: String, Codable {
+enum Rubrica: Int, Codable {
     /// A rubrica quando o estudante não estudou um objetivo de aprendizado.
-    case naoEstudado = "Não Estudado"
+    case naoEstudado = 0
     
     /// A rubrica quando o estudante está muito satifeito com o objetivo de aprendizado.
-    case muitoSatisfeito = "Muito Satisfeito(a)"
+    case muitoSatisfeito = 5
     
     /// A rubrica quando o estudante está parcialmente satisfeito com o objetivo de aprendizado.
-    case parcialmenteSatisfeito = "Parcialmente Satisfeito(a)"
+    case parcialmenteSatisfeito = 4
     
     /// A rubrica quando o estudante não está nem satisfeito ou insatisfeito com o objetivo de aprendizado.
-    case nemSatisfeitoNemInsatisfeito = "Nem Satisfeito(a), nem insatisfeito(a)"
+    case nemSatisfeitoNemInsatisfeito = 3
     
     /// A rubrica quando o estudante está parcilamente satisfeito com o objetivo de aprendizado.
-    case parcialmenteInsatisfeito = "Parcialmente Insatisfeito(a)"
+    case parcialmenteInsatisfeito = 2
     
     /// A rubrica quando o estudante está muito satisfeito com o objetivo de aprendizado.
-    case muitoInsatisfeito = "Muito Insatisfeito(a)"
+    case muitoInsatisfeito = 1
     
     
     

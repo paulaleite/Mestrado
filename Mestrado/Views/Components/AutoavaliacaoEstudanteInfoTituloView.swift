@@ -21,13 +21,13 @@ struct AutoavaliacaoEstudanteInfoTituloView: View {
             Text("Titulo.Autoavaliacao".localized())
                 .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .topLeading)
-                .padding([.vertical, .horizontal], 16)
+                .padding(.horizontal, 16)
             
             NavigationLink {
                 AutoavaliacaoEstudanteCriacaoView()
             } label: {
                 Image(systemName: "plus.circle")
-                    .font(.body.bold())
+                    .font(.body)
                     .foregroundColor(Color.corDeAcao)
             }
             .padding(.trailing, 4)

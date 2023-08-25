@@ -1,5 +1,3 @@
-# URL.getTodasAutoavaliacoesPorEstudante/?estudante-id=1
-
 {
     "qtdObjsPorCompetencia": [
         {
@@ -30,7 +28,7 @@
             "qtdObjetivosTotais": 13,
             "mediaDaTurma": 1
         }
-    ]
+    ],
     "momentosAvaliativos": [
         {
             "titulo": "Momento 1"
@@ -39,35 +37,37 @@
             "titulo": "Momento 2"
         }
     ],
-    "objetivos": [
-        {
-            "descricao": "sdofn",
-            "cor": "red",
-            "nivelEsperado": 2,
-            "nomeCompetencia": "dsffsdf",
-            "autoAvaliacao": 3
-        },
-        {
-            "descricao": "sdofn",
-            "cor": "green",
-            "nivelEsperado": 2,
-            "nomeCompetencia": "sdfas",
-            "autoAvaliacao": 3
-        }
-    ],
     "reflexoes": [
          {
              "sentimento": 4,
-             "data": "2023-04-16",
-             "descricao": "alksdfkhjvbags dvbssac uasidufguya"
+             "data": "2023-08-23",
+             "descricao": "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante.",
+             "momentoAvaliativo": "Momento 1"
          },
          {
-             "sentimento": 5,
-             "data": "2023-04-17",
-             "descricao": "aksbdkj UiusdbkhgvjhvgasdYcv dvbssac uasidufguya"
-         }
+             "sentimento": 4,
+             "data": "2023-01-22",
+             "descricao": "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.",
+             "momentoAvaliativo": "Momento 2"
+         },
         
+    ],
+    "objetivos": [
+        {
+            "descricao": "Possuam sólida formação em Ciência da Computação e Matemática que os capacitem a construir aplicativos de propósito geral, ferramentas e infraestrutura de software de sistemas de computação e de sistemas embarcados, gerar conhecimento científico e inovação e que os incentivem a estender suas competências à medida que a área se desenvolve.",
+            "corCompetencia": "Competencia1",
+            "nomeCompetencia": "Visão Geral",
+            "nivelEsperado": 3,
+            "rubricaSelecionada": 2,
+            "momentoAvaliativo": "Momento 1"
+        },
+        {
+            "descricao": "Concepção, justificativa e objetivos gerais e específicos do curso, contextualizados em relação às suas inserções institucional, política, geográfica e social.",
+            "corCompetencia": "Competencia2",
+            "nomeCompetencia": "Impactos da Área",
+            "nivelEsperado": 3,
+            "rubricaSelecionada": 1,
+            "momentoAvaliativo": "Momento 1"
+        },
     ]
-    
-    
 }

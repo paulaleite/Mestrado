@@ -37,7 +37,7 @@ struct FiltroMomentos: View {
             }
         } label: {
             Image(systemName: "line.3.horizontal.decrease.circle")
-                .font(.body.bold())
+                .font(.body)
                 .foregroundColor(Color.corDeAcao)
         }
     }
