@@ -15,7 +15,7 @@ struct ReflexaoItemDTO {
     /// A data configurada pelo estudante, do tipo Date.
     let data: String
     /// A reflexão configurada pelo estudante, do tipo String.
-    let reflexaoTexto: String
+    let descricao: String
 }
 
 /// Configura o Item específico de uma Reflexão.
@@ -47,7 +47,7 @@ struct ReflexaoItemView: View {
                     .foregroundColor(Color("Texto2"))
             }
             
-            Text(dto.reflexaoTexto)
+            Text(dto.descricao)
                 .font(.body)
                 .foregroundColor(Color("Texto1"))
         }

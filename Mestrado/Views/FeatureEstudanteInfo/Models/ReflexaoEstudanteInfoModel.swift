@@ -8,7 +8,7 @@
 import Foundation
 
 /// Reflexões que o Estudante já realizou em uma determinada Disciplina.
-struct ReflexaoEstudanteInfoModel: Codable {
+struct ReflexaoEstudanteInfoModel: Codable, Hashable {
     
     /// O Sentimento que o Estudante selecionou em relação ao Momento Avaliativo.
     var sentimento: Sentimento

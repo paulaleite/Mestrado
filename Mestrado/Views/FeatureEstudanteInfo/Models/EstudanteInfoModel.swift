@@ -8,13 +8,13 @@
 import Foundation
 
 /// Conjunto dos dados utilizados na Feature Estudante Informações.
-struct InfoEstudanteModel: Codable {
+struct EstudanteInfoModel: Codable {
     
     /// Dados dos Objetivos de Aprendizado agrupados por Competência.
-    var qtdObjsPorCompetencia: [GraficoEstudanteModel]
+    var qtdObjsPorCompetencia: [GraficoEstudanteInfoModel]
     
     /// Dados dos Momentos Avaliativos utilizados nessa feature.
-    var momentosAvaliativos: [MomentoAvaliativoInfoEstudanteModel]
+    var momentosAvaliativos: [MomentoAvaliativoEstudanteINfoModel]
     
     /// Dados das Reflexões utilizadas nessa feature.
     var reflexoes: [ReflexaoEstudanteInfoModel]

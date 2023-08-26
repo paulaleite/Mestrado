@@ -8,7 +8,7 @@
 import Foundation
 
 /// Objetivo de Aprendizado necessário para construir a tela de Informações do Estudane.
-struct ObjetivoEstudanteInfoModel: Codable {
+struct ObjetivoEstudanteInfoModel: Codable, Hashable {
     
     /// Descrição detalhada do Objetivo de Aprendizado.
     var descricao: String

@@ -7,13 +7,18 @@
 
 import SwiftUI
 
+struct SectionHeaderDTO {
+    /// Título do Header de um Section de uma View.
+    var titulo: String
+    /// Quantidade de Objetivos de Aprendizado ou Reflexões que um Estudante possuí em uma Disciplina.
+    var quantidade: Int
+}
+
 struct SectionHeaderView: View {
     // MARK: - Variáveis e Constantes
     
-    /// Título do Header de um Section de uma View.
-    var titulo: String
-    
-    var quantidade: Int
+    /// Conjunto de dados que são solicitados por essa struct, o qual são representados pelo DTO do Header de uma Section.
+    var dto: SectionHeaderDTO
     
     /// Binding que permite informar se uma section precisa ser expandida ou não.
     @Binding var sectionExpandida: Bool
@@ -21,7 +26,7 @@ struct SectionHeaderView: View {
     // MARK: - Body da View
     var body: some View {
         HStack {
-            Text(titulo)
+            Text(dto.titulo)
                 .textCase(.none)
                 .font(.body)
                 .fontWeight(.semibold)
@@ -29,7 +34,7 @@ struct SectionHeaderView: View {
             
             Spacer()
             
-            Image(systemName: sectionExpandida && quantidade > 0 ? "chevron.down" : "chevron.forward")
+            Image(systemName: sectionExpandida && dto.quantidade > 0 ? "chevron.down" : "chevron.forward")
                 .fontWeight(.semibold)
                 .foregroundColor(Color.texto2)
                 .frame(width: 20, height: 20)

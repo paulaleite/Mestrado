@@ -25,7 +25,8 @@ struct APIServico: APIServicoProtocol {
     /// - returns: dado adqurido pelo JSON da URL.
     func getDado(stringURL: String) async throws -> Data {
         let url = URL(filePath: stringURL)  // else { throw NSError() }
-        let (dado, resposta) = try await URLSession.shared.data(from: url)
+//        let (dado, resposta) = try await URLSession.shared.data(from: url)
+        let (dado, _) = try await URLSession.shared.data(from: url)
         
         
 //        guard let resposta = resposta as? HTTPURLResponse, resposta.statusCode == 200 else {
@@ -48,13 +49,13 @@ struct APIServico: APIServicoProtocol {
     /// - Parameter estudanteID: String do ID do Estudante.
     /// - Parameter disciplinaID: String do ID da Disciplina.
     /// - returns: dados dos momentos avaliativos.
-    internal func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async throws -> InfoEstudanteModel {
+    internal func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async throws -> EstudanteInfoModel {
 //        let stringURL: String = .getGraficoEstudante + "\(estudanteID)" + "\(disciplinaID)"
         if let stringPath = Bundle.main.path(forResource: "getAutoavaliacoesEstudante", ofType: "json") {
-            return try await getDadoDecodificado(stringURL: stringPath, tipo: InfoEstudanteModel.self)
+            return try await getDadoDecodificado(stringURL: stringPath, tipo: EstudanteInfoModel.self)
         }
         
-        return InfoEstudanteModel(qtdObjsPorCompetencia: [], momentosAvaliativos: [], reflexoes: [], objetivos: [])
+        return EstudanteInfoModel(qtdObjsPorCompetencia: [], momentosAvaliativos: [], reflexoes: [], objetivos: [])
     }
     
     /// Essa função pega do servidor, um Estudante específico, de acordo com seu ID.

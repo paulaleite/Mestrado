@@ -7,8 +7,11 @@
 
 import SwiftUI
 
-struct EstudanteInfosView: View {
-    @ObservedObject var viewModel: AutoavaliacaoEstudanteInfoViewModel = AutoavaliacaoEstudanteInfoViewModel()
+/// Com essa visualização, o Estudante consegue encontrar todas as Informações referentes à Disciplina selecionada. Sendo um gráfico que representa a quantidade de objetivos de aprendizados concluídos em cada competência e os resultados de todas as suas autoavaliações.
+struct EstudanteInfoView: View {
+    // MARK: - Constantes e Variáveis
+    
+    @ObservedObject var viewModel: EstudanteInfoViewModel = EstudanteInfoViewModel()
     
     /// Estado que informa qual momento avaliativo está selecionado
     @State var momentoAvaliativoSelecionado = "Titulo.Momentos.Todos".localized()
@@ -23,11 +26,14 @@ struct EstudanteInfosView: View {
         return resultado
     }
     
+    // MARK: - Inicializadores
+    
     init(estudanteID: String, disciplinaID: String) {
         viewModel.estudanteID = estudanteID
         viewModel.disciplinaID = disciplinaID
     }
     
+    // MARK: - Body da View
     var body: some View {
         VStack {
             AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)

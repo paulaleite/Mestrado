@@ -14,7 +14,7 @@ struct RubricaView: View {
     /// Representa a cor da Competência do Objetivo de Aprendizado
     var corCompetencia: Color
     /// A Rubrica escolhida pelo Estudante para o Objetivo de Aprendizado que está sendo aprensetado no elemento da lista, representada por um Int entre 0 e 5.
-    var objetivoNivel: Int
+    var rubricaSelecionada: Int
     /// A Rubrica escolhida pelo Professor, que o Estudante precisa atingir até o final da Disciplina, representada por um Int entre 0 e 5.
     var nivelEsperado: Int
     /// Representa o tamanho do elemento retangular customizado de cada Rubrica.
@@ -32,12 +32,12 @@ struct RubricaView: View {
         self.corCompetencia = corCompetencia
         
         switch objetivoNivel {
-            case .naoEstudado: self.objetivoNivel = 0
-            case .muitoInsatisfeito: self.objetivoNivel = 1
-            case .parcialmenteInsatisfeito: self.objetivoNivel = 2
-            case .nemSatisfeitoNemInsatisfeito: self.objetivoNivel = 3
-            case .parcialmenteSatisfeito: self.objetivoNivel = 4
-            case .muitoSatisfeito: self.objetivoNivel = 5
+            case .naoEstudado: self.rubricaSelecionada = 0
+            case .muitoInsatisfeito: self.rubricaSelecionada = 1
+            case .parcialmenteInsatisfeito: self.rubricaSelecionada = 2
+            case .nemSatisfeitoNemInsatisfeito: self.rubricaSelecionada = 3
+            case .parcialmenteSatisfeito: self.rubricaSelecionada = 4
+            case .muitoSatisfeito: self.rubricaSelecionada = 5
         }
         
         switch nivelEsperado {
@@ -56,23 +56,14 @@ struct RubricaView: View {
         
         ZStack {
             HStack(spacing: 4) {
-                RetanguloArrendado(retanguloDTO: RetanguloDTO(corCompetencia: objetivoNivel > 0 ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: 1), retanguloEsquerda: FormaBordaArrendondadoEsquerda(raio: 4))
+                RetanguloArrendado(retanguloDTO: RetanguloDTO(corCompetencia: rubricaSelecionada > 0 ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: 1), retanguloEsquerda: FormaBordaArrendondadoEsquerda(raio: 4))
                 
                 ForEach(2 ..< 5) { i in
-                    RetanguloMeio(retanguloDTO: RetanguloDTO(corCompetencia: objetivoNivel > (i - 1) ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: i))
+                    RetanguloMeio(retanguloDTO: RetanguloDTO(corCompetencia: rubricaSelecionada > (i - 1) ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: i))
                 }
                 
-                RetanguloArrendado(retanguloDTO: RetanguloDTO(corCompetencia: objetivoNivel > 4 ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: 5), retanguloDireita: FormaBordaArrendondadoDireita(raio: 4))
+                RetanguloArrendado(retanguloDTO: RetanguloDTO(corCompetencia: rubricaSelecionada > 4 ? corCompetencia : corFundoSemRubrica, nivelEsperado: nivelEsperado, tamanho: tamanho, qualRetangulo: 5), retanguloDireita: FormaBordaArrendondadoDireita(raio: 4))
             }
         }
-    }
-}
-
-struct LevelView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            RubricaView(corCompetencia: Color.competencia1, objetivoNivel: .muitoInsatisfeito, nivelEsperado: .muitoSatisfeito, tamanho: [30, 10])
-        }
-        .background(Color.fundo2)
     }
 }

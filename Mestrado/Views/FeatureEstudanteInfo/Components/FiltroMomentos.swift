@@ -12,6 +12,7 @@ struct FiltroMomentosDTO {
     var titulos: [String]
 }
 
+/// Visualização específica do Context Menu chamado para Filtrar os Objetivos de Aprendizado de um Estudante, em uma Disciplina, de acordo com o Momento Avaliativo selecionado.
 struct FiltroMomentos: View {
     // MARK: - Variáveis e Constantes
     /// Conjunto de dados que são solicitados por essa struct, o qual são representados pelo DTO do Filtro do Momento.

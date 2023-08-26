@@ -18,7 +18,7 @@ protocol APIServicoProtocol {
     
     // MARK: - Feature Estudante Informações
     
-    func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async throws -> InfoEstudanteModel
+    func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async throws -> EstudanteInfoModel
     
     // MARK: - Outros
     

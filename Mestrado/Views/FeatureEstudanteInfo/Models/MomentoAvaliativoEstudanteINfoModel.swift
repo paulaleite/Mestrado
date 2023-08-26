@@ -8,7 +8,7 @@
 import Foundation
 
 /// Entidade que representa os Momentos Avaliativos do Estudante, que será utilizados na Tela de Informações do Estudante.
-struct MomentoAvaliativoInfoEstudanteModel: Codable {
+struct MomentoAvaliativoEstudanteINfoModel: Codable {
     
     /// Título do Momento Avaliativo
     var titulo: String

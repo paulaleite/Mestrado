@@ -9,7 +9,7 @@ import Foundation
 
 /// Entidade que possui as informações necessárias para construir o gráfico do Estudante.
 /// Ele representa a quantidade de objetivos que o Estudante concluiu de acordo com cada uma das Competências. Além disso, informa a média da turma para cada uma das Competências.
-struct GraficoEstudanteModel: Codable, Identifiable {
+struct GraficoEstudanteInfoModel: Codable, Identifiable {
     
     /// Identificador único do Gráfico do Estudante
     var id: String

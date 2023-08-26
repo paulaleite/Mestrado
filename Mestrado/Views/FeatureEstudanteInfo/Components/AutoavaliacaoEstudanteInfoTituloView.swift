@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Visualização do Título e Botões utilizados para representar os Objetivos de Aprendizado avaliados pelo Estudante, bem como suas Reflexões.
 struct AutoavaliacaoEstudanteInfoTituloView: View {
     
     // MARK: - Variáveis e Constantes
