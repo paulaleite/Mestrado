@@ -20,7 +20,7 @@ struct AutoavaliacaoEstudanteInfoTituloView: View {
     var body: some View {
         HStack {
             Text("Titulo.Autoavaliacao".localized())
-                .font(.largeTitle.bold())
+                .font(.title.bold())
                 .frame(maxWidth: .infinity, alignment: .topLeading)
                 .padding(.horizontal, 16)
             

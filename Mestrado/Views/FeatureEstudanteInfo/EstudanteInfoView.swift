@@ -16,16 +16,6 @@ struct EstudanteInfoView: View {
     /// Estado que informa qual momento avaliativo está selecionado
     @State var momentoAvaliativoSelecionado = "Titulo.Momentos.Todos".localized()
     
-    /// Variável computável que configura adiciona no começo da lista de momentos avaliativos, a opção de filtro com todos os objetivos.
-    var momentos: [String] {
-        var resultado: [String] = []
-        for momentoAvaliativo in viewModel.momentosAvaliativos {
-            resultado.append(momentoAvaliativo.titulo)
-        }
-        resultado.insert("Titulo.Momentos.Todos".localized(), at: 0)
-        return resultado
-    }
-    
     // MARK: - Inicializadores
     
     init(estudanteID: String, disciplinaID: String) {
@@ -35,10 +25,21 @@ struct EstudanteInfoView: View {
     
     // MARK: - Body da View
     var body: some View {
-        VStack {
-            AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-            
-            AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+        NavigationStack {
+            VStack(spacing: 8) {
+                Text("Competências".localized())
+                    .font(.title.bold())
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
+                
+                GraficoBarrasEstudanteInfoView(viewModel: viewModel)
+                    .padding(.bottom, 16)
+                
+                AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+            }
+            .background(Color.fundo1)
+            .navigationTitle("Disciplina 1")
         }
         .background(Color.fundo1)
     }
