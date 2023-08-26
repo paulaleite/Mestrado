@@ -46,13 +46,10 @@ class EstudanteFetcher: ObservableObject {
         Task {
             do {
                 estudante = try await servico.getEstudantePorID(estudante: id)
-            } catch APIErro.URLInvalida {
-                mensagemDeErro = APIErro.URLInvalida.descricao
-            } catch APIErro.dadoInvalido {
-                mensagemDeErro = APIErro.dadoInvalido.descricao
-            } catch APIErro.respostaInvalida {
-                mensagemDeErro = APIErro.respostaInvalida.descricao
+            } catch(let e) {
+                mensagemDeErro = e.localizedDescription
             }
+            estaBuscando = false
         }
     }
 }

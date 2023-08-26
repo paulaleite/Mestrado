@@ -1,0 +1,73 @@
+{
+    "qtdObjsPorCompetencia": [
+        {
+            "id": "1",
+            "titulo": "Visão Geral",
+            "qtdObjetivosConcluidos": 1,
+            "qtdObjetivosTotais": 7,
+            "mediaDaTurma": 6
+        },
+        {
+            "id": "2",
+            "titulo": "Impactos da Área",
+            "qtdObjetivosConcluidos": 1,
+            "qtdObjetivosTotais": 8,
+            "mediaDaTurma": 5
+        },
+        {
+            "id": "1",
+            "titulo": "Elementos Essenciais",
+            "qtdObjetivosConcluidos": 1,
+            "qtdObjetivosTotais": 11,
+            "mediaDaTurma": 2
+        },
+        {
+            "id": "1",
+            "titulo": "Elementos Técnicos",
+            "qtdObjetivosConcluidos": 0,
+            "qtdObjetivosTotais": 13,
+            "mediaDaTurma": 1
+        }
+    ],
+    "momentosAvaliativos": [
+        {
+            "titulo": "Momento 1"
+        },
+        {
+            "titulo": "Momento 2"
+        }
+    ],
+    "reflexoes": [
+         {
+             "sentimento": 4,
+             "data": "2023-08-23",
+             "descricao": "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante.",
+             "momentoAvaliativo": "Momento 1"
+         },
+         {
+             "sentimento": 4,
+             "data": "2023-01-22",
+             "descricao": "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.",
+             "momentoAvaliativo": "Momento 2"
+         },
+        
+    ],
+    "objetivos": [
+        {
+            "descricao": "Possuam sólida formação em Ciência da Computação e Matemática que os capacitem a construir aplicativos de propósito geral, ferramentas e infraestrutura de software de sistemas de computação e de sistemas embarcados, gerar conhecimento científico e inovação e que os incentivem a estender suas competências à medida que a área se desenvolve.",
+            "corCompetencia": "Competencia1",
+            "nomeCompetencia": "Visão Geral",
+            "nivelEsperado": 3,
+            "rubricaSelecionada": 2,
+            "momentoAvaliativo": "Momento 1"
+        },
+        {
+            "descricao": "Concepção, justificativa e objetivos gerais e específicos do curso, contextualizados em relação às suas inserções institucional, política, geográfica e social.",
+            "corCompetencia": "Competencia2",
+            "nomeCompetencia": "Impactos da Área",
+            "nivelEsperado": 3,
+            "rubricaSelecionada": 1,
+            "momentoAvaliativo": "Momento 1"
+        },
+    ]
+}

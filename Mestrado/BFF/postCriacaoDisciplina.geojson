@@ -1,0 +1,27 @@
+# URL.postDisciplina
+
+#body
+{
+    "titulo": "Disciplina 1",
+    "momentoAvaliativo": [
+        "titulo": "Momento 1",
+        "data": "2023-08-23",
+        "objetivos": [
+            {
+                "id": "1",
+                "nivelEsperado": 1
+            },
+            {
+                "id": "2",
+                "nivelEsperado": 3
+            }
+        ]
+    ],
+    "estudantes": [
+        {
+            "id": "1"
+        }
+    ]
+}
+
+#response status 201

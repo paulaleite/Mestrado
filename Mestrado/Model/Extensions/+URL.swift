@@ -20,6 +20,10 @@ extension String {
         criarEndpoint("professores")
     }
     
+    static var getObjetivos: String {
+        criarEndpoint("objetivos")
+    }
+    
     /// Função que une o endpoint específico de uma URL, com a URL da API.
     static private func criarEndpoint(_ endpoint: String) -> String {
         return URLConexao + "\(endpoint)"

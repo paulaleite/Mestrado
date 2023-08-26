@@ -14,7 +14,7 @@ struct AutoAvaliacao: Codable, Identifiable {
     var id: String
     
     /// Os Objetivos de Aprendizado que o Estudante avaliou.
-    var objetivosDeAprendizadoSendoAvaliados: [ObjetivoDeAprendizadoAvaliado]
+    var avalicao: [ObjetivoDeAprendizadoAvaliado]
     
     /// O Sentimento que o Estudante selecionou em relação ao Momento Avaliativo.
     var sentimentoSelecionado: Sentimento

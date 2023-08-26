@@ -15,6 +15,11 @@
 "Titulo.Rubricas.ParcialmenteInsatisfeito" = "Parcialmente Insatisfeito(a)";
 "Titulo.Rubricas.MuitoInsatisfeito" = "Muito Insatisfeito(a)";
 
+"Titulo.Autoavaliacao" = "Autoavaliação";
+"Titulo.Filtro" = "Filtrar por";
+"Titulo.Momentos.Todos" = "Todos os Momentos";
+"Titulo.Reflexao.Plural" = "Reflexões";
+"Titulo.Objetivo.Pural" = "Objetivos de Aprendizado";
 
 // MARK: Descrições
 // Sentimentos

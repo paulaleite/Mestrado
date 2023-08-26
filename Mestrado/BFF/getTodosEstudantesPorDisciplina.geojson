@@ -1,0 +1,27 @@
+# URL.getTodosEstudantesComInfoPorDisciplina/?disciplina-id=1
+
+{
+    [
+        {
+            "id": "1",
+            "numeroDeIdentificacao": 1,
+            "nome": "Katarina de Silva Cardoso",
+            "qtdObjsForaNivel": 3,
+            "qtdObjsSemAvaliacao": 43
+        },
+        {
+            "id": "2",
+            "numeroDeIdentificacao": 2,
+            "nome": "Rebeca da Luz",
+            "qtdObjsForaNivel": 3,
+            "qtdObjsSemAvaliacao": 43
+        },
+        {
+            "id": "3",
+            "numeroDeIdentificacao": 3,
+            "nome": "Luiz Miguel Cavalcanti",
+            "qtdObjsForaNivel": 3,
+            "qtdObjsSemAvaliacao": 43
+        }
+    ]
+}

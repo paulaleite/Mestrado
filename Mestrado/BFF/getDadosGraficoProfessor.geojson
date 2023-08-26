@@ -1,0 +1,26 @@
+# URL.getDadosGraficoProfessor/?disciplina-id=1
+
+{
+    "qtdObjsPorDisciplina": [
+        {
+            "id": "1",
+            "titulo": "Visão Geral",
+            "qtdObjetivos": 25
+        },
+        {
+            "id": "2",
+            "titulo": "asd",
+            "qtdObjetivos": 30
+        },
+        {
+            "id": "1",
+            "titulo": "hgr",
+            "qtdObjetivos": 20
+        },
+        {
+            "id": "1",
+            "titulo": "cojs",
+            "qtdObjetivos": 25
+        }
+    ]
+}

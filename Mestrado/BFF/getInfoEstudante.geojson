@@ -1,0 +1,52 @@
+# URL.getInfoEstudante/?estudante-id=1?disciplina-id&1
+
+{
+    "objetivosForaDoNivel": [
+        {
+            "descricao": "sdofn",
+            "cor": "red",
+            "nivelEsperado": 2,
+            "autoAvaliacao": 3
+        },
+        {
+            "descricao": "sdosdf3fn",
+            "cor": "red",
+            "nivelEsperado": 3,
+            "autoAvaliacao": 2
+        }
+    ],
+    "objetivosNaoAvaliados": [
+        {
+            "descricao": "sdofn",
+            "cor": "red"
+        },
+        {
+            "descricao": "sdofn",
+            "cor": "blue"
+        },
+    ],
+    "autoavaliacoes": [
+        {
+            "tituloMomento": "Momento 1",
+            "reflexao": {
+                "sentimento": 1,
+                "data": "2023-04-23",
+                "reflexaoTextual": "sdfsdfadsfawleij"
+            },
+            "objetivos": [
+                {
+                    "descricao": "sdosdf3fn",
+                    "cor": "red",
+                    "nivelEsperado": 3,
+                    "autoAvaliacao": 2
+                },
+                {
+                    "descricao": "sdosdf3fn",
+                    "cor": "red",
+                    "nivelEsperado": 3,
+                    "autoAvaliacao": 2
+                }
+            ]
+        }
+    ]
+}

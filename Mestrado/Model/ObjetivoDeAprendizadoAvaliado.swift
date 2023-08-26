@@ -15,7 +15,7 @@ struct ObjetivoDeAprendizadoAvaliado: Codable, Identifiable {
     var id: String
     
     /// O Objetivo de Aprendizado  que está sendo avaliado.
-    var objetivoDeAprendizado: ObjetivoDeAprendizado
+    var objetivoDeAprendizadoID: String
     
     /// A Rubrica escolhida para o Objetivo de Aprendizado em avaliação.
     var rubricaSelecionada: Rubrica
