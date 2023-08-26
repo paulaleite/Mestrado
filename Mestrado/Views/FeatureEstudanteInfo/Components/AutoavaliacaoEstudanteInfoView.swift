@@ -53,7 +53,7 @@ struct AutoavaliacaoEstudanteInfoView: View {
                     }
                 }
             } header: {
-                SectionHeaderView(dto: SectionHeaderDTO(titulo: "Reflexões", quantidade: reflexoes.count), sectionExpandida: $sectionReflexoesExpandida)
+                SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Reflexao.Plural".localized(), quantidade: reflexoes.count), sectionExpandida: $sectionReflexoesExpandida)
             }
             
             Section {
@@ -63,7 +63,7 @@ struct AutoavaliacaoEstudanteInfoView: View {
                     }
                 }
             } header: {
-                SectionHeaderView(dto: SectionHeaderDTO(titulo: "Objetivos de Aprendizado", quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
+                SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Objetivo.Pural".localized(), quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
             }
         }
         .background(Color.fundo1)
