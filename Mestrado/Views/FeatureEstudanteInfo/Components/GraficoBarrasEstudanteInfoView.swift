@@ -53,10 +53,6 @@ struct GraficoBarrasEstudanteInfoView: View {
         })
         .frame(maxHeight: 200, alignment: .leading)
         .aspectRatio(1, contentMode: .fill)
-        .padding(16)
-        .background(Color.fundo2)
-        .cornerRadius(5)
-        .padding(.horizontal, 16)
     }
     
 }

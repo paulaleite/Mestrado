@@ -16,6 +16,16 @@ struct EstudanteInfoView: View {
     /// Estado que informa qual momento avaliativo está selecionado
     @State var momentoAvaliativoSelecionado = "Titulo.Momentos.Todos".localized()
     
+    /// Variável computável que configura adiciona no começo da lista de momentos avaliativos, a opção de filtro com todos os objetivos.
+    var momentos: [String] {
+        var resultado: [String] = []
+        for momentoAvaliativo in viewModel.momentosAvaliativos {
+            resultado.append(momentoAvaliativo.titulo)
+        }
+        resultado.insert("Titulo.Momentos.Todos".localized(), at: 0)
+        return resultado
+    }
+    
     // MARK: - Inicializadores
     
     init(estudanteID: String, disciplinaID: String) {
@@ -26,19 +36,33 @@ struct EstudanteInfoView: View {
     // MARK: - Body da View
     var body: some View {
         NavigationStack {
-            VStack(spacing: 8) {
-                Text("Competências".localized())
-                    .font(.title.bold())
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 16)
+            List {
+                Section {
+                    GraficoBarrasEstudanteInfoView(viewModel: viewModel)
+                        .padding(.bottom, 16)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.fundo2)
+                } header: {
+                    Text("Competências".localized())
+                        .font(.title.bold())
+                        .foregroundColor(Color.texto1)
+                        .textCase(.none)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .listRowSeparator(.hidden)
+                        .padding(.horizontal, -20)
+                }
                 
-                GraficoBarrasEstudanteInfoView(viewModel: viewModel)
-                    .padding(.bottom, 16)
+                AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.fundo1)
+                    .padding(.horizontal, -20)
                 
                 AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.fundo2)
             }
-            .background(Color.fundo1)
+            .listStyle(.insetGrouped)
+            .frame(maxHeight: .infinity)
             .navigationTitle("Disciplina 1")
         }
         .background(Color.fundo1)

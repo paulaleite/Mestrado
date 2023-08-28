@@ -14,16 +14,6 @@ struct AutoavaliacaoEstudanteInfoView: View {
     
     @ObservedObject var viewModel: EstudanteInfoViewModel
     
-    /// Variável computável que configura adiciona no começo da lista de momentos avaliativos, a opção de filtro com todos os objetivos.
-    var momentos: [String] {
-        var resultado: [String] = []
-        for momentoAvaliativo in viewModel.momentosAvaliativos {
-            resultado.append(momentoAvaliativo.titulo)
-        }
-        resultado.insert("Titulo.Momentos.Todos".localized(), at: 0)
-        return resultado
-    }
-    
     /// Todos os Objetivos de Aprendizado, filtrados de acordo com o Momento Avaliativo selecionado.
     var objetivos: [ObjetivoEstudanteInfoModel] {
         if momentoAvaliativoSelecionado == "Titulo.Momentos.Todos".localized() {
@@ -56,31 +46,26 @@ struct AutoavaliacaoEstudanteInfoView: View {
     // MARK: - Body da View
     var body: some View {
         
-        VStack(spacing: 4) {
-            AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-            
-            List {
-                Section {
-                    if sectionReflexoesExpandida && reflexoes.count > 0 {
-                        ForEach(reflexoes, id: \.self) { reflexao in
-                            ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: reflexao.sentimento, data: reflexao.data, descricao: reflexao.descricao))
-                        }
-                    }
-                } header: {
-                    SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Reflexao.Plural".localized(), quantidade: reflexoes.count), sectionExpandida: $sectionReflexoesExpandida)
-                }
-                
-                Section {
-                    if sectionObjetivosExpandida && objetivos.count > 0 {
-                        ForEach(objetivos, id: \.self) { objetivo in
-                            ObjetivoItemView(dto: ObjetivoItemDTO(corCompetencia: Color(objetivo.corCompetencia), descricao: objetivo.descricao, rubricaSelecionada: objetivo.rubricaSelecionada, nivelEsperado: objetivo.nivelEsperado))
-                        }
-                    }
-                } header: {
-                    SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Objetivo.Pural".localized(), quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
+        Section {
+            if sectionReflexoesExpandida && reflexoes.count > 0 {
+                ForEach(reflexoes, id: \.self) { reflexao in
+                    ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: reflexao.sentimento, data: reflexao.data, descricao: reflexao.descricao))
                 }
             }
-            .background(Color.fundo1)
+        } header: {
+            SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Reflexao.Plural".localized(), quantidade: reflexoes.count), sectionExpandida: $sectionReflexoesExpandida)
+                .padding(.top, -20)
+        }
+        
+        Section {
+            if sectionObjetivosExpandida && objetivos.count > 0 {
+                ForEach(objetivos, id: \.self) { objetivo in
+                    ObjetivoItemView(dto: ObjetivoItemDTO(corCompetencia: Color(objetivo.corCompetencia), descricao: objetivo.descricao, rubricaSelecionada: objetivo.rubricaSelecionada, nivelEsperado: objetivo.nivelEsperado))
+                }
+            }
+        } header: {
+            SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Objetivo.Pural".localized(), quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
+                .padding(.top, -20)
         }
         
     }

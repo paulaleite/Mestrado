@@ -21,20 +21,26 @@ struct AutoavaliacaoEstudanteInfoTituloView: View {
         HStack {
             Text("Titulo.Autoavaliacao".localized())
                 .font(.title.bold())
-                .frame(maxWidth: .infinity, alignment: .topLeading)
-                .padding(.horizontal, 16)
+                .foregroundColor(Color.texto1)
             
-            NavigationLink {
-                AutoavaliacaoEstudanteCriacaoView()
-            } label: {
+            Spacer()
+            
+            HStack {
                 Image(systemName: "plus.circle")
                     .font(.body)
                     .foregroundColor(Color.corDeAcao)
+                    .overlay {
+                        NavigationLink {
+                            AutoavaliacaoEstudanteCriacaoView()
+                        } label: {
+                            EmptyView()
+                        }
+                        .opacity(0)
+                    }
+                
+                FiltroMomentos(dto: FiltroMomentosDTO(titulos: dto.titulos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
             }
-            .padding(.trailing, 4)
             
-            FiltroMomentos(dto: FiltroMomentosDTO(titulos: dto.titulos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-                .padding(.trailing, 16)
         }
     }
 }
