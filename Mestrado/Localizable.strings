@@ -7,6 +7,11 @@
 */
 
 // MARK: Títulos
+
+// Ações
+"Titulo.Cancelar" = "Cancelar";
+"Titulo.Concluido" = "Concluído";
+
 // Rubricas
 "Titulo.Rubricas.NãoEstudado" = "Não Estudado";
 "Titulo.Rubricas.MuitoSatisfeito" = "Muito Satisfeito(a)";
@@ -15,11 +20,27 @@
 "Titulo.Rubricas.ParcialmenteInsatisfeito" = "Parcialmente Insatisfeito(a)";
 "Titulo.Rubricas.MuitoInsatisfeito" = "Muito Insatisfeito(a)";
 
+// Autoavaliação
 "Titulo.Autoavaliacao" = "Autoavaliação";
+"Titulo.Autoavaliacao.Nova" = "Nova autoavaliação";
+
+// Filtro
 "Titulo.Filtro" = "Filtrar por";
+
+// Momento Avaliativo
+"Titulo.Momento" = "Momento";
+"Titulo.Momento.Plural" = "Momentos";
 "Titulo.Momentos.Todos" = "Todos os Momentos";
+
+// Data
+"Titulo.Data" = "Data";
+
+// Reflexão
 "Titulo.Reflexao.Plural" = "Reflexões";
+
+// Objetivos de Aprendizado
 "Titulo.Objetivo.Pural" = "Objetivos de Aprendizado";
+
 
 // MARK: Descrições
 // Sentimentos

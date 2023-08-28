@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 /// Classe que possibilita a manipulação dos dados da Tela de Informações do Estudante, permitindo que ele visualize informações sobre o seu estado na disciplina.
 @MainActor class EstudanteInfoViewModel: ObservableObject {
@@ -17,7 +16,7 @@ import Combine
     @Published var qtdObjsPorCompetencia: [GraficoEstudanteInfoModel] = []
     
     /// Source of Truth dos momentos avaliativos do Estudante, dentro da Disciplina.
-    @Published var momentosAvaliativos: [MomentoAvaliativoEstudanteINfoModel] = []
+    @Published var momentosAvaliativos: [MomentoAvaliativoTituloModel] = []
     
     /// Source of Truth das reflexões do Estudante, dentro da Disciplina.
     @Published var reflexoes: [ReflexaoEstudanteInfoModel] = []

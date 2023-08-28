@@ -28,7 +28,6 @@ struct APIServico: APIServicoProtocol {
 //        let (dado, resposta) = try await URLSession.shared.data(from: url)
         let (dado, _) = try await URLSession.shared.data(from: url)
         
-        
 //        guard let resposta = resposta as? HTTPURLResponse, resposta.statusCode == 200 else {
 //            throw APIErro.respostaInvalida
 //        }
@@ -45,10 +44,10 @@ struct APIServico: APIServicoProtocol {
         return try dadoDecodificado(dado: dado, tipo: T.self)
     }
     
-    /// Essa função busca do servidor, os dados para dos momentos avaliativos de um estudante, dentro de uma disciplina específica.
+    /// Essa função busca do servidor, os dados para a criação Tela de Informações do Estudante, permitindo que ele visualize informações sobre o seu estado na disciplina.
     /// - Parameter estudanteID: String do ID do Estudante.
     /// - Parameter disciplinaID: String do ID da Disciplina.
-    /// - returns: dados dos momentos avaliativos.
+    /// - returns: dados do Modelo das Informações do Estudante.
     internal func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async throws -> EstudanteInfoModel {
 //        let stringURL: String = .getGraficoEstudante + "\(estudanteID)" + "\(disciplinaID)"
         if let stringPath = Bundle.main.path(forResource: "getAutoavaliacoesEstudante", ofType: "json") {
@@ -56,6 +55,18 @@ struct APIServico: APIServicoProtocol {
         }
         
         return EstudanteInfoModel(qtdObjsPorCompetencia: [], momentosAvaliativos: [], reflexoes: [], objetivos: [])
+    }
+    
+    /// Essa função busca do servidor, os dados para necessários para construir a Feature de Criação de uma Autoavaliação..
+    /// - Parameter estudanteID: String do ID do Estudante.
+    /// - Parameter disciplinaID: String do ID da Disciplina.
+    /// - returns: dados do Modelo de Criação de uma Autoavaliação.
+    internal func getDadosAutoavaliacao(estudanteID: String, disciplinaID: String) async throws -> AutoavaliacaoModel {
+        if let stringPath = Bundle.main.path(forResource: "getAutoavaliacao", ofType: "json") {
+            return try await getDadoDecodificado(stringURL: stringPath, tipo: AutoavaliacaoModel.self)
+        }
+        
+        return AutoavaliacaoModel(momentos: [], objetivos: [])
     }
     
     /// Essa função pega do servidor, um Estudante específico, de acordo com seu ID.

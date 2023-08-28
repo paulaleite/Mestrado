@@ -52,13 +52,12 @@ struct EstudanteInfoView: View {
                         .padding(.horizontal, -20)
                 }
                 
-                AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+                AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.fundo1)
                     .padding(.horizontal, -20)
                 
                 AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-                    .listRowSeparator(.hidden)
                     .listRowBackground(Color.fundo2)
             }
             .listStyle(.insetGrouped)

@@ -1,0 +1,24 @@
+{
+    "momentos": [
+        {
+            "titulo": "Momento 1"
+        },
+        {
+            "titulo": "Momento 2"
+        }
+    ],
+    "objetivos": [
+        {
+            "id": "1",
+            "descricao": "Conheçam a estrutura dos sistemas de computação e os processos envolvidos na sua construção e análise.",
+            "corCompetencia": "red",
+            "rubricaSelecionada": 3
+        },
+        {
+            "id": "2",
+            "descricao": "sdofn",
+            "corCompetencia": "green",
+            "rubricaSelecionada": 3
+        }
+    ]
+}

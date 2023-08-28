@@ -14,8 +14,11 @@ struct AutoavaliacaoEstudanteInfoTituloView: View {
     /// Conjunto de dados que são solicitados por essa struct, o qual são representados pelo DTO do Filtro do Momento.
     var dto: FiltroMomentosDTO
     
+    @ObservedObject var viewModel: EstudanteInfoViewModel
+    
     /// Estado que informa qual momento avaliativo está selecionado
     @Binding var momentoAvaliativoSelecionado: String
+    @State var abrirCriacaoAutoavaliacao: Bool = false
     
     var body: some View {
         HStack {
@@ -26,21 +29,20 @@ struct AutoavaliacaoEstudanteInfoTituloView: View {
             Spacer()
             
             HStack {
-                Image(systemName: "plus.circle")
-                    .font(.body)
-                    .foregroundColor(Color.corDeAcao)
-                    .overlay {
-                        NavigationLink {
-                            AutoavaliacaoEstudanteCriacaoView()
-                        } label: {
-                            EmptyView()
-                        }
-                        .opacity(0)
-                    }
+                Button {
+                    abrirCriacaoAutoavaliacao.toggle()
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .font(.body)
+                        .foregroundColor(Color.corDeAcao)
+                }
                 
                 FiltroMomentos(dto: FiltroMomentosDTO(titulos: dto.titulos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
             }
             
+        }
+        .sheet(isPresented: $abrirCriacaoAutoavaliacao) {
+            AutoavaliacaoView(estudanteID: "1", disciplinaID: "1")
         }
     }
 }

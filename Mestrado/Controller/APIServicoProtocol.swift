@@ -16,9 +16,11 @@ protocol APIServicoProtocol {
     
     func getDadoDecodificado<T: Decodable>(stringURL: String, tipo: T.Type) async throws -> T
     
-    // MARK: - Feature Estudante Informações
+    // MARK: - Features
     
     func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async throws -> EstudanteInfoModel
+    
+    func getDadosAutoavaliacao(estudanteID: String, disciplinaID: String) async throws -> AutoavaliacaoModel
     
     // MARK: - Outros
     

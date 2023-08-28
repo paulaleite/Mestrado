@@ -14,7 +14,7 @@ struct EstudanteInfoModel: Codable {
     var qtdObjsPorCompetencia: [GraficoEstudanteInfoModel]
     
     /// Dados dos Momentos Avaliativos utilizados nessa feature.
-    var momentosAvaliativos: [MomentoAvaliativoEstudanteINfoModel]
+    var momentosAvaliativos: [MomentoAvaliativoTituloModel]
     
     /// Dados das Reflexões utilizadas nessa feature.
     var reflexoes: [ReflexaoEstudanteInfoModel]
