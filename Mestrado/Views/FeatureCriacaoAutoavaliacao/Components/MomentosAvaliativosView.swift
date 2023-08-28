@@ -30,30 +30,3 @@ struct MomentosAvaliativosView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
-/// Essa é a visualização da célula do Momento Avaliativo quando possuí o checkmark.
-struct MomentoCheckCellView: View {
-    
-    /// Momento Avaliativo da célula específica.
-    let momento: MomentoAvaliativoTituloModel
-    
-    /// Binding que informa qual momento avaliativo está selecionado.
-    @Binding var momentoAvaliativoSelecionado: String
-    
-    var body: some View {
-        HStack {
-            Text(momento.titulo)
-                .foregroundColor(Color.texto1)
-            Spacer()
-            if momento.titulo == momentoAvaliativoSelecionado {
-                Image(systemName: "checkmark")
-                    .foregroundColor(Color.corDeAcao)
-                    .fontWeight(.semibold)
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .onTapGesture {
-            self.momentoAvaliativoSelecionado = momento.titulo
-        }
-    }
-}

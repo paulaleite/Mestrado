@@ -43,7 +43,7 @@ struct EstudanteInfoView: View {
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.fundo2)
                 } header: {
-                    Text("Competências".localized())
+                    Text("Titulo.Competencia".localized())
                         .font(.title.bold())
                         .foregroundColor(Color.texto1)
                         .textCase(.none)

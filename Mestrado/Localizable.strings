@@ -11,7 +11,6 @@
 // Ações
 "Titulo.Cancelar" = "Cancelar";
 "Titulo.Concluido" = "Concluído";
-
 // Rubricas
 "Titulo.Rubricas.NãoEstudado" = "Não Estudado";
 "Titulo.Rubricas.MuitoSatisfeito" = "Muito Satisfeito(a)";
@@ -19,27 +18,24 @@
 "Titulo.Rubricas.NemSatisfeitoNemInsatisfeito" = "Nem Satisfeito(a), nem insatisfeito(a)";
 "Titulo.Rubricas.ParcialmenteInsatisfeito" = "Parcialmente Insatisfeito(a)";
 "Titulo.Rubricas.MuitoInsatisfeito" = "Muito Insatisfeito(a)";
-
 // Autoavaliação
 "Titulo.Autoavaliacao" = "Autoavaliação";
 "Titulo.Autoavaliacao.Nova" = "Nova autoavaliação";
-
 // Filtro
 "Titulo.Filtro" = "Filtrar por";
-
 // Momento Avaliativo
 "Titulo.Momento" = "Momento";
 "Titulo.Momento.Plural" = "Momentos";
 "Titulo.Momentos.Todos" = "Todos os Momentos";
-
 // Data
 "Titulo.Data" = "Data";
-
 // Reflexão
+"Titulo.Reflexao" = "Reflexão";
 "Titulo.Reflexao.Plural" = "Reflexões";
-
 // Objetivos de Aprendizado
 "Titulo.Objetivo.Pural" = "Objetivos de Aprendizado";
+// Competências
+"Titulo.Competencia" = "Competências";
 
 
 // MARK: Descrições
@@ -53,3 +49,5 @@
 "Descricao.Erro.URLInvalida" = "A URL de consulta está inválida";
 "Descricao.Erro.RespostaInvalida" = "A resposta fornecida pela consulta está inválida";
 "Descricao.Erro.DadoInvalido" = "Os dados convertidos estão inválidos";
+// Reflexão
+"Descricao.Reflexao" = "Compartilhe seus pensamentos sobre\n o momento atual, seus sentimentos, opiniões, aprendizados e planos para o futuro.";

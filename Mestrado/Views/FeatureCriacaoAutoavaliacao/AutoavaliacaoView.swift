@@ -18,6 +18,9 @@ struct AutoavaliacaoView: View {
     /// Estado que informa qual momento avaliativo está selecionado
     @State var momentoAvaliativoSelecionado = ""
     
+    /// Estado que reflete o texto da reflexão do Estudante.
+    @State var descricaoReflexao = ""
+    
     /// Estado que informa qual data está selecionada.
     @State private var data = Date()
     
@@ -47,8 +50,19 @@ struct AutoavaliacaoView: View {
                     DataCellView(data: $data)
                 } header: {
                     Text("Titulo.Momento".localized())
+                        .textCase(.uppercase)
                 }
-
+                
+                Section {
+                    TextField("Descricao.Reflexao".localized(), text: $descricaoReflexao, axis: .vertical)
+                        .frame(minHeight: 100, maxHeight: 100)
+//                        .fixedSize(horizontal: false, vertical: true)
+//                        .multilineTextAlignment(.leading)
+                } header: {
+                    Text("Titulo.Reflexao".localized())
+                        .textCase(.uppercase)
+                }
+                
             }
             .navigationTitle("Titulo.Autoavaliacao.Nova".localized())
             .navigationBarTitleDisplayMode(.inline)
@@ -71,7 +85,7 @@ struct AutoavaliacaoView: View {
                             .foregroundColor(Color.texto1)
                     }
                 }
-        }
+            }
         }
     }
 }
