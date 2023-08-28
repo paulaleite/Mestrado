@@ -15,21 +15,45 @@ struct MomentosAvaliativosView: View {
     @Binding var momentoAvaliativoSelecionado: String
     
     /// Lista dos Momentos Avaliativos disponíveis na Disciplina determinada.
-    var momentos: [MomentoAvaliativoTituloModel]
+    var titulosMomentos: [String]
     
     // MARK: - Body da View
     var body: some View {
-        List {
-            Section {
-                ForEach(momentos, id: \.self) { momento in
-                    Text(momento.titulo)
-                }
-            } header: {
-                Text("Momentos".localized())
-                    .textCase(.uppercase)
+        Picker("Momentos", selection: $momentoAvaliativoSelecionado) {
+            ForEach(titulosMomentos, id: \.self) {
+                Text($0)
             }
         }
+        .pickerStyle(.navigationLink)
+        
         .navigationTitle("Momentos".localized())
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+/// Essa é a visualização da célula do Momento Avaliativo quando possuí o checkmark.
+struct MomentoCheckCellView: View {
+    
+    /// Momento Avaliativo da célula específica.
+    let momento: MomentoAvaliativoTituloModel
+    
+    /// Binding que informa qual momento avaliativo está selecionado.
+    @Binding var momentoAvaliativoSelecionado: String
+    
+    var body: some View {
+        HStack {
+            Text(momento.titulo)
+                .foregroundColor(Color.texto1)
+            Spacer()
+            if momento.titulo == momentoAvaliativoSelecionado {
+                Image(systemName: "checkmark")
+                    .foregroundColor(Color.corDeAcao)
+                    .fontWeight(.semibold)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .onTapGesture {
+            self.momentoAvaliativoSelecionado = momento.titulo
+        }
     }
 }

@@ -21,6 +21,14 @@ struct AutoavaliacaoView: View {
     /// Estado que informa qual data está selecionada.
     @State private var data = Date()
     
+    var titulosMomentos: [String] {
+        var titulos: [String] = []
+        for momento in viewModel.momentos {
+            titulos.append(momento.titulo)
+        }
+        return titulos
+    }
+    
     // MARK: - Inicializadores
     
     init(estudanteID: String, disciplinaID: String) {
@@ -32,13 +40,9 @@ struct AutoavaliacaoView: View {
     
     var body: some View {
         NavigationStack {
-            List {
+            Form {
                 Section {
-                    NavigationLink {
-                        MomentosAvaliativosView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, momentos: viewModel.momentos)
-                    } label: {
-                        MomentoCellView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-                    }
+                    MomentosAvaliativosView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, titulosMomentos: titulosMomentos)
                     
                     DataCellView(data: $data)
                 } header: {
