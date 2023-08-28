@@ -45,28 +45,28 @@ struct AutoavaliacaoEstudanteInfoView: View {
     
     // MARK: - Body da View
     var body: some View {
-        List {
-            Section {
-                if sectionReflexoesExpandida && reflexoes.count > 0 {
-                    ForEach(reflexoes, id: \.self) { reflexao in
-                        ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: reflexao.sentimento, data: reflexao.data, descricao: reflexao.descricao))
-                    }
+        
+        Section {
+            if sectionReflexoesExpandida && reflexoes.count > 0 {
+                ForEach(reflexoes, id: \.self) { reflexao in
+                    ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: reflexao.sentimento, data: reflexao.data, descricao: reflexao.descricao))
                 }
-            } header: {
-                SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Reflexao.Plural".localized(), quantidade: reflexoes.count), sectionExpandida: $sectionReflexoesExpandida)
             }
-            
-            Section {
-                if sectionObjetivosExpandida && objetivos.count > 0 {
-                    ForEach(objetivos, id: \.self) { objetivo in
-                        ObjetivoItemView(dto: ObjetivoItemDTO(corCompetencia: Color(objetivo.corCompetencia), descricao: objetivo.descricao, rubricaSelecionada: objetivo.rubricaSelecionada, nivelEsperado: objetivo.nivelEsperado))
-                    }
-                }
-            } header: {
-                SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Objetivo.Pural".localized(), quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
-            }
+        } header: {
+            SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Reflexao.Plural".localized(), quantidade: reflexoes.count), sectionExpandida: $sectionReflexoesExpandida)
+                .padding(.top, -20)
         }
-        .background(Color.fundo1)
+        
+        Section {
+            if sectionObjetivosExpandida && objetivos.count > 0 {
+                ForEach(objetivos, id: \.self) { objetivo in
+                    ObjetivoItemView(dto: ObjetivoItemDTO(corCompetencia: Color(objetivo.corCompetencia), descricao: objetivo.descricao, rubricaSelecionada: objetivo.rubricaSelecionada, nivelEsperado: objetivo.nivelEsperado))
+                }
+            }
+        } header: {
+            SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Objetivo.Pural".localized(), quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
+                .padding(.top, -20)
+        }
         
     }
 }

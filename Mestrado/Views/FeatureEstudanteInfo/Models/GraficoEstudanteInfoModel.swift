@@ -17,6 +17,9 @@ struct GraficoEstudanteInfoModel: Codable, Identifiable {
     /// Título da Competência
     var titulo: String
     
+    /// Nome da Cor da Competência
+    var corCompetencia: String
+    
     /// Número de Objetivos de Aprendizado que o Estudante concluí na Competência.
     var qtdObjetivosConcluidos: Int
     

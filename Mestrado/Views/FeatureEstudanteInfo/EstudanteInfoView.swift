@@ -35,10 +35,35 @@ struct EstudanteInfoView: View {
     
     // MARK: - Body da View
     var body: some View {
-        VStack {
-            AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-            
-            AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+        NavigationStack {
+            List {
+                Section {
+                    GraficoBarrasEstudanteInfoView(viewModel: viewModel)
+                        .padding(.bottom, 16)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.fundo2)
+                } header: {
+                    Text("Competências".localized())
+                        .font(.title.bold())
+                        .foregroundColor(Color.texto1)
+                        .textCase(.none)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .listRowSeparator(.hidden)
+                        .padding(.horizontal, -20)
+                }
+                
+                AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.fundo1)
+                    .padding(.horizontal, -20)
+                
+                AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.fundo2)
+            }
+            .listStyle(.insetGrouped)
+            .frame(maxHeight: .infinity)
+            .navigationTitle("Disciplina 1")
         }
         .background(Color.fundo1)
     }

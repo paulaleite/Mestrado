@@ -84,22 +84,23 @@ extension Color {
     }()
     
     /// Cor que representa o fundo quaternário do aplicativo.
-    static var fundo4: Color? = {
+    /// Utilizado como cor de fundo do Gráfico do Estudante
+    static var fundo4: Color = {
        Color("Fundo4")
     }()
     
     /// Cor utilizada nos textos primários do aplicativo.
-    static var texto1: Color? = {
+    static var texto1: Color = {
        Color("Texto1")
     }()
     
     /// Cor utilizada nos textos secundários do aplicativo.
-    static var texto2: Color? = {
+    static var texto2: Color = {
        Color("Texto2")
     }()
     
     /// Cor utilizada nos textos terciários do aplicativo.
-    static var texto3: Color? = {
+    static var texto3: Color = {
        Color("Texto3")
     }()
 }
