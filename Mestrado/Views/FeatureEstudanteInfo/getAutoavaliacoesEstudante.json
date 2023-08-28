@@ -3,6 +3,7 @@
         {
             "id": "1",
             "titulo": "Visão Geral",
+            "corCompetencia": "Competencia1",
             "qtdObjetivosConcluidos": 1,
             "qtdObjetivosTotais": 7,
             "mediaDaTurma": 6
@@ -10,6 +11,7 @@
         {
             "id": "2",
             "titulo": "Impactos da Área",
+            "corCompetencia": "Competencia2",
             "qtdObjetivosConcluidos": 1,
             "qtdObjetivosTotais": 8,
             "mediaDaTurma": 5
@@ -17,6 +19,7 @@
         {
             "id": "1",
             "titulo": "Elementos Essenciais",
+            "corCompetencia": "Competencia3",
             "qtdObjetivosConcluidos": 1,
             "qtdObjetivosTotais": 11,
             "mediaDaTurma": 2
@@ -24,6 +27,7 @@
         {
             "id": "1",
             "titulo": "Elementos Técnicos",
+            "corCompetencia": "Competencia4",
             "qtdObjetivosConcluidos": 0,
             "qtdObjetivosTotais": 13,
             "mediaDaTurma": 1

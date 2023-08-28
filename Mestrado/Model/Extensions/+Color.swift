@@ -84,6 +84,7 @@ extension Color {
     }()
     
     /// Cor que representa o fundo quaternário do aplicativo.
+    /// Utilizado como cor de fundo do Gráfico do Estudante
     static var fundo4: Color = {
        Color("Fundo4")
     }()

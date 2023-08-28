@@ -17,19 +17,12 @@ struct GraficoBarrasEstudanteInfoView: View {
     // MARK: - Body da View
     var body: some View {
         Chart(viewModel.qtdObjsPorCompetencia) { dado in
-            BarMark(x: .value("Objetivos de Aprendizado", dado.qtdObjetivosConcluidos), y: .value("Competência", dado.titulo))
-                .foregroundStyle(by: .value("Competência", dado.titulo))
             
-            BarMark(x: .value("Objetivos de Aprendizado", dado.qtdObjetivosTotais), y: .value("Competência", dado.titulo))
-                .foregroundStyle(Color.texto3)
-                .annotation(position: .trailing) {
-                    Text("\(dado.qtdObjetivosConcluidos) de \(dado.qtdObjetivosTotais)")
-                        .foregroundColor(Color.texto2)
-                        .font(.caption2)
-                }
+            BarMark(x: .value("Objetivos de Aprendizado", dado.qtdObjetivosConcluidos), y: .value("Competência", "\(dado.titulo): \(dado.qtdObjetivosConcluidos) de \(dado.qtdObjetivosTotais)"), width: .fixed(12))
+                .foregroundStyle(Color(dado.corCompetencia))
             
-            RuleMark(x: .value("Média", dado.mediaDaTurma))
-                .foregroundStyle(Color.texto2)
+            BarMark(x: .value("Objetivos de Aprendizado", dado.qtdObjetivosTotais), y: .value("Competência", "\(dado.titulo): \(dado.qtdObjetivosConcluidos) de \(dado.qtdObjetivosTotais)"), width: .fixed(12))
+                .foregroundStyle(Color.fundo4)
         }
         .chartLegend(.hidden)
         .chartXAxis(.hidden)
@@ -38,12 +31,32 @@ struct GraficoBarrasEstudanteInfoView: View {
                 AxisValueLabel()
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: 200, alignment: .leading) // TODO: Melhorar a altura do gráfico.
+        .chartOverlay(content: { proxy in
+            Chart(viewModel.qtdObjsPorCompetencia) { dado in
+                BarMark(x: .value("Média", dado.mediaDaTurma), y: .value("Competência", "\(dado.titulo): \(dado.qtdObjetivosConcluidos) de \(dado.qtdObjetivosTotais)"), width: .fixed(0))
+                    .annotation(position: .trailing) {
+                        Rectangle()
+                            .frame(width: 1, height: 20)
+                    }
+                BarMark(x: .value("Objetivos de Aprendizado", dado.qtdObjetivosTotais), y: .value("Competência", "\(dado.titulo): \(dado.qtdObjetivosConcluidos) de \(dado.qtdObjetivosTotais)"), width: .fixed(0))
+            }
+            .frame(maxHeight: 200, alignment: .leading)
+            .aspectRatio(1, contentMode: .fill)
+            .chartLegend(.hidden)
+            .chartXAxis(.hidden)
+            .chartYAxis {
+                AxisMarks { _ in
+                    AxisValueLabel()
+                }
+            }
+            
+        })
+        .frame(maxHeight: 200, alignment: .leading)
         .aspectRatio(1, contentMode: .fill)
-        .padding(8)
+        .padding(16)
         .background(Color.fundo2)
+        .cornerRadius(5)
         .padding(.horizontal, 16)
-        .cornerRadius(10)
     }
     
 }
