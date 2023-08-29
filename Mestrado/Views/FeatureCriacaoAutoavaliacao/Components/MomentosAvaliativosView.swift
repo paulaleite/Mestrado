@@ -2,12 +2,11 @@
 //  MomentosAvaliativosView.swift
 //  Mestrado
 //
-//  Created by Paula Leite on 28/08/23.
+//  Created by Paula Leite on 29/08/23.
 //
 
 import SwiftUI
 
-/// Com essa visualização, é possível selecionar, dentre uma lista de Momentos Avaliativos, qual representa a Autoavaliação.
 struct MomentosAvaliativosView: View {
     // MARK: - Variáveis e Constantes
     
@@ -18,15 +17,24 @@ struct MomentosAvaliativosView: View {
     var titulosMomentos: [String]
     
     // MARK: - Body da View
+    
     var body: some View {
-        Picker("Momentos", selection: $momentoAvaliativoSelecionado) {
-            ForEach(titulosMomentos, id: \.self) {
-                Text($0)
+        NavigationLink {
+            MomentosAvaliativosDetalheView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, titulosMomentos: titulosMomentos)
+        } label: {
+            HStack {
+                Text("Titulo.Momento.Plural".localized())
+                    .foregroundColor(Color.texto1)
+                
+                Spacer()
+                
+                if momentoAvaliativoSelecionado == "" {
+                    Text("Descricao.Momento.Selecao".localized())
+                } else {
+                    Text(momentoAvaliativoSelecionado)
+                        .foregroundColor(Color.texto2)
+                }
             }
         }
-        .pickerStyle(.navigationLink)
-        
-        .navigationTitle("Momentos".localized())
-        .navigationBarTitleDisplayMode(.inline)
     }
 }

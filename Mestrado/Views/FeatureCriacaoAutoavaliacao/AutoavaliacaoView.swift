@@ -16,13 +16,15 @@ struct AutoavaliacaoView: View {
     @ObservedObject var viewModel: AutoavaliacaoViewModel = AutoavaliacaoViewModel()
     
     /// Estado que informa qual momento avaliativo está selecionado
-    @State var momentoAvaliativoSelecionado = ""
-    
+    @State var momentoAvaliativoSelecionado = "Descricao.Momento.Selecao".localized()
     /// Estado que reflete o texto da reflexão do Estudante.
     @State var descricaoReflexao = ""
-    
+    /// Estado que reflete o sentimento selecionado pelo Estudante.
+    @State var sentimentoSelecionado: Int = 4
     /// Estado que informa qual data está selecionada.
     @State private var data = Date()
+    
+    var sentimentos: [Sentimento] = [.amei, .gostei, .indiferente, .naoGostei, .odiei]
     
     var titulosMomentos: [String] {
         var titulos: [String] = []
@@ -46,21 +48,17 @@ struct AutoavaliacaoView: View {
             Form {
                 Section {
                     MomentosAvaliativosView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, titulosMomentos: titulosMomentos)
+                        .listRowBackground(Color.fundo2)
                     
                     DataCellView(data: $data)
+                        .listRowBackground(Color.fundo2)
                 } header: {
                     Text("Titulo.Momento".localized())
                         .textCase(.uppercase)
+                        .font(.system(size: 14))
                 }
                 
-                Section {
-                    TextField("Descricao.Reflexao".localized(), text: $descricaoReflexao, axis: .vertical)
-                        .frame(minHeight: 100, maxHeight: 100, alignment: .topLeading)
-                    
-                } header: {
-                    Text("Titulo.Reflexao".localized())
-                        .textCase(.uppercase)
-                }
+                SentimentosSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
                 
             }
             .navigationTitle("Titulo.Autoavaliacao.Nova".localized())
