@@ -12,12 +12,21 @@
             "id": "1",
             "descricao": "Conheçam a estrutura dos sistemas de computação e os processos envolvidos na sua construção e análise.",
             "corCompetencia": "Competencia1",
+            "momentoAvaliativo": "Momento 1",
             "rubricaSelecionada": 3
         },
         {
             "id": "2",
             "descricao": "Condições objetivas de oferta e a vocação do curso.",
             "corCompetencia": "Competencia2",
+            "momentoAvaliativo": "Momento 1",
+            "rubricaSelecionada": 0
+        },
+        {
+            "id": "3",
+            "descricao": "Analisar quanto um sistema baseado em computadores atende os critérios definidos para seu uso corrente e futuro (adequabilidade).",
+            "corCompetencia": "Competencia4",
+            "momentoAvaliativo": "Momento 2",
             "rubricaSelecionada": 0
         }
     ]

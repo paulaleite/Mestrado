@@ -17,6 +17,9 @@ struct ObjetivoAutoavaliacaoModel: Codable, Hashable {
     /// Cor da Competência em que o Objetivo de Aprendizado se encontra.
     var corCompetencia: String
     
+    /// Momento Avaliativo do qual esse Objetivo de Aprendizado faz parte.
+    var momentoAvaliativo: String
+    
     /// Nível selecionado pelo Estudante nesse Objetivo de Aprendizado.
     var rubricaSelecionada: Rubrica
 }

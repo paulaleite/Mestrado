@@ -26,12 +26,25 @@ struct AutoavaliacaoView: View {
     
     var sentimentos: [Sentimento] = [.amei, .gostei, .indiferente, .naoGostei, .odiei]
     
+    /// Título dos Momentos, tirados da ViewModel.
     var titulosMomentos: [String] {
         var titulos: [String] = []
         for momento in viewModel.momentos {
             titulos.append(momento.titulo)
         }
         return titulos
+    }
+    
+    var objetivos: [ObjetivoAutoavaliacaoModel] {
+        var objs: [ObjetivoAutoavaliacaoModel] = []
+        
+        for objetivo in viewModel.objetivos {
+            if objetivo.momentoAvaliativo == momentoAvaliativoSelecionado {
+                objs.append(objetivo)
+            }
+        }
+        
+        return objs
     }
     
     // MARK: - Inicializadores
@@ -46,42 +59,17 @@ struct AutoavaliacaoView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    MomentosAvaliativosView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, titulosMomentos: titulosMomentos)
-                        .listRowBackground(Color.fundo2)
-                    
-                    DataCellView(data: $data)
-                        .listRowBackground(Color.fundo2)
-                } header: {
-                    Text("Titulo.Momento".localized())
-                        .textCase(.uppercase)
-                        .font(.system(size: 14))
-                }
+                MomentoSectionView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, data: $data, titulosMomentos: titulosMomentos)
                 
-                SentimentosSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
+                ReflexaoSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
                 
-                Section {
-                    ForEach(viewModel.objetivos, id: \.self) { objetivo in
-                        ObjetivoSelecaoItemView(dto: ObjetivoSelecaoItemDTO(corCompetencia: Color(objetivo.corCompetencia), descricao: objetivo.descricao, rubricaEstudante: objetivo.rubricaSelecionada))
-                    }
-                } header: {
-                    Text("Titulo.Objetivo.Plural".localized())
-                        .textCase(.uppercase)
-                        .font(.system(size: 14))
-                }
-                
+                ObjetivosAvaliacaoSectionView(objetivos: objetivos)
             }
             .navigationTitle("Titulo.Autoavaliacao.Nova".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                        // TODO: Chamar pop-up
-                    } label: {
-                        Text("Titulo.Cancelar".localized())
-                            .foregroundColor(.red)
-                    }
+                    CancelarAvaliacaoView()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {

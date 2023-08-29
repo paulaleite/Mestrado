@@ -29,32 +29,23 @@ struct ObjetivoSelecaoItemView: View {
     @State var rubricaSelecionada: Rubrica = .naoEstudado
     
     var body: some View {
-        VStack {
-            HStack(alignment: .top) {
-                Circle()
-                    .frame(width: 13, height: 13)
-                    .foregroundColor(dto.corCompetencia)
-                    .padding(.top, 3)
-                
-                Text(dto.descricao)
-                    .font(.body)
-                    .foregroundColor(Color.texto1)
-            }
-            .padding(.top, 8)
+        
+        HStack(alignment: .top) {
+            Circle()
+                .frame(width: 13, height: 13)
+                .foregroundColor(dto.corCompetencia)
+                .padding(.top, 3)
             
-            HStack {
-                Spacer()
-                Picker("", selection: $rubricaSelecionada) {
-                    ForEach(dto.rubricas, id: \.self) {
-                        Text($0.titulo)
-                    }
+            Picker("\(dto.descricao)", selection: $rubricaSelecionada) {
+                ForEach(dto.rubricas, id: \.self) {
+                    Text($0.titulo)
                 }
-                .tint(Color.texto2)
-                .pickerStyle(.menu)
-                .onAppear {
-                    if dto.rubricaEstudante.rawValue != 0 {
-                        rubricaSelecionada = dto.rubricaEstudante
-                    }
+            }
+            .tint(Color.texto2)
+            .pickerStyle(.menu)
+            .onAppear {
+                if dto.rubricaEstudante.rawValue != 0 {
+                    rubricaSelecionada = dto.rubricaEstudante
                 }
             }
         }

@@ -10,7 +10,10 @@
 
 // Ações
 "Titulo.Cancelar" = "Cancelar";
+"Titulo.Continuar" = "Continuar";
 "Titulo.Concluido" = "Concluído";
+"Titulo.Manter" = "Manter";
+"Titulo.Descartar" = "Descartar";
 // Rubricas
 "Titulo.Rubricas.NãoEstudado" = "Não Estudado";
 "Titulo.Rubricas.MuitoSatisfeito" = "Muito Satisfeito(a)";
@@ -53,3 +56,9 @@
 "Descricao.Reflexao" = "Compartilhe seus pensamentos...";
 // Momento
 "Descricao.Momento.Selecao" = "Escolha um Momento";
+"Descricao.Momento.Nao.Selecao" = "Para que seja possível visualizar os Objetivos de Aprendizado que serão avaliados, escolha o Momento Avaliativo em que está. Isso pode ser feito na Seção Momentos.";
+
+
+// MARK: Alerts
+"Alert.Titulo.Avaliacao.Cancelar" = "Descartar autoavaliação";
+"Alert.Mensagem.Avaliacao.Cancelar" = "Com essa ação todas as informações inseridas sobre sua autoavaliação serão perdidas.";

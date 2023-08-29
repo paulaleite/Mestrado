@@ -1,0 +1,34 @@
+//
+//  MomentoSectionView.swift
+//  Mestrado
+//
+//  Created by Paula Leite on 29/08/23.
+//
+
+import SwiftUI
+
+/// Com essa visualização, é possível estruturar a Section do Momento Avaliativo que será utilizada durante a Autoavaliação.
+struct MomentoSectionView: View {
+    // MARK: - Variáveis e Constantes
+    /// Estado que informa qual momento avaliativo está selecionado
+    @Binding var momentoAvaliativoSelecionado: String
+    /// Estado que informa qual data está selecionada.
+    @Binding var data: Date
+    
+    var titulosMomentos: [String]
+    
+    // MARK: - Body da View
+    var body: some View {
+        Section {
+            MomentosAvaliativosView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, titulosMomentos: titulosMomentos)
+                .listRowBackground(Color.fundo2)
+            
+            DataCellView(data: $data)
+                .listRowBackground(Color.fundo2)
+        } header: {
+            Text("Titulo.Momento".localized())
+                .textCase(.uppercase)
+                .font(.system(size: 14))
+        }
+    }
+}

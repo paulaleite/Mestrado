@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Com essa visualização, é possível estruturar o Item de seleção dos Momentos Avaliativos para uma Autoavaliação.
 struct MomentosAvaliativosView: View {
     // MARK: - Variáveis e Constantes
     

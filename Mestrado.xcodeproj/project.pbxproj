@@ -19,8 +19,11 @@
 		64195F512A99451000490385 /* EstudanteInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64195F502A99451000490385 /* EstudanteInfoView.swift */; };
 		641EB50E2A9E240A00D1747B /* SentimentosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB50D2A9E240A00D1747B /* SentimentosView.swift */; };
 		641EB5102A9E4DC000D1747B /* MomentosAvaliativosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB50F2A9E4DC000D1747B /* MomentosAvaliativosView.swift */; };
-		641EB5122A9E501000D1747B /* SentimentosSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB5112A9E501000D1747B /* SentimentosSectionView.swift */; };
+		641EB5122A9E501000D1747B /* ReflexaoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB5112A9E501000D1747B /* ReflexaoSectionView.swift */; };
 		641EB5142A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB5132A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift */; };
+		641EB5182A9E6D3100D1747B /* ObjetivosAvaliacaoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB5172A9E6D3100D1747B /* ObjetivosAvaliacaoSectionView.swift */; };
+		641EB51A2A9E6E6000D1747B /* MomentoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB5192A9E6E6000D1747B /* MomentoSectionView.swift */; };
+		641EB51C2A9E776500D1747B /* CancelarAvaliacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB51B2A9E776500D1747B /* CancelarAvaliacaoView.swift */; };
 		64388C3B2A5725AF00FDC452 /* RubricaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64388C3A2A5725AF00FDC452 /* RubricaView.swift */; };
 		64388C3D2A5726DF00FDC452 /* Cor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64388C3C2A5726DF00FDC452 /* Cor.xcassets */; };
 		64388C3F2A572F7000FDC452 /* RetangulosCustomizados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64388C3E2A572F7000FDC452 /* RetangulosCustomizados.swift */; };
@@ -84,8 +87,11 @@
 		64195F502A99451000490385 /* EstudanteInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstudanteInfoView.swift; sourceTree = "<group>"; };
 		641EB50D2A9E240A00D1747B /* SentimentosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentosView.swift; sourceTree = "<group>"; };
 		641EB50F2A9E4DC000D1747B /* MomentosAvaliativosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentosAvaliativosView.swift; sourceTree = "<group>"; };
-		641EB5112A9E501000D1747B /* SentimentosSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentosSectionView.swift; sourceTree = "<group>"; };
+		641EB5112A9E501000D1747B /* ReflexaoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflexaoSectionView.swift; sourceTree = "<group>"; };
 		641EB5132A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetivoSelecaoItemView.swift; sourceTree = "<group>"; };
+		641EB5172A9E6D3100D1747B /* ObjetivosAvaliacaoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetivosAvaliacaoSectionView.swift; sourceTree = "<group>"; };
+		641EB5192A9E6E6000D1747B /* MomentoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentoSectionView.swift; sourceTree = "<group>"; };
+		641EB51B2A9E776500D1747B /* CancelarAvaliacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelarAvaliacaoView.swift; sourceTree = "<group>"; };
 		64388C3A2A5725AF00FDC452 /* RubricaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubricaView.swift; sourceTree = "<group>"; };
 		64388C3C2A5726DF00FDC452 /* Cor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Cor.xcassets; sourceTree = "<group>"; };
 		64388C3E2A572F7000FDC452 /* RetangulosCustomizados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetangulosCustomizados.swift; sourceTree = "<group>"; };
@@ -211,10 +217,13 @@
 			children = (
 				6469D7962A9D1AB600662FDE /* MomentosAvaliativosDetalheView.swift */,
 				641EB50F2A9E4DC000D1747B /* MomentosAvaliativosView.swift */,
+				641EB5192A9E6E6000D1747B /* MomentoSectionView.swift */,
 				6469D7A32A9D327C00662FDE /* MomentoCellView.swift */,
 				6469D7A52A9D333400662FDE /* DataCellView.swift */,
 				641EB50D2A9E240A00D1747B /* SentimentosView.swift */,
-				641EB5112A9E501000D1747B /* SentimentosSectionView.swift */,
+				641EB5112A9E501000D1747B /* ReflexaoSectionView.swift */,
+				641EB5172A9E6D3100D1747B /* ObjetivosAvaliacaoSectionView.swift */,
+				641EB51B2A9E776500D1747B /* CancelarAvaliacaoView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 				64388C412A57302D00FDC452 /* ShapeCustomizada.swift in Sources */,
 				649E1B572A54C11900DE4664 /* +URL.swift in Sources */,
 				6469D79B2A9D29CC00662FDE /* ObjetivoAutoavaliacaoModel.swift in Sources */,
+				641EB5182A9E6D3100D1747B /* ObjetivosAvaliacaoSectionView.swift in Sources */,
 				1E7EB6EE2A98254B003415AE /* EstudanteInfoViewModel.swift in Sources */,
 				6459F3D42A55AA4500A66AFD /* MomentoAvaliativo.swift in Sources */,
 				64943AB92A53643200585CA1 /* +Localizable.swift in Sources */,
@@ -449,6 +459,7 @@
 				64195F512A99451000490385 /* EstudanteInfoView.swift in Sources */,
 				6459F3D22A55A9A600A66AFD /* Professor.swift in Sources */,
 				64943AA12A53323100585CA1 /* ContentView.swift in Sources */,
+				641EB51C2A9E776500D1747B /* CancelarAvaliacaoView.swift in Sources */,
 				64943AB22A53625400585CA1 /* Sentimento.swift in Sources */,
 				64388C3B2A5725AF00FDC452 /* RubricaView.swift in Sources */,
 				6459F3E42A560D0E00A66AFD /* ObjetivoItemView.swift in Sources */,
@@ -461,7 +472,7 @@
 				6459F3DA2A55B55400A66AFD /* ObjetivoDeAprendizado.swift in Sources */,
 				6469D79D2A9D2A3F00662FDE /* AutoavaliacaoModel.swift in Sources */,
 				64C9CD8A2A97D1F90083B13F /* SectionHeaderView.swift in Sources */,
-				641EB5122A9E501000D1747B /* SentimentosSectionView.swift in Sources */,
+				641EB5122A9E501000D1747B /* ReflexaoSectionView.swift in Sources */,
 				1EF0DEF82A9A7594004AD38B /* GraficoBarrasEstudanteInfoView.swift in Sources */,
 				64C9CD862A9792940083B13F /* FiltroMomentos.swift in Sources */,
 				6469D7A62A9D333400662FDE /* DataCellView.swift in Sources */,
@@ -476,6 +487,7 @@
 				64943AB02A53603D00585CA1 /* ReflexaoItemView.swift in Sources */,
 				64C9CD822A9790370083B13F /* AutoavaliacaoEstudanteInfoView.swift in Sources */,
 				641EB5102A9E4DC000D1747B /* MomentosAvaliativosView.swift in Sources */,
+				641EB51A2A9E6E6000D1747B /* MomentoSectionView.swift in Sources */,
 				6459F3E22A55EB7B00A66AFD /* ProfessorFetcher.swift in Sources */,
 				649E1B512A54BA6100DE4664 /* APIServicoProtocol.swift in Sources */,
 				649E1B4B2A54B02500DE4664 /* Rubrica.swift in Sources */,

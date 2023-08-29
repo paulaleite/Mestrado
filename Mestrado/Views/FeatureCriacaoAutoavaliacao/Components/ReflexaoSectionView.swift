@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct SentimentosSectionView: View {
+/// Com essa visualização, é possível estruturar a Section de Reflexão, com a seleção de sentimentos e a escrita da Reflexão.
+struct ReflexaoSectionView: View {
     // MARK: - Variáveis e Constantes
     /// Binding que reflete o sentimento selecionado pelo Estudante.
     @Binding var sentimentoSelecionado: Int
@@ -34,13 +35,5 @@ struct SentimentosSectionView: View {
                 .font(.system(size: 14))
                 .textCase(.uppercase)
         }
-        
-        
-//        Section {
-//            TextField("Descricao.Reflexao".localized(), text: $descricaoReflexao, axis: .vertical)
-//                .listRowSeparator(.hidden)
-//                .listRowBackground(Color.fundo2)
-//                .frame(minHeight: 100, maxHeight: 100, alignment: .topLeading)
-//        }
     }
 }
