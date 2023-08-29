@@ -59,13 +59,15 @@ struct AutoavaliacaoView: View {
     var body: some View {
         NavigationStack {
             Form {
+                InformacoesAvaliacaoSectionView()
+                
                 MomentoSectionView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, data: $data, titulosMomentos: titulosMomentos)
                 
                 ReflexaoSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
                 
                 ObjetivosAvaliacaoSectionView(objetivos: objetivos)
                 
-                InformacoesAvaliacaoSectionView()
+                
             }
             .scrollContentBackground(.hidden)
             .background(Color.fundo1)

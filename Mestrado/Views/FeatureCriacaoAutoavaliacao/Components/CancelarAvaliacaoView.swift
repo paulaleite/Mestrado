@@ -24,8 +24,6 @@ struct CancelarAvaliacaoView: View {
             Alert(title: Text("Alert.Titulo.Avaliacao.Cancelar".localized()), message: Text("Alert.Mensagem.Avaliacao.Cancelar".localized()), primaryButton: .default(Text("Titulo.Manter".localized())), secondaryButton: .destructive(Text("Titulo.Descartar".localized())) {
                 dismiss()
             })
-                
-            
         }
     }
 }

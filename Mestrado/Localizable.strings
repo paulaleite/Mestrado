@@ -15,6 +15,8 @@
 "Titulo.Manter" = "Manter";
 "Titulo.Descartar" = "Descartar";
 "Titulo.Informações" = "Informações";
+"Titulo.Editar" = "Editar";
+"Titulo.Salvar" = "Salvar";
 // Rubricas
 "Titulo.Rubricas.NãoEstudado" = "Não Estudado";
 "Titulo.Rubricas.MuitoSatisfeito" = "Muito Satisfeito(a)";
@@ -62,4 +64,6 @@
 
 // MARK: Alerts
 "Alert.Titulo.Avaliacao.Cancelar" = "Descartar autoavaliação";
-"Alert.Mensagem.Avaliacao.Cancelar" = "Com essa ação todas as informações inseridas sobre sua autoavaliação serão perdidas.";
+"Alert.Mensagem.Avaliacao.Cancelar" = "Com essa ação, todas as informações inseridas sobre sua autoavaliação serão perdidas.";
+"Alert.Titulo.Avaliacao.Adicionar" = "Salvar autoavaliação";
+"Alert.Mensagem.Avaliacao.Adicionar" = "Com essa ação, a autoavaliação será criada e não será possível editá-la.";

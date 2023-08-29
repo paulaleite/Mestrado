@@ -14,11 +14,7 @@ struct InformacoesAvaliacaoSectionView: View {
                 .font(.system(size: 11))
                 .foregroundColor(Color.texto2)
                 .listRowBackground(Color.fundo1)
-                .padding(.horizontal, -16)
-        } header: {
-            Text("Titulo.Informações".localized())
-                .textCase(.uppercase)
-                .font(.system(size: 14))
+//                .padding(.horizontal, -16)
         }
     }
 }
