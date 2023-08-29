@@ -20,6 +20,7 @@
 		641EB50E2A9E240A00D1747B /* SentimentosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB50D2A9E240A00D1747B /* SentimentosView.swift */; };
 		641EB5102A9E4DC000D1747B /* MomentosAvaliativosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB50F2A9E4DC000D1747B /* MomentosAvaliativosView.swift */; };
 		641EB5122A9E501000D1747B /* SentimentosSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB5112A9E501000D1747B /* SentimentosSectionView.swift */; };
+		641EB5142A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB5132A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift */; };
 		64388C3B2A5725AF00FDC452 /* RubricaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64388C3A2A5725AF00FDC452 /* RubricaView.swift */; };
 		64388C3D2A5726DF00FDC452 /* Cor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64388C3C2A5726DF00FDC452 /* Cor.xcassets */; };
 		64388C3F2A572F7000FDC452 /* RetangulosCustomizados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64388C3E2A572F7000FDC452 /* RetangulosCustomizados.swift */; };
@@ -84,6 +85,7 @@
 		641EB50D2A9E240A00D1747B /* SentimentosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentosView.swift; sourceTree = "<group>"; };
 		641EB50F2A9E4DC000D1747B /* MomentosAvaliativosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentosAvaliativosView.swift; sourceTree = "<group>"; };
 		641EB5112A9E501000D1747B /* SentimentosSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentosSectionView.swift; sourceTree = "<group>"; };
+		641EB5132A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetivoSelecaoItemView.swift; sourceTree = "<group>"; };
 		64388C3A2A5725AF00FDC452 /* RubricaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubricaView.swift; sourceTree = "<group>"; };
 		64388C3C2A5726DF00FDC452 /* Cor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Cor.xcassets; sourceTree = "<group>"; };
 		64388C3E2A572F7000FDC452 /* RetangulosCustomizados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetangulosCustomizados.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				1ED068602A9A6A1C00A05BC9 /* Shapes */,
 				64C9CD892A97D1F90083B13F /* SectionHeaderView.swift */,
 				64943AAF2A53603D00585CA1 /* ReflexaoItemView.swift */,
+				641EB5132A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift */,
 				6459F3E32A560D0E00A66AFD /* ObjetivoItemView.swift */,
 				64388C3A2A5725AF00FDC452 /* RubricaView.swift */,
 			);
@@ -428,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				641EB5142A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift in Sources */,
 				641EB50E2A9E240A00D1747B /* SentimentosView.swift in Sources */,
 				1E7EB6F32A982569003415AE /* ReflexaoEstudanteInfoModel.swift in Sources */,
 				6459F3E02A55B8E000A66AFD /* ObjetivoDeAprendizadoAvaliado.swift in Sources */,

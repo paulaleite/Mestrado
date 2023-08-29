@@ -41,7 +41,7 @@ enum Rubrica: Int, Codable {
             case .nemSatisfeitoNemInsatisfeito:
                 return "Titulo.Rubricas.NemSatisfeitoNemInsatisfeito".localized()
             case .parcialmenteInsatisfeito:
-                return "Titulo.Rubricas.ParcilamenteInsatifeito".localized()
+                return "Titulo.Rubricas.ParcialmenteInsatisfeito".localized()
             case .muitoInsatisfeito:
                 return "Titulo.Rubricas.MuitoInsatisfeito".localized()
         }

@@ -64,7 +64,7 @@ struct AutoavaliacaoEstudanteInfoView: View {
                 }
             }
         } header: {
-            SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Objetivo.Pural".localized(), quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
+            SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Objetivo.Plural".localized(), quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
                 .padding(.top, -20)
         }
         

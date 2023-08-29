@@ -11,14 +11,14 @@
         {
             "id": "1",
             "descricao": "Conheçam a estrutura dos sistemas de computação e os processos envolvidos na sua construção e análise.",
-            "corCompetencia": "red",
+            "corCompetencia": "Competencia1",
             "rubricaSelecionada": 3
         },
         {
             "id": "2",
-            "descricao": "sdofn",
-            "corCompetencia": "green",
-            "rubricaSelecionada": 3
+            "descricao": "Condições objetivas de oferta e a vocação do curso.",
+            "corCompetencia": "Competencia2",
+            "rubricaSelecionada": 0
         }
     ]
 }

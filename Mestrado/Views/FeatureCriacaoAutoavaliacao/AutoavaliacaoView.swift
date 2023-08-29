@@ -60,6 +60,16 @@ struct AutoavaliacaoView: View {
                 
                 SentimentosSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
                 
+                Section {
+                    ForEach(viewModel.objetivos, id: \.self) { objetivo in
+                        ObjetivoSelecaoItemView(dto: ObjetivoSelecaoItemDTO(corCompetencia: Color(objetivo.corCompetencia), descricao: objetivo.descricao, rubricaEstudante: objetivo.rubricaSelecionada))
+                    }
+                } header: {
+                    Text("Titulo.Objetivo.Plural".localized())
+                        .textCase(.uppercase)
+                        .font(.system(size: 14))
+                }
+                
             }
             .navigationTitle("Titulo.Autoavaliacao.Nova".localized())
             .navigationBarTitleDisplayMode(.inline)
