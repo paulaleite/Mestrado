@@ -14,6 +14,7 @@
 "Titulo.Concluido" = "Concluído";
 "Titulo.Manter" = "Manter";
 "Titulo.Descartar" = "Descartar";
+"Titulo.Informações" = "Informações";
 // Rubricas
 "Titulo.Rubricas.NãoEstudado" = "Não Estudado";
 "Titulo.Rubricas.MuitoSatisfeito" = "Muito Satisfeito(a)";
@@ -52,11 +53,11 @@
 "Descricao.Erro.URLInvalida" = "A URL de consulta está inválida";
 "Descricao.Erro.RespostaInvalida" = "A resposta fornecida pela consulta está inválida";
 "Descricao.Erro.DadoInvalido" = "Os dados convertidos estão inválidos";
-// Reflexão
+// Autoavaliação
 "Descricao.Reflexao" = "Compartilhe seus pensamentos...";
-// Momento
 "Descricao.Momento.Selecao" = "Escolha um Momento";
 "Descricao.Momento.Nao.Selecao" = "Para que seja possível visualizar os Objetivos de Aprendizado que serão avaliados, escolha o Momento Avaliativo em que está. Isso pode ser feito na Seção Momentos.";
+"Descricao.Salvar" = "Para que seja possível criar uma autoavaliação, é necessário informar o Momento Avaliativo e escrever uma Reflexão.";
 
 
 // MARK: Alerts

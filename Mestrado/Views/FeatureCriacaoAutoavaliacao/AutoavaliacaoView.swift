@@ -64,7 +64,11 @@ struct AutoavaliacaoView: View {
                 ReflexaoSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
                 
                 ObjetivosAvaliacaoSectionView(objetivos: objetivos)
+                
+                InformacoesAvaliacaoSectionView()
             }
+            .scrollContentBackground(.hidden)
+            .background(Color.fundo1)
             .navigationTitle("Titulo.Autoavaliacao.Nova".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -72,13 +76,7 @@ struct AutoavaliacaoView: View {
                     CancelarAvaliacaoView()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        dismiss()
-                        // TODO: Chamar pop-up
-                    } label: {
-                        Text("Titulo.Concluido".localized())
-                            .foregroundColor(Color.texto1)
-                    }
+                    AdicionarAvaliacaoView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, descricaoReflexao: $descricaoReflexao)
                 }
             }
         }
