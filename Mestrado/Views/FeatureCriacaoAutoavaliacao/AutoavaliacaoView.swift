@@ -55,9 +55,8 @@ struct AutoavaliacaoView: View {
                 
                 Section {
                     TextField("Descricao.Reflexao".localized(), text: $descricaoReflexao, axis: .vertical)
-                        .frame(minHeight: 100, maxHeight: 100)
-//                        .fixedSize(horizontal: false, vertical: true)
-//                        .multilineTextAlignment(.leading)
+                        .frame(minHeight: 100, maxHeight: 100, alignment: .topLeading)
+                    
                 } header: {
                     Text("Titulo.Reflexao".localized())
                         .textCase(.uppercase)
