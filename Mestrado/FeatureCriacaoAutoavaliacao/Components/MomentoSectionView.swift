@@ -11,16 +11,16 @@ import SwiftUI
 struct MomentoSectionView: View {
     // MARK: - Variáveis e Constantes
     /// Estado que informa qual momento avaliativo está selecionado
-    @Binding var momentoAvaliativoSelecionado: String
+    @Binding var momentoAvaliativoSelecionado: MomentoAvaliativoModel
     /// Estado que informa qual data está selecionada.
     @Binding var data: Date
     
-    var titulosMomentos: [String]
+    var momentos: [MomentoAvaliativoModel]
     
     // MARK: - Body da View
     var body: some View {
         Section {
-            MomentosAvaliativosView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, titulosMomentos: titulosMomentos)
+            MomentosAvaliativosView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, momentos: momentos)
                 .listRowBackground(Color.fundo2)
             
             DataCellView(data: $data)

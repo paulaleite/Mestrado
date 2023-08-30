@@ -18,7 +18,7 @@ struct PostAutoavaliacaoModel: Codable {
     var data: String
     
     /// O sentimento selecionado pelo Estudante em relação ao Momento Avaliativo.
-    var sentimento: Sentimento
+    var sentimento: Int
     
     /// A descrição que representa a reflexão textual feita pelo Estudante.
     var descricao: String

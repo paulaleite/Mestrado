@@ -45,6 +45,7 @@
 		648105942A9F6D230040EA26 /* ModelosAntigos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648105932A9F6D230040EA26 /* ModelosAntigos.swift */; };
 		648105962A9F6DAA0040EA26 /* ViewModelsAntigas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648105952A9F6DAA0040EA26 /* ViewModelsAntigas.swift */; };
 		648105982A9F75040040EA26 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648105972A9F75040040EA26 /* LoadingView.swift */; };
+		648FE1972A9FAB4F0043BAC8 /* MomentoAvaliativoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648FE1962A9FAB4F0043BAC8 /* MomentoAvaliativoModel.swift */; };
 		64943A9F2A53323100585CA1 /* MestradoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64943A9E2A53323100585CA1 /* MestradoApp.swift */; };
 		64943AA12A53323100585CA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64943AA02A53323100585CA1 /* ContentView.swift */; };
 		64943AA32A53323300585CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64943AA22A53323300585CA1 /* Assets.xcassets */; };
@@ -110,6 +111,7 @@
 		648105932A9F6D230040EA26 /* ModelosAntigos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelosAntigos.swift; sourceTree = "<group>"; };
 		648105952A9F6DAA0040EA26 /* ViewModelsAntigas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsAntigas.swift; sourceTree = "<group>"; };
 		648105972A9F75040040EA26 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		648FE1962A9FAB4F0043BAC8 /* MomentoAvaliativoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentoAvaliativoModel.swift; sourceTree = "<group>"; };
 		64943A9B2A53323100585CA1 /* Mestrado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mestrado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64943A9E2A53323100585CA1 /* MestradoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MestradoApp.swift; sourceTree = "<group>"; };
 		64943AA02A53323100585CA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -214,8 +216,9 @@
 		6469D7992A9D29B500662FDE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6469D79A2A9D29CC00662FDE /* ObjetivoAutoavaliacaoModel.swift */,
 				6469D79C2A9D2A3F00662FDE /* AutoavaliacaoModel.swift */,
+				6469D79A2A9D29CC00662FDE /* ObjetivoAutoavaliacaoModel.swift */,
+				648FE1962A9FAB4F0043BAC8 /* MomentoAvaliativoModel.swift */,
 				648105912A9F6BEA0040EA26 /* PostObjetivoModel.swift */,
 				6481058F2A9F6B5E0040EA26 /* PostAutoavaliacaoModel.swift */,
 			);
@@ -446,6 +449,7 @@
 				64388C3B2A5725AF00FDC452 /* RubricaView.swift in Sources */,
 				6459F3E42A560D0E00A66AFD /* ObjetivoItemView.swift in Sources */,
 				64195F442A98EACD00490385 /* MomentoAvaliativoTituloModel.swift in Sources */,
+				648FE1972A9FAB4F0043BAC8 /* MomentoAvaliativoModel.swift in Sources */,
 				64195F422A98E94100490385 /* GraficoEstudanteInfoModel.swift in Sources */,
 				64943A9F2A53323100585CA1 /* MestradoApp.swift in Sources */,
 				6469D7A42A9D327C00662FDE /* MomentoCellView.swift in Sources */,

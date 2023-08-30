@@ -12,16 +12,16 @@ struct MomentosAvaliativosView: View {
     // MARK: - Variáveis e Constantes
     
     /// Binding que informa qual momento avaliativo está selecionado.
-    @Binding var momentoAvaliativoSelecionado: String
+    @Binding var momentoAvaliativoSelecionado: MomentoAvaliativoModel
     
     /// Lista dos Momentos Avaliativos disponíveis na Disciplina determinada.
-    var titulosMomentos: [String]
+    var momentos: [MomentoAvaliativoModel]
     
     // MARK: - Body da View
     
     var body: some View {
         NavigationLink {
-            MomentosAvaliativosDetalheView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, titulosMomentos: titulosMomentos)
+            MomentosAvaliativosDetalheView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, momentos: momentos)
         } label: {
             HStack {
                 Text("Titulo.Momento.Plural".localized())
@@ -29,10 +29,10 @@ struct MomentosAvaliativosView: View {
                 
                 Spacer()
                 
-                if momentoAvaliativoSelecionado == "" {
+                if momentoAvaliativoSelecionado.titulo == "" {
                     Text("Descricao.Momento.Selecao".localized())
                 } else {
-                    Text(momentoAvaliativoSelecionado)
+                    Text(momentoAvaliativoSelecionado.titulo)
                         .foregroundColor(Color.texto2)
                 }
             }

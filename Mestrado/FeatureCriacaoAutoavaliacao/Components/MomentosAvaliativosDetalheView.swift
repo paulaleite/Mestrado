@@ -14,22 +14,22 @@ struct MomentosAvaliativosDetalheView: View {
     @Environment(\.dismiss) var dismiss
     
     /// Binding que informa qual momento avaliativo está selecionado.
-    @Binding var momentoAvaliativoSelecionado: String
+    @Binding var momentoAvaliativoSelecionado: MomentoAvaliativoModel
     
     /// Lista dos Momentos Avaliativos disponíveis na Disciplina determinada.
-    var titulosMomentos: [String]
+    var momentos: [MomentoAvaliativoModel]
     
     // MARK: - Body da View
     var body: some View {
         List {
-            ForEach(titulosMomentos, id: \.self) { titulo in
+            ForEach(momentos, id: \.self) { momento in
                 HStack {
-                    Text(titulo)
+                    Text(momento.titulo)
                         .font(.body)
                     
                     Spacer()
                     
-                    if momentoAvaliativoSelecionado == titulo {
+                    if momentoAvaliativoSelecionado.titulo == momento.titulo {
                         Image(systemName: "checkmark")
                             .font(.body)
                             .fontWeight(.semibold)
@@ -41,7 +41,8 @@ struct MomentosAvaliativosDetalheView: View {
                 .gesture(
                     TapGesture()
                         .onEnded { _ in
-                            momentoAvaliativoSelecionado = titulo
+                            momentoAvaliativoSelecionado.titulo = momento.titulo
+                            momentoAvaliativoSelecionado.id = momento.id
                             dismiss()
                     })
             }

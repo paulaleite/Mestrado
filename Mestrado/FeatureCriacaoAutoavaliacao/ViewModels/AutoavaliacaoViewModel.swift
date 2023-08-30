@@ -13,7 +13,7 @@ class AutoavaliacaoViewModel: ObservableObject {
     // MARK: - Variávies e Constantes
     
     /// Source of Truth dos momentos avaliativos do Estudante, dentro da Disciplina.
-    @Published var momentos: [MomentoAvaliativoTituloModel] = []
+    @Published var momentos: [MomentoAvaliativoModel] = []
     
     /// Source of Truth dos objetivos de aprendizado de um Momento Avaliativo.
     @Published var objetivos: [ObjetivoAutoavaliacaoModel] = []
@@ -23,6 +23,10 @@ class AutoavaliacaoViewModel: ObservableObject {
     
     /// Source of Truth de erros que ocorram enquando os dados estão sendo buscados no Servidor.
     @Published var mensagemDeErro: String? = nil
+    
+    @Published var autoavaliacao: PostAutoavaliacaoModel? = nil
+    
+    @Published var objetivosAvaliados: [PostObjetivoModel] = []
     
     /// Constante que representa o serviço de acesso à API, com o qual é possível utilizar as ferramentas de acesso à mesma.
     let servico: APIServicoProtocol
@@ -35,8 +39,6 @@ class AutoavaliacaoViewModel: ObservableObject {
     // MARK: - Inicializadores
     init(servico: APIServicoProtocol = APIServico()) {
         self.servico = servico
-        
-        //        getDadosCriacaoAutoavaliacao(estudanteID: estudanteID, disciplinaID: disciplinaID)
     }
     
     // MARK: - Funções
@@ -72,14 +74,28 @@ class AutoavaliacaoViewModel: ObservableObject {
         }
     }
     
-    func criarAutoavaliacao() {
-        // Talvez colocar como Pulblished lá na ViewModel e criar lá o Objetivo, qdo estiver pronto, chamar a função.
-        // Talvez ter todas os itens como Published aqui.
-        // Talvez colocar PostObjetivoModel como Published aqui...
-        var objsAvaliados: [PostObjetivoModel]
-        for obj in objetivos {
-            objsAvaliados.append(PostObjetivoModel(objetivoID: obj.id, rubricaSelecionada: obj.rubricaSelecionada))
+    func criarObjetivos(objetivos: [ObjetivoAutoavaliacaoModel]) {
+        if objetivosAvaliados.isEmpty {
+            for obj in objetivos {
+                objetivosAvaliados.append(PostObjetivoModel(objetivoID: obj.id, rubricaSelecionada: obj.rubricaSelecionada.rawValue))
+            }
         }
-//        var autoavaliacao = PostAutoavaliacaoModel(estudanteID: estudanteID, momentoAvaliativoID: momentoAvaliativoSelecionado, data: data, sentimento: sentimentoSelecionado, descricao: descricaoReflexao, objetivosAvaliados: objsAvaliados)
+    }
+    
+    func atualizarObjetivo(objetivoID: String, rubricaSelecionada: Int) {
+
+            if !objetivosAvaliados.isEmpty {
+                for i in 0 ..< objetivosAvaliados.count {
+                    if objetivoID == objetivosAvaliados[i].objetivoID {
+                        objetivosAvaliados[i].rubricaSelecionada = rubricaSelecionada
+                    }
+                }
+            }
+    }
+    
+    func atualizarAutoavaliacao(estudanteID: String, momentoID: String, data: String, sentimento: Int, descricao: String, objetivos: [ObjetivoAutoavaliacaoModel]) {
+        autoavaliacao = PostAutoavaliacaoModel(estudanteID: estudanteID, momentoAvaliativoID: momentoID, data: data, sentimento: sentimento, descricao: descricao, objetivosAvaliados: self.objetivosAvaliados)
+        
+        print(autoavaliacao!)
     }
 }

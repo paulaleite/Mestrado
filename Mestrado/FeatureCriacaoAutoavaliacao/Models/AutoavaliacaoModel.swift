@@ -11,7 +11,7 @@ import Foundation
 struct AutoavaliacaoModel: Codable, Hashable {
     
     /// Dados dos Momentos Avaliativos dessa Disciplina.
-    var momentos: [MomentoAvaliativoTituloModel]
+    var momentos: [MomentoAvaliativoModel]
     
     /// Dados dos Objetivos de Aprendizado utilizados nessa feature.
     var objetivos: [ObjetivoAutoavaliacaoModel]

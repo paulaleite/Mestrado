@@ -19,13 +19,13 @@ struct AutoavaliacaoView: View {
     var disciplinaID: String
     
     /// Estado que informa qual momento avaliativo está selecionado
-    @State var momentoAvaliativoSelecionado = "Descricao.Momento.Selecao".localized()
+    @State var momentoAvaliativoSelecionado: MomentoAvaliativoModel = MomentoAvaliativoModel(id: "", titulo: "Descricao.Momento.Selecao".localized())
     /// Estado que reflete o texto da reflexão do Estudante.
     @State var descricaoReflexao = ""
     /// Estado que reflete o sentimento selecionado pelo Estudante.
     @State var sentimentoSelecionado: Int = 4
     /// Estado que informa qual data está selecionada.
-    @State private var data = Date()
+    @State var data = Date()
     /// Estado que informa se a solicitação ocorreu de forma incorreta.
     @State var mostrarErro: Bool = false
     
@@ -44,7 +44,7 @@ struct AutoavaliacaoView: View {
         var objs: [ObjetivoAutoavaliacaoModel] = []
         
         for objetivo in viewModel.objetivos {
-            if objetivo.momentoAvaliativo == momentoAvaliativoSelecionado {
+            if objetivo.momentoAvaliativo == momentoAvaliativoSelecionado.titulo {
                 objs.append(objetivo)
             }
         }
@@ -62,7 +62,7 @@ struct AutoavaliacaoView: View {
                 Form {
                     InformacoesAvaliacaoSectionView()
                     
-                    MomentoSectionView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, data: $data, titulosMomentos: titulosMomentos)
+                    MomentoSectionView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, data: $data, momentos: viewModel.momentos)
                     
                     ReflexaoSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
                     
@@ -77,7 +77,7 @@ struct AutoavaliacaoView: View {
                         CancelarAvaliacaoView()
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        AdicionarAvaliacaoView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, descricaoReflexao: $descricaoReflexao, autoavaliacao: autoavaliacao, disciplinaID: disciplinaID)
+                        AdicionarAvaliacaoView(viewModel: viewModel, momentoAvaliativoSelecionado: momentoAvaliativoSelecionado, descricaoReflexao: descricaoReflexao, data: data.description, sentimentoSelecionado: sentimentoSelecionado, disciplinaID: disciplinaID, estudanteID: estudanteID, objetivos: objetivos)
                     }
                 }
             }
@@ -94,5 +94,6 @@ struct AutoavaliacaoView: View {
             Alert(title: Text(viewModel.mensagemDeErro!), message: Text("Alert.Mensagem.Erro".localized()), dismissButton:
                     .cancel(Text("Titulo.OK".localized())))
         }
+        .environmentObject(viewModel)
     }
 }

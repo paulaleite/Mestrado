@@ -15,14 +15,19 @@ struct AdicionarAvaliacaoView: View {
     @ObservedObject var viewModel: AutoavaliacaoViewModel
     
     /// Binding que informa qual momento avaliativo está selecionado
-    @Binding var momentoAvaliativoSelecionado: String
+    var momentoAvaliativoSelecionado: MomentoAvaliativoModel
     /// Binding que reflete o texto da reflexão do Estudante.
-    @Binding var descricaoReflexao: String
+    var descricaoReflexao: String
+    /// Binding que reflete a data selecionada pelo Estudante.
+    var data: String
+    /// Estado que reflete o sentimento selecionado pelo Estudante.
+    var sentimentoSelecionado: Int
     /// State que permite mostrar o Alert quando o botão de Concluído é selecionado.
     @State var mostrarAlert = false
     
-    var autoavaliacao: PostAutoavaliacaoModel
     var disciplinaID: String
+    var estudanteID: String
+    var objetivos: [ObjetivoAutoavaliacaoModel]
     
     // MARK: - Body da View
     var body: some View {
@@ -30,14 +35,17 @@ struct AdicionarAvaliacaoView: View {
             mostrarAlert.toggle()
         } label: {
             Text("Titulo.Concluido".localized())
-                .foregroundColor((momentoAvaliativoSelecionado == "Descricao.Momento.Selecao".localized() || descricaoReflexao.isEmpty) ? Color.texto2 : Color.corDeAcao)
+                .foregroundColor((momentoAvaliativoSelecionado.titulo == "Descricao.Momento.Selecao".localized() || descricaoReflexao.isEmpty) ? Color.texto2 : Color.corDeAcao)
         }
-        .disabled((momentoAvaliativoSelecionado == "Descricao.Momento.Selecao".localized() || descricaoReflexao.isEmpty) ? true : false)
+        .disabled((momentoAvaliativoSelecionado.titulo == "Descricao.Momento.Selecao".localized() || descricaoReflexao.isEmpty) ? true : false)
         .alert(isPresented: $mostrarAlert) {
             Alert(title: Text("Alert.Titulo.Avaliacao.Adicionar".localized()), message: Text("Alert.Mensagem.Avaliacao.Adicionar".localized()), primaryButton: .default(Text("Titulo.Editar".localized())), secondaryButton: .default(Text("Titulo.Salvar".localized())) {
                 dismiss()
+                viewModel.atualizarAutoavaliacao(estudanteID: estudanteID, momentoID: momentoAvaliativoSelecionado.id, data: data, sentimento: sentimentoSelecionado, descricao: descricaoReflexao, objetivos: objetivos)
                 Task {
-                    await viewModel.postDadosAutoavaliacao(autoavaliacao: autoavaliacao, disciplinaID: disciplinaID)
+                    if let autoavaliacao = viewModel.autoavaliacao {
+                        await viewModel.postDadosAutoavaliacao(autoavaliacao: autoavaliacao, disciplinaID: disciplinaID)
+                    }
                 }
             })
         }

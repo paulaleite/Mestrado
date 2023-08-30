@@ -12,5 +12,5 @@ struct PostObjetivoModel: Codable {
     var objetivoID: String
     
     /// Rubrica selecionada pelo Estudante em relação ao Objetivo de Aprendizado.
-    var rubricaSelecionada: Rubrica
+    var rubricaSelecionada: Int
 }

@@ -120,13 +120,24 @@ struct APIServico: APIServicoProtocol {
     internal func postDadosAutoavaliacao(dados: PostAutoavaliacaoModel, disciplinaID: String) async -> (PostAutoavaliacaoModel?, APIErro?) {
         let stringURL: String = .postDadoAutoavaliacao + "\(dados.estudanteID)" + "\(disciplinaID)"
         
+        var objs: [[String: Any]] = []
+        
+        for obj in dados.objetivosAvaliados {
+            let objetivosAvaliados: [String: Any] = [
+                "id": obj.objetivoID,
+                "rubricaSelecionada": obj.rubricaSelecionada
+            ]
+            
+            objs.append(objetivosAvaliados)
+        }
+        
         let autoavaliacaoInfo: [String: Any] = [
             "estudanteID": dados.estudanteID,
             "momentoAvaliativoID": dados.momentoAvaliativoID,
             "data": dados.data,
             "sentimento": dados.sentimento,
             "descricao": dados.descricao,
-            "objetivosAvaliados": dados.objetivosAvaliados
+            "objetivosAvaliados": objs
         ]
         
         do {

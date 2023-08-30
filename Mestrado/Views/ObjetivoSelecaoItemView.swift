@@ -15,6 +15,8 @@ struct ObjetivoSelecaoItemDTO {
     let descricao: String
     /// A rubrica selecionada pelo Estudante.
     var rubricaEstudante: Rubrica
+    /// Objetivo ID
+    var objetivoID: String
     /// As rubricas disponíveis
     let rubricas: [Rubrica] = [.naoEstudado, .muitoSatisfeito, .parcialmenteSatisfeito, .nemSatisfeitoNemInsatisfeito, .parcialmenteInsatisfeito, .muitoInsatisfeito]
 }
@@ -23,10 +25,16 @@ struct ObjetivoSelecaoItemDTO {
 struct ObjetivoSelecaoItemView: View {
     
     // MARK: - Variáveis e Constantes
+    @EnvironmentObject var viewModel: AutoavaliacaoViewModel
+    
     let dto: ObjetivoSelecaoItemDTO
+    
+    // state object do model
+    // id do objetivo
     
     /// A Rubrica escolhida pelo Estudante para o Objetivo de Aprendizado que está sendo apresentado no elemento da lista ou o Nível escolhido pelo Professor.
     @State var rubricaSelecionada: Rubrica = .naoEstudado
+    
     
     var body: some View {
         
@@ -49,6 +57,9 @@ struct ObjetivoSelecaoItemView: View {
                 }
             }
         }
+        .onChange(of: rubricaSelecionada, perform: { newValue in
+            viewModel.atualizarObjetivo(objetivoID: dto.objetivoID, rubricaSelecionada: rubricaSelecionada.rawValue)
+        })
         .listRowBackground(Color.fundo2)
     }
 }
