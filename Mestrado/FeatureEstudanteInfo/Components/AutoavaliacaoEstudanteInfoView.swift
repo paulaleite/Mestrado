@@ -50,6 +50,7 @@ struct AutoavaliacaoEstudanteInfoView: View {
             if sectionReflexoesExpandida && reflexoes.count > 0 {
                 ForEach(reflexoes, id: \.self) { reflexao in
                     ReflexaoItemView(dto: ReflexaoItemDTO(sentimento: reflexao.sentimento, data: reflexao.data, descricao: reflexao.descricao))
+                        .listRowBackground(Color.fundo2)
                 }
             }
         } header: {
@@ -61,6 +62,8 @@ struct AutoavaliacaoEstudanteInfoView: View {
             if sectionObjetivosExpandida && objetivos.count > 0 {
                 ForEach(objetivos, id: \.self) { objetivo in
                     ObjetivoItemView(dto: ObjetivoItemDTO(corCompetencia: Color(objetivo.corCompetencia), descricao: objetivo.descricao, rubricaSelecionada: objetivo.rubricaSelecionada, nivelEsperado: objetivo.nivelEsperado))
+                        .listRowBackground(Color.fundo2)
+                        .background(Color.fundo2)
                 }
             }
         } header: {

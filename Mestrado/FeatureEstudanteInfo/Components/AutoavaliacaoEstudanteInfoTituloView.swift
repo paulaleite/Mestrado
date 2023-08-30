@@ -43,6 +43,7 @@ struct AutoavaliacaoEstudanteInfoTituloView: View {
         }
         .sheet(isPresented: $abrirCriacaoAutoavaliacao) {
             AutoavaliacaoView(estudanteID: "1", disciplinaID: "1")
+                .interactiveDismissDisabled(true)
         }
     }
 }

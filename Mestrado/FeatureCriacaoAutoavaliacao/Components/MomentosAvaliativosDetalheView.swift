@@ -36,7 +36,6 @@ struct MomentosAvaliativosDetalheView: View {
                             .foregroundColor(Color.corDeAcao)
                     }
                 }
-                .background(Color.fundo2)
                 .listRowBackground(Color.fundo2)
                 .gesture(
                     TapGesture()
@@ -47,6 +46,8 @@ struct MomentosAvaliativosDetalheView: View {
                     })
             }
         }
+        .background(Color.fundo1)
+        .scrollContentBackground(.hidden)
         .navigationTitle("Titulo.Momento".localized())
     }
 }

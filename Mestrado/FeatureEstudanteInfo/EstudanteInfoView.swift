@@ -42,7 +42,6 @@ struct EstudanteInfoView: View {
                         GraficoBarrasEstudanteInfoView(viewModel: viewModel)
                             .padding(.bottom, 16)
                             .listRowSeparator(.hidden)
-                            .listRowBackground(Color.fundo2)
                     } header: {
                         Text("Titulo.Competencia".localized())
                             .font(.title.bold())
@@ -50,6 +49,7 @@ struct EstudanteInfoView: View {
                             .textCase(.none)
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .listRowSeparator(.hidden)
+                            .listRowBackground(Color.fundo1)
                             .padding(.horizontal, -20)
                     }
                     
@@ -59,13 +59,15 @@ struct EstudanteInfoView: View {
                         .padding(.horizontal, -20)
                     
                     AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-                        .listRowBackground(Color.fundo2)
+                        .background(Color.fundo1)
                 }
                 .listStyle(.insetGrouped)
                 .frame(maxHeight: .infinity)
                 .navigationTitle("Disciplina 1")
+                .background(Color.fundo1)
             }
         }
+        .scrollContentBackground(.hidden)
         .onAppear {
             Task {
                 await viewModel.getDadosInfoEstudante(estudanteID: estudanteID, disciplinaID: disciplinaID)
@@ -78,6 +80,5 @@ struct EstudanteInfoView: View {
             Alert(title: Text(viewModel.mensagemDeErro!), message: Text("Alert.Mensagem.Erro".localized()), dismissButton:
                     .cancel(Text("Titulo.OK".localized())))
         }
-        .background(Color.fundo1)
     }
 }
