@@ -49,7 +49,6 @@ class AutoavaliacaoViewModel: ObservableObject {
         estaBuscando = true
         mensagemDeErro = nil
         
-        
         let resultado = await servico.getDadosAutoavaliacao(estudanteID: estudanteID, disciplinaID: disciplinaID)
         if resultado.1 != nil {
             mensagemDeErro = resultado.1?.descricao
@@ -59,6 +58,28 @@ class AutoavaliacaoViewModel: ObservableObject {
         }
         
         self.estaBuscando = false
+    }
+    
+    @MainActor internal func postDadosAutoavaliacao(autoavaliacao: PostAutoavaliacaoModel, disciplinaID: String) async {
+        estaBuscando = true
+        mensagemDeErro = nil
         
+        let resultado = await servico.postDadosAutoavaliacao(dados: autoavaliacao, disciplinaID: disciplinaID)
+        if resultado.1 != nil {
+            mensagemDeErro = resultado.1?.descricao
+        } else {
+            print(resultado.0!)
+        }
+    }
+    
+    func criarAutoavaliacao() {
+        // Talvez colocar como Pulblished lá na ViewModel e criar lá o Objetivo, qdo estiver pronto, chamar a função.
+        // Talvez ter todas os itens como Published aqui.
+        // Talvez colocar PostObjetivoModel como Published aqui...
+        var objsAvaliados: [PostObjetivoModel]
+        for obj in objetivos {
+            objsAvaliados.append(PostObjetivoModel(objetivoID: obj.id, rubricaSelecionada: obj.rubricaSelecionada))
+        }
+//        var autoavaliacao = PostAutoavaliacaoModel(estudanteID: estudanteID, momentoAvaliativoID: momentoAvaliativoSelecionado, data: data, sentimento: sentimentoSelecionado, descricao: descricaoReflexao, objetivosAvaliados: objsAvaliados)
     }
 }

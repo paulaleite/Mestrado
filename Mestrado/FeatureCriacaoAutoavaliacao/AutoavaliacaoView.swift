@@ -67,8 +67,6 @@ struct AutoavaliacaoView: View {
                     ReflexaoSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
                     
                     ObjetivosAvaliacaoSectionView(objetivos: objetivos)
-                    
-                    
                 }
                 .scrollContentBackground(.hidden)
                 .background(Color.fundo1)
@@ -79,7 +77,7 @@ struct AutoavaliacaoView: View {
                         CancelarAvaliacaoView()
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        AdicionarAvaliacaoView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, descricaoReflexao: $descricaoReflexao)
+                        AdicionarAvaliacaoView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, descricaoReflexao: $descricaoReflexao, autoavaliacao: autoavaliacao, disciplinaID: disciplinaID)
                     }
                 }
             }

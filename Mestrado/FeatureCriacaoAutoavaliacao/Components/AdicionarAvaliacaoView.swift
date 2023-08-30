@@ -12,12 +12,17 @@ struct AdicionarAvaliacaoView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    @ObservedObject var viewModel: AutoavaliacaoViewModel
+    
     /// Binding que informa qual momento avaliativo está selecionado
     @Binding var momentoAvaliativoSelecionado: String
     /// Binding que reflete o texto da reflexão do Estudante.
     @Binding var descricaoReflexao: String
     /// State que permite mostrar o Alert quando o botão de Concluído é selecionado.
     @State var mostrarAlert = false
+    
+    var autoavaliacao: PostAutoavaliacaoModel
+    var disciplinaID: String
     
     // MARK: - Body da View
     var body: some View {
@@ -31,7 +36,9 @@ struct AdicionarAvaliacaoView: View {
         .alert(isPresented: $mostrarAlert) {
             Alert(title: Text("Alert.Titulo.Avaliacao.Adicionar".localized()), message: Text("Alert.Mensagem.Avaliacao.Adicionar".localized()), primaryButton: .default(Text("Titulo.Editar".localized())), secondaryButton: .default(Text("Titulo.Salvar".localized())) {
                 dismiss()
-                // Salvar dados!
+                Task {
+                    await viewModel.postDadosAutoavaliacao(autoavaliacao: autoavaliacao, disciplinaID: disciplinaID)
+                }
             })
         }
     }

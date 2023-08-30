@@ -20,7 +20,7 @@ extension String {
         criarEndpoint("professores")
     }
     
-    static var getObjetivos: String {
+    static var postDadoAutoavaliacao: String {
         criarEndpoint("objetivos")
     }
     

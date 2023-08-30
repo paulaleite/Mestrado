@@ -22,5 +22,5 @@ protocol APIServicoProtocol {
     
     func getDadosAutoavaliacao(estudanteID: String, disciplinaID: String) async -> (AutoavaliacaoModel?, APIErro?)
     
-    func postDadosAutoavaliacao(dados: PostAutoavaliacaoModel) async throws -> PostAutoavaliacaoModel
+    func postDadosAutoavaliacao(dados: PostAutoavaliacaoModel, disciplinaID: String) async -> (PostAutoavaliacaoModel?, APIErro?)
 }
