@@ -95,7 +95,5 @@ class AutoavaliacaoViewModel: ObservableObject {
     
     func atualizarAutoavaliacao(estudanteID: String, momentoID: String, data: String, sentimento: Int, descricao: String, objetivos: [ObjetivoAutoavaliacaoModel]) {
         autoavaliacao = PostAutoavaliacaoModel(estudanteID: estudanteID, momentoAvaliativoID: momentoID, data: data, sentimento: sentimento, descricao: descricao, objetivosAvaliados: self.objetivosAvaliados)
-        
-        print(autoavaliacao!)
     }
 }

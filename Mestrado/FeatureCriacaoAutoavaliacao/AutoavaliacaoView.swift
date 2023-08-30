@@ -77,7 +77,7 @@ struct AutoavaliacaoView: View {
                         CancelarAvaliacaoView()
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        AdicionarAvaliacaoView(viewModel: viewModel, momentoAvaliativoSelecionado: momentoAvaliativoSelecionado, descricaoReflexao: descricaoReflexao, data: data.description, sentimentoSelecionado: sentimentoSelecionado, disciplinaID: disciplinaID, estudanteID: estudanteID, objetivos: objetivos)
+                        AdicionarAvaliacaoView(dto: AdcAvaliacaoDTO(momentoAvaliativoSelecionado: momentoAvaliativoSelecionado, descricaoReflexao: descricaoReflexao, data: data.description, sentimentoSelecionado: sentimentoSelecionado, disciplinaID: disciplinaID, estudanteID: estudanteID, objetivos: objetivos))
                     }
                 }
             }

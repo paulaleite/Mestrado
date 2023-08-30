@@ -33,7 +33,7 @@ struct AdicionarAvaliacaoView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    @ObservedObject var viewModel: AutoavaliacaoViewModel
+    @EnvironmentObject var viewModel: AutoavaliacaoViewModel
     
     /// State que permite mostrar o Alert quando o botão de Concluído é selecionado.
     @State var mostrarAlert = false
