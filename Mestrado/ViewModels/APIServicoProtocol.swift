@@ -21,10 +21,4 @@ protocol APIServicoProtocol {
     func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async throws -> EstudanteInfoModel
     
     func getDadosAutoavaliacao(estudanteID: String, disciplinaID: String) async throws -> AutoavaliacaoModel
-    
-    // MARK: - Outros
-    
-    func getEstudantePorID(estudante id: String) async throws -> Estudante
-    
-    func getProfessorPorID(professor id: String) async throws -> Professor
 }

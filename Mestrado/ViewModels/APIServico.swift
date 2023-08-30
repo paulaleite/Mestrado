@@ -68,21 +68,5 @@ struct APIServico: APIServicoProtocol {
         
         return AutoavaliacaoModel(momentos: [], objetivos: [])
     }
-    
-    /// Essa função pega do servidor, um Estudante específico, de acordo com seu ID.
-    /// - Parameter id: a String do ID do Estudante.
-    /// - returns: um Estudante.
-    internal func getEstudantePorID(estudante id: String) async throws -> Estudante {
-        let stringURL: String = .getEstudante + "\(id)"
-        return try await getDadoDecodificado(stringURL: stringURL, tipo: Estudante.self)
-    }
-    
-    /// Essa função pega do servidor, um Professor específico, de acordo com seu ID.
-    /// - Parameter id: a String do ID do Professor.
-    /// - returns: um Professor.
-    func getProfessorPorID(professor id: String) async throws -> Professor {
-        let stringURL: String = .getProfessor + "\(id)"
-        return try await getDadoDecodificado(stringURL: stringURL, tipo: Professor.self)
-    }
 }
 
