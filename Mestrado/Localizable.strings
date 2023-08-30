@@ -7,6 +7,18 @@
 */
 
 // MARK: Títulos
+
+// Ações
+"Titulo.Cancelar" = "Cancelar";
+"Titulo.Continuar" = "Continuar";
+"Titulo.Concluido" = "Concluído";
+"Titulo.Manter" = "Manter";
+"Titulo.Descartar" = "Descartar";
+"Titulo.Informações" = "Informações";
+"Titulo.Editar" = "Editar";
+"Titulo.Salvar" = "Salvar";
+"Titulo.OK" = "OK";
+"Titulo.Carregando" = "Buscando Informações...";
 // Rubricas
 "Titulo.Rubricas.NãoEstudado" = "Não Estudado";
 "Titulo.Rubricas.MuitoSatisfeito" = "Muito Satisfeito(a)";
@@ -14,12 +26,25 @@
 "Titulo.Rubricas.NemSatisfeitoNemInsatisfeito" = "Nem Satisfeito(a), nem insatisfeito(a)";
 "Titulo.Rubricas.ParcialmenteInsatisfeito" = "Parcialmente Insatisfeito(a)";
 "Titulo.Rubricas.MuitoInsatisfeito" = "Muito Insatisfeito(a)";
-
+// Autoavaliação
 "Titulo.Autoavaliacao" = "Autoavaliação";
+"Titulo.Autoavaliacao.Nova" = "Nova autoavaliação";
+// Filtro
 "Titulo.Filtro" = "Filtrar por";
+// Momento Avaliativo
+"Titulo.Momento" = "Momento";
+"Titulo.Momento.Plural" = "Momentos";
 "Titulo.Momentos.Todos" = "Todos os Momentos";
+// Data
+"Titulo.Data" = "Data";
+// Reflexão
+"Titulo.Reflexao" = "Reflexão";
 "Titulo.Reflexao.Plural" = "Reflexões";
-"Titulo.Objetivo.Pural" = "Objetivos de Aprendizado";
+// Objetivos de Aprendizado
+"Titulo.Objetivo.Plural" = "Objetivos de Aprendizado";
+// Competências
+"Titulo.Competencia" = "Competências";
+
 
 // MARK: Descrições
 // Sentimentos
@@ -32,3 +57,18 @@
 "Descricao.Erro.URLInvalida" = "A URL de consulta está inválida";
 "Descricao.Erro.RespostaInvalida" = "A resposta fornecida pela consulta está inválida";
 "Descricao.Erro.DadoInvalido" = "Os dados convertidos estão inválidos";
+// Autoavaliação
+"Descricao.Reflexao" = "Compartilhe seus pensamentos...";
+"Descricao.Momento.Selecao" = "Escolha um Momento";
+"Descricao.Momento.Nao.Selecao" = "Para que seja possível visualizar os Objetivos de Aprendizado que serão avaliados, escolha o Momento Avaliativo em que está. Isso pode ser feito na Seção Momentos.";
+"Descricao.Salvar" = "Para que seja possível criar uma autoavaliação, é necessário informar o Momento Avaliativo e escrever uma Reflexão.";
+
+
+// MARK: Alerts
+"Alert.Titulo.Avaliacao.Cancelar" = "Descartar autoavaliação";
+"Alert.Mensagem.Avaliacao.Cancelar" = "Com essa ação, todas as informações inseridas sobre sua autoavaliação serão perdidas.";
+
+"Alert.Titulo.Avaliacao.Adicionar" = "Salvar autoavaliação";
+"Alert.Mensagem.Avaliacao.Adicionar" = "Com essa ação, a autoavaliação será criada e não será possível editá-la.";
+
+"Alert.Mensagem.Erro" = "Entre em contato com a equipe de desenvolvimento.";
