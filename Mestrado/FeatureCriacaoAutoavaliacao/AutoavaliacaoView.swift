@@ -13,7 +13,10 @@ struct AutoavaliacaoView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    @ObservedObject var viewModel: AutoavaliacaoViewModel = AutoavaliacaoViewModel()
+    @StateObject var viewModel: AutoavaliacaoViewModel = AutoavaliacaoViewModel()
+    
+    var estudanteID: String
+    var disciplinaID: String
     
     /// Estado que informa qual momento avaliativo está selecionado
     @State var momentoAvaliativoSelecionado = "Descricao.Momento.Selecao".localized()
@@ -23,6 +26,8 @@ struct AutoavaliacaoView: View {
     @State var sentimentoSelecionado: Int = 4
     /// Estado que informa qual data está selecionada.
     @State private var data = Date()
+    /// Estado que informa se a solicitação ocorreu de forma incorreta.
+    @State var mostrarErro: Bool = false
     
     var sentimentos: [Sentimento] = [.amei, .gostei, .indiferente, .naoGostei, .odiei]
     
@@ -47,40 +52,49 @@ struct AutoavaliacaoView: View {
         return objs
     }
     
-    // MARK: - Inicializadores
-    
-    init(estudanteID: String, disciplinaID: String) {
-        viewModel.estudanteID = estudanteID
-        viewModel.disciplinaID = disciplinaID
-    }
-    
     // MARK: - Body da View
     
     var body: some View {
         NavigationStack {
-            Form {
-                InformacoesAvaliacaoSectionView()
-                
-                MomentoSectionView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, data: $data, titulosMomentos: titulosMomentos)
-                
-                ReflexaoSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
-                
-                ObjetivosAvaliacaoSectionView(objetivos: objetivos)
-                
-                
-            }
-            .scrollContentBackground(.hidden)
-            .background(Color.fundo1)
-            .navigationTitle("Titulo.Autoavaliacao.Nova".localized())
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    CancelarAvaliacaoView()
+            if viewModel.estaBuscando {
+                LoadingView()
+            } else {
+                Form {
+                    InformacoesAvaliacaoSectionView()
+                    
+                    MomentoSectionView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, data: $data, titulosMomentos: titulosMomentos)
+                    
+                    ReflexaoSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
+                    
+                    ObjetivosAvaliacaoSectionView(objetivos: objetivos)
+                    
+                    
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    AdicionarAvaliacaoView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, descricaoReflexao: $descricaoReflexao)
+                .scrollContentBackground(.hidden)
+                .background(Color.fundo1)
+                .navigationTitle("Titulo.Autoavaliacao.Nova".localized())
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        CancelarAvaliacaoView()
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        AdicionarAvaliacaoView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, descricaoReflexao: $descricaoReflexao)
+                    }
                 }
             }
+        }
+        .onAppear {
+            Task {
+                await viewModel.getDadosCriacaoAutoavaliacao(estudanteID: estudanteID, disciplinaID: disciplinaID)
+            }
+            if viewModel.mensagemDeErro != nil {
+                mostrarErro.toggle()
+            }
+        }
+        .alert(isPresented: $mostrarErro) {
+            Alert(title: Text(viewModel.mensagemDeErro!), message: Text("Alert.Mensagem.Erro".localized()), dismissButton:
+                    .cancel(Text("Titulo.OK".localized())))
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 /// Classe que possibilita a manipulação dos dados da Tela de Criação de uma Autoavaliação, permitindo que ele informe a data, reflexão e o nível nos objetivos. Também possibilita o acesso das informações.
-@MainActor class AutoavaliacaoViewModel: ObservableObject {
+class AutoavaliacaoViewModel: ObservableObject {
     
     // MARK: - Variávies e Constantes
     
@@ -36,7 +36,7 @@ import Foundation
     init(servico: APIServicoProtocol = APIServico()) {
         self.servico = servico
         
-        getDadosCriacaoAutoavaliacao(estudanteID: estudanteID, disciplinaID: disciplinaID)
+        //        getDadosCriacaoAutoavaliacao(estudanteID: estudanteID, disciplinaID: disciplinaID)
     }
     
     // MARK: - Funções
@@ -45,19 +45,20 @@ import Foundation
     /// Para isso, serão buscadas as informações dos Momento Avaliativos de uma Disciplina, bem como os Objetivos de Aprendizado associados a elas.
     /// - Parameter estudanteID: a String que possui o ID do Estudante.
     /// - Parameter disciplinaID: a String que possui o ID da Disciplina.
-    internal func getDadosCriacaoAutoavaliacao(estudanteID: String, disciplinaID: String) {
+    @MainActor internal func getDadosCriacaoAutoavaliacao(estudanteID: String, disciplinaID: String) async {
         estaBuscando = true
         mensagemDeErro = nil
         
-        Task {
-            do {
-                let dados = try await servico.getDadosAutoavaliacao(estudanteID: estudanteID, disciplinaID: disciplinaID)
-                self.momentos = dados.momentos
-                self.objetivos = dados.objetivos
-            } catch(let erro) {
-                self.mensagemDeErro = erro.localizedDescription
-            }
-            self.estaBuscando = false
+        
+        let resultado = await servico.getDadosAutoavaliacao(estudanteID: estudanteID, disciplinaID: disciplinaID)
+        if resultado.1 != nil {
+            mensagemDeErro = resultado.1?.descricao
+        } else {
+            self.momentos = resultado.0!.momentos
+            self.objetivos = resultado.0!.objetivos
         }
+        
+        self.estaBuscando = false
+        
     }
 }

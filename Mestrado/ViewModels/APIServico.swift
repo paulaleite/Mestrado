@@ -48,25 +48,52 @@ struct APIServico: APIServicoProtocol {
     /// - Parameter estudanteID: String do ID do Estudante.
     /// - Parameter disciplinaID: String do ID da Disciplina.
     /// - returns: dados do Modelo das Informações do Estudante.
-    internal func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async throws -> EstudanteInfoModel {
+    internal func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async -> (EstudanteInfoModel?, APIErro?) {
 //        let stringURL: String = .getGraficoEstudante + "\(estudanteID)" + "\(disciplinaID)"
-        if let stringPath = Bundle.main.path(forResource: "getAutoavaliacoesEstudante", ofType: "json") {
-            return try await getDadoDecodificado(stringURL: stringPath, tipo: EstudanteInfoModel.self)
-        }
         
-        return EstudanteInfoModel(qtdObjsPorCompetencia: [], momentosAvaliativos: [], reflexoes: [], objetivos: [])
+        if let stringPath = Bundle.main.path(forResource: "getAutoavaliacoesEstudante", ofType: "json") {
+            do {
+                return (try await getDadoDecodificado(stringURL: stringPath, tipo: EstudanteInfoModel.self), nil)
+            } catch (let e) {
+                if let err = e as? APIErro {
+                    return (nil, err)
+                }
+            }
+        }
+    
+        return (nil, APIErro.URLInvalida)
     }
     
     /// Essa função busca do servidor, os dados para necessários para construir a Feature de Criação de uma Autoavaliação..
     /// - Parameter estudanteID: String do ID do Estudante.
     /// - Parameter disciplinaID: String do ID da Disciplina.
     /// - returns: dados do Modelo de Criação de uma Autoavaliação.
-    internal func getDadosAutoavaliacao(estudanteID: String, disciplinaID: String) async throws -> AutoavaliacaoModel {
+    internal func getDadosAutoavaliacao(estudanteID: String, disciplinaID: String) async -> (AutoavaliacaoModel?, APIErro?) {
         if let stringPath = Bundle.main.path(forResource: "getAutoavaliacao", ofType: "json") {
-            return try await getDadoDecodificado(stringURL: stringPath, tipo: AutoavaliacaoModel.self)
+            do {
+                return (try await getDadoDecodificado(stringURL: stringPath, tipo: AutoavaliacaoModel.self), nil)
+            } catch(let e) {
+                if let erro = e as? APIErro {
+                    return (nil, erro)
+                }
+            }
         }
         
-        return AutoavaliacaoModel(momentos: [], objetivos: [])
+        return (nil, APIErro.URLInvalida)
+    }
+    
+    internal func postDadosAutoavaliacao(dados: PostAutoavaliacaoModel) async throws -> PostAutoavaliacaoModel {
+        return PostAutoavaliacaoModel(estudanteID: "", momentoAvaliativoID: "", data: "", sentimento: .amei, descricao: "", objetivosAvaliados: [PostObjetivoModel(objetivoID: "", rubricaSelecionada: .muitoInsatisfeito)])
+//        let autoAvaliacaoInfo: [String: Any] = [
+//            "estudanteID": dados.estudanteID,
+//            "momentoAvaliativoID": dados.momentoAvaliativoID,
+//            "data": dados.data,
+//            "sentimento": dados.sentimento,
+//            "descricao": dados.descricao,
+//            "objetivosAvaliados": dados.objetivosAvaliados
+//        ]
+//
+//
     }
 }
 

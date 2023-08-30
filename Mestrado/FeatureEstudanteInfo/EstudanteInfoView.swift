@@ -11,10 +11,15 @@ import SwiftUI
 struct EstudanteInfoView: View {
     // MARK: - Constantes e Variáveis
     
-    @ObservedObject var viewModel: EstudanteInfoViewModel = EstudanteInfoViewModel()
+    @StateObject var viewModel: EstudanteInfoViewModel = EstudanteInfoViewModel()
+    
+    var estudanteID: String
+    var disciplinaID: String
     
     /// Estado que informa qual momento avaliativo está selecionado
     @State var momentoAvaliativoSelecionado = "Titulo.Momentos.Todos".localized()
+    /// Estado que informa se a solicitação ocorreu de forma incorreta.
+    @State var mostrarErro: Bool = false
     
     /// Variável computável que configura adiciona no começo da lista de momentos avaliativos, a opção de filtro com todos os objetivos.
     var momentos: [String] {
@@ -26,43 +31,52 @@ struct EstudanteInfoView: View {
         return resultado
     }
     
-    // MARK: - Inicializadores
-    
-    init(estudanteID: String, disciplinaID: String) {
-        viewModel.estudanteID = estudanteID
-        viewModel.disciplinaID = disciplinaID
-    }
-    
     // MARK: - Body da View
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    GraficoBarrasEstudanteInfoView(viewModel: viewModel)
-                        .padding(.bottom, 16)
+            if viewModel.estaBuscando {
+                LoadingView()
+            } else {
+                List {
+                    Section {
+                        GraficoBarrasEstudanteInfoView(viewModel: viewModel)
+                            .padding(.bottom, 16)
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.fundo2)
+                    } header: {
+                        Text("Titulo.Competencia".localized())
+                            .font(.title.bold())
+                            .foregroundColor(Color.texto1)
+                            .textCase(.none)
+                            .frame(maxWidth: .infinity, alignment: .topLeading)
+                            .listRowSeparator(.hidden)
+                            .padding(.horizontal, -20)
+                    }
+                    
+                    AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
                         .listRowSeparator(.hidden)
-                        .listRowBackground(Color.fundo2)
-                } header: {
-                    Text("Titulo.Competencia".localized())
-                        .font(.title.bold())
-                        .foregroundColor(Color.texto1)
-                        .textCase(.none)
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.fundo1)
                         .padding(.horizontal, -20)
+                    
+                    AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+                        .listRowBackground(Color.fundo2)
                 }
-                
-                AutoavaliacaoEstudanteInfoTituloView(dto: FiltroMomentosDTO(titulos: self.momentos), viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.fundo1)
-                    .padding(.horizontal, -20)
-                
-                AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
-                    .listRowBackground(Color.fundo2)
+                .listStyle(.insetGrouped)
+                .frame(maxHeight: .infinity)
+                .navigationTitle("Disciplina 1")
             }
-            .listStyle(.insetGrouped)
-            .frame(maxHeight: .infinity)
-            .navigationTitle("Disciplina 1")
+        }
+        .onAppear {
+            Task {
+                await viewModel.getDadosInfoEstudante(estudanteID: estudanteID, disciplinaID: disciplinaID)
+            }
+            if viewModel.mensagemDeErro != nil {
+                mostrarErro.toggle()
+            }
+        }
+        .alert(isPresented: $mostrarErro) {
+            Alert(title: Text(viewModel.mensagemDeErro!), message: Text("Alert.Mensagem.Erro".localized()), dismissButton:
+                    .cancel(Text("Titulo.OK".localized())))
         }
         .background(Color.fundo1)
     }

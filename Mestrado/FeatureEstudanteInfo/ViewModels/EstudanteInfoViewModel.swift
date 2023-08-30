@@ -8,7 +8,7 @@
 import Foundation
 
 /// Classe que possibilita a manipulação dos dados da Tela de Informações do Estudante, permitindo que ele visualize informações sobre o seu estado na disciplina.
-@MainActor class EstudanteInfoViewModel: ObservableObject {
+class EstudanteInfoViewModel: ObservableObject {
     
     // MARK: - Variávies e Constantes
     
@@ -42,7 +42,7 @@ import Foundation
     init(servico: APIServicoProtocol = APIServico()) {
         self.servico = servico
         
-        getDadosInfoEstudante(estudanteID: estudanteID, disciplinaID: disciplinaID)
+        //        getDadosInfoEstudante(estudanteID: estudanteID, disciplinaID: disciplinaID)
     }
     
     // MARK: - Funções
@@ -51,21 +51,19 @@ import Foundation
     /// Para isso, serão adquiridas as informações dos dados que ajudarão a construir o gráfico do Estudante, bem como os Momentos Avaliativos daquela Disciplina, as Reflexões que o usuário já executou e os objetivos que ele já revisou.
     /// - Parameter estudanteID: a String que possui o ID do Estudante.
     /// - Parameter disciplinaID: a String que possui o ID da Disciplina.
-    internal func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) {
+    @MainActor internal func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async {
         estaBuscando = true
         mensagemDeErro = nil
         
-        Task {
-            do {
-                let dados = try await servico.getDadosInfoEstudante(estudanteID: estudanteID, disciplinaID: disciplinaID)
-                self.qtdObjsPorCompetencia = dados.qtdObjsPorCompetencia
-                self.momentosAvaliativos = dados.momentosAvaliativos
-                self.reflexoes = dados.reflexoes
-                self.objetivos = dados.objetivos
-            } catch(let erro) {
-                self.mensagemDeErro = erro.localizedDescription
-            }
-            self.estaBuscando = false
+        let resultado = await servico.getDadosInfoEstudante(estudanteID: estudanteID, disciplinaID: disciplinaID)
+        if resultado.1 != nil {
+            mensagemDeErro = resultado.1?.descricao
+        } else {
+            self.qtdObjsPorCompetencia = resultado.0!.qtdObjsPorCompetencia
+            self.momentosAvaliativos = resultado.0!.momentosAvaliativos
+            self.reflexoes = resultado.0!.reflexoes
+            self.objetivos = resultado.0!.objetivos
         }
+        self.estaBuscando = false
     }
 }
