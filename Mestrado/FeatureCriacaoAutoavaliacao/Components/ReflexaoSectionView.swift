@@ -15,6 +15,7 @@ struct ReflexaoSectionView: View {
     /// Binding que reflete o texto da reflexão do Estudante.
     @Binding var descricaoReflexao: String
     
+    /// Sentimentos disponíveis.
     var sentimentos: [Sentimento]
     
     // MARK: - Body da View

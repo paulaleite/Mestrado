@@ -12,6 +12,7 @@ struct ObjetivosAvaliacaoSectionView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: AutoavaliacaoViewModel
     
+    /// Objetivos disponíveis.
     var objetivos: [ObjetivoAutoavaliacaoModel]
     
     // MARK: - Body da View

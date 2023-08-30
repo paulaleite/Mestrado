@@ -9,6 +9,7 @@ import SwiftUI
 
 /// Com essa visualização, é possível selecionar o Momento Avaliativo da Autoavaliação.
 struct MomentoCellView: View {
+    
     // MARK: - Variáveis e Constantes
     
     /// Binding que informa qual momento avaliativo está selecionado.

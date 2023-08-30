@@ -15,7 +15,9 @@ struct AutoavaliacaoView: View {
     
     @StateObject var viewModel: AutoavaliacaoViewModel = AutoavaliacaoViewModel()
     
+    /// Identificador único do estudante.
     var estudanteID: String
+    /// Identificado único da disciplina
     var disciplinaID: String
     
     /// Estado que informa qual momento avaliativo está selecionado

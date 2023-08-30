@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+/// Com essa visualização, é possível interagir com o botão de Cancelar a criação de uma autoavaliação e abrir o Alert de Confirmação.
 struct CancelarAvaliacaoView: View {
     // MARK: - Variáveis e Constantes
     @Environment(\.dismiss) var dismiss
+    
+    /// Estado que permite aparecer o Alert de Cancelamento.
     @State var mostrarConfirmacao = false
     
     // MARK: - Body da View
