@@ -28,12 +28,21 @@ struct ReflexaoSectionView: View {
                 .frame(minHeight: 100, maxHeight: 100, alignment: .topLeading)
             
         } header: {
-            Text("Titulo.Reflexao".localized())
-                .listRowSeparator(.hidden)
-                .foregroundColor(Color.texto2)
-                .listRowBackground(Color.fundo1)
-                .font(.system(size: 14))
-                .textCase(.uppercase)
+            HStack(spacing: 2) {
+                Text("Titulo.Reflexao".localized())
+                    .listRowSeparator(.hidden)
+                    .foregroundColor(Color.texto2)
+                    .listRowBackground(Color.fundo1)
+                    .font(.system(size: 14))
+                    .textCase(.uppercase)
+                
+                Text("*")
+                    .foregroundColor(.red)
+                    .font(.system(size: 14))
+                    .fontWeight(.bold)
+                
+                Spacer()
+            }
         }
     }
 }

@@ -26,9 +26,18 @@ struct MomentoSectionView: View {
             DataCellView(data: $data)
                 .listRowBackground(Color.fundo2)
         } header: {
-            Text("Titulo.Momento".localized())
-                .textCase(.uppercase)
-                .font(.system(size: 14))
+            HStack(spacing: 2) {
+                Text("Titulo.Momento".localized())
+                    .textCase(.uppercase)
+                    .font(.system(size: 14))
+                
+                Text("*")
+                    .foregroundColor(.red)
+                    .font(.system(size: 14))
+                    .fontWeight(.bold)
+                
+                Spacer()
+            }
         }
     }
 }

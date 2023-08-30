@@ -9,12 +9,11 @@ import SwiftUI
 
 struct InformacoesAvaliacaoSectionView: View {
     var body: some View {
-        Section {
+//        Section {
             Text("Descricao.Salvar".localized())
                 .font(.system(size: 11))
                 .foregroundColor(Color.texto2)
                 .listRowBackground(Color.fundo1)
-//                .padding(.horizontal, -16)
-        }
+//        }
     }
 }

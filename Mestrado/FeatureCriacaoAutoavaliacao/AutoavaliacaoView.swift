@@ -60,8 +60,6 @@ struct AutoavaliacaoView: View {
                 LoadingView()
             } else {
                 Form {
-                    InformacoesAvaliacaoSectionView()
-                    
                     MomentoSectionView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado, data: $data, momentos: viewModel.momentos)
                     
                     ReflexaoSectionView(sentimentoSelecionado: $sentimentoSelecionado, descricaoReflexao: $descricaoReflexao, sentimentos: sentimentos)
