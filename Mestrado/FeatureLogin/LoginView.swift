@@ -22,7 +22,6 @@ struct LoginView: View {
         NavigationStack {
             Form {
                 Section {
-                    
                     Picker("Quem é você?", selection: $tipoSelecionado) {
                         ForEach(tipos, id: \.self) {
                             Text($0)

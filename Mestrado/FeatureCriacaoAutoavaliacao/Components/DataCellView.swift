@@ -25,13 +25,7 @@ struct DataCellView: View {
     
     // MARK: - Body da View
     var body: some View {
-        HStack {
-            Text("Titulo.Data".localized())
-            
-            Spacer()
-            
-            DatePicker("", selection: $data, in: intervalo, displayedComponents: [.date])
-                .datePickerStyle(.compact)
-        }
+        DatePicker("Titulo.Data".localized(), selection: $data, in: intervalo, displayedComponents: [.date])
+            .datePickerStyle(.compact)
     }
 }
