@@ -61,13 +61,13 @@ struct EstudanteInfoView: View {
                     AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
                         .background(Color.fundo1)
                 }
+                .scrollContentBackground(.hidden)
                 .listStyle(.insetGrouped)
                 .frame(maxHeight: .infinity)
                 .navigationTitle("Disciplina 1")
                 .background(Color.fundo1)
             }
         }
-        .scrollContentBackground(.hidden)
         .onAppear {
             Task {
                 await viewModel.getDadosInfoEstudante(estudanteID: estudanteID, disciplinaID: disciplinaID)

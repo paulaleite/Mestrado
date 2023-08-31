@@ -1,0 +1,19 @@
+{
+    "id": "1",
+    "senha": "123",
+    "tipo": "Estudante",
+    "disciplinas": [
+        {
+            "id": "1",
+            "titulo": "Disciplina 1"
+        },
+        {
+            "id": "2",
+            "titulo": "Disciplina 2"
+        },
+        {
+            "id": "3",
+            "titulo": "Disciplina 3"
+        }
+    ]
+}

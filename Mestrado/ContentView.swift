@@ -9,15 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // MARK: Variáveis e Constantes
+    @StateObject var loginViewModel: LoginViewModel = LoginViewModel()
+    
     // MARK: - Body da View
     
     var body: some View {
-        EstudanteInfoView(estudanteID: "1", disciplinaID: "1")
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        if let pessoa = loginViewModel.pessoa {
+            DisciplinasView(pessoa: pessoa)
+                .environmentObject(loginViewModel)
+        } else {
+            if loginViewModel.estaBuscando {
+                LoadingView()
+            } else {
+                LoginView()
+                    .environmentObject(loginViewModel)
+            }
+        }
     }
 }
