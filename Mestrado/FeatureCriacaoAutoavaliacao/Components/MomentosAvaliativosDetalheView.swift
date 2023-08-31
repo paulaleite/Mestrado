@@ -36,6 +36,7 @@ struct MomentosAvaliativosDetalheView: View {
                             .foregroundColor(Color.corDeAcao)
                     }
                 }
+                .background(Color.fundo2)
                 .listRowBackground(Color.fundo2)
                 .gesture(
                     TapGesture()
