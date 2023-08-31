@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Visualização que permite que a Pessoa consultar todas as Disciplinas que faz parte, bem como a opção de deslogar.
 struct DisciplinasView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: LoginViewModel
@@ -17,22 +18,13 @@ struct DisciplinasView: View {
     // MARK: - Body da View
     var body: some View {
         NavigationStack {
-            List(pessoa.disciplinas, id: \.self) { disciplina in
-                NavigationLink {
-                    if viewModel.pessoa?.tipo == "Professor" {
-                        EmptyView()
-                    } else {
-                        EstudanteInfoView(estudanteID: pessoa.id, disciplinaID: disciplina.id)
+            DisciplinasListView(pessoa: pessoa)
+                .navigationTitle("Titulo.Disciplina.Plural".localized())
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        PessoaBotaoView()
                     }
-                } label: {
-                    Text(disciplina.titulo)
-                        .foregroundColor(Color.texto1)
                 }
-                .listRowBackground(Color.fundo2)
-            }
-            .scrollContentBackground(.hidden)
-            .background(Color.fundo1)
-            .navigationTitle("Disciplinas")
         }
     }
 }

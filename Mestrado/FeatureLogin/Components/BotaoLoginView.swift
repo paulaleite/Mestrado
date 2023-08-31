@@ -23,16 +23,19 @@ struct BotaoLoginView: View {
     var body: some View {
         Section {
             Button {
-                Task {
-                    await viewModel.getPessoa(pessoaID: usuario, senha: senha, tipo: tipoSelecionado)
+                if usuario != "" || senha != "" {
+                    Task {
+                        await viewModel.getPessoa(pessoaID: usuario, senha: senha, tipo: tipoSelecionado)
+                    }
                 }
             } label: {
                 Text("Titulo.Logar".localized())
                     .foregroundColor(Color.texto3)
                     .frame(maxWidth: .infinity, alignment: .center)
+                    .background(usuario == "" || senha == "" ? Color.texto2 : Color.corDeAcao)
             }
             .buttonStyle(.plain)
-            .listRowBackground(Color.corDeAcao)
+            .listRowBackground(usuario == "" || senha == "" ? Color.texto2 : Color.corDeAcao)
         }
     }
 }

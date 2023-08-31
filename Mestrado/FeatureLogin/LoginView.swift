@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Visualização da Tela de Login de uma Pessoa.
 struct LoginView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: LoginViewModel

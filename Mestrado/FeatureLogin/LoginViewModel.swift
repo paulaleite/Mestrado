@@ -64,4 +64,8 @@ class LoginViewModel: ObservableObject {
         
         self.estaBuscando = false
     }
+    
+    internal func removerPessoa() {
+        pessoa = nil
+    }
 }

@@ -44,11 +44,14 @@
 "Titulo.Objetivo.Plural" = "Objetivos de Aprendizado";
 // Competências
 "Titulo.Competencia" = "Competências";
+// Disciplina
+"Titulo.Disciplina.Plural" = "Disciplinas";
 // Login
 "Titulo.Tipo" = "Quem é você?";
 "Titulo.Usuario" = "Usuário";
 "Titulo.Senha" = "Senha";
 "Titulo.Logar" = "Logar";
+"Titulo.Deslogar" = "Deslogar";
 
 // MARK: Descrições
 // Sentimentos
@@ -67,9 +70,9 @@
 "Descricao.Momento.Nao.Selecao" = "Para que seja possível visualizar os Objetivos de Aprendizado que serão avaliados, escolha o Momento Avaliativo em que está. Isso pode ser feito na Seção Momentos.";
 "Descricao.Salvar" = "Para que seja possível criar uma autoavaliação, é necessário informar o Momento Avaliativo e escrever uma Reflexão.";
 // Login
-"Descricao.Tipo" = "Você é professor ou estudante? 🎓";
-"Descricao.Usuario" = "Informe o seu usuário, que foi pré-disponibilizado. 👤";
-"Descricao.Senha" = "Informe a sua senha, que foi pré-disponibilizada. 🤫";
+"Descricao.Tipo" = "Você é professor ou estudante?";
+"Descricao.Usuario" = "Informe o seu usuário.";
+"Descricao.Senha" = "Informe a sua senha.";
 "Descricao.Login" = "Faça seu Login";
 
 
@@ -81,3 +84,6 @@
 "Alert.Mensagem.Avaliacao.Adicionar" = "Com essa ação, a autoavaliação será criada e não será possível editá-la.";
 
 "Alert.Mensagem.Erro" = "Entre em contato com a equipe de desenvolvimento.";
+
+"Alert.Titulo.Deslogar" = "Deslogar da Conta";
+"Alert.Mensagem.Deslogar" = "Com essa ação, você será deslogado de sua conta.";

@@ -19,10 +19,19 @@ struct SenhaLoginView: View {
             SecureField("Titulo.Senha".localized(), text: $senha)
                 .listRowBackground(Color.fundo2)
         } header: {
-            Text("Descricao.Senha".localized())
-                .font(.system(size: 14))
-                .textCase(.none)
-                .foregroundColor(Color.texto2)
+            HStack(spacing: 2) {
+                Text("*")
+                    .foregroundColor(.red)
+                    .font(.system(size: 14))
+                    .fontWeight(.bold)
+                
+                Text("Descricao.Senha".localized())
+                    .font(.system(size: 14))
+                    .textCase(.none)
+                    .foregroundColor(Color.texto2)
+                
+                Spacer()
+            }
         }
     }
 }

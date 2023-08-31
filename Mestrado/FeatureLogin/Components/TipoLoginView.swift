@@ -29,10 +29,19 @@ struct TipoLoginView: View {
             .pickerStyle(.menu)
             .listRowBackground(Color.fundo2)
         } header: {
-            Text("Descricao.Tipo".localized())
-                .font(.system(size: 14))
-                .textCase(.none)
-                .foregroundColor(Color.texto2)
+            HStack(spacing: 2) {
+                Text("*")
+                    .foregroundColor(.red)
+                    .font(.system(size: 14))
+                    .fontWeight(.bold)
+                
+                Text("Descricao.Tipo".localized())
+                    .font(.system(size: 14))
+                    .textCase(.none)
+                    .foregroundColor(Color.texto2)
+                
+                Spacer()
+            }
         }
     }
 }
