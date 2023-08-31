@@ -19,6 +19,7 @@ protocol APIServicoProtocol {
     // MARK: - Features
     
     func getPessoaPeloID(pessoaID: String, senha: String, tipo: String) async -> (LoginModel?, APIErro?)
+    func getDisciplinasDaPessoa(pessoaID: String, senha: String, tipo: String) async -> ([DisciplinaTituloModel]?, APIErro?)
     
     func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async -> (EstudanteInfoModel?, APIErro?)
     

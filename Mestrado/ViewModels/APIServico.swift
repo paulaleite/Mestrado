@@ -25,12 +25,12 @@ struct APIServico: APIServicoProtocol {
     /// - returns: dado adqurido pelo JSON da URL.
     func getDado(stringURL: String) async throws -> Data {
         let url = URL(filePath: stringURL)  // else { throw NSError() }
-//        let (dado, resposta) = try await URLSession.shared.data(from: url)
+        //        let (dado, resposta) = try await URLSession.shared.data(from: url)
         let (dado, _) = try await URLSession.shared.data(from: url)
         
-//        guard let resposta = resposta as? HTTPURLResponse, resposta.statusCode == 200 else {
-//            throw APIErro.respostaInvalida
-//        }
+        //        guard let resposta = resposta as? HTTPURLResponse, resposta.statusCode == 200 else {
+        //            throw APIErro.respostaInvalida
+        //        }
         
         return dado
     }
@@ -41,7 +41,7 @@ struct APIServico: APIServicoProtocol {
     /// - returns: dado enviado para o servidor.
     func postDado(stringURL: String, dados: [String: Any]) async throws -> Data {
         let url = URL(filePath: stringURL)  // else { throw NSError() }
-
+        
         var requisicao = URLRequest(url: url)
         requisicao.httpMethod = "POST"
         requisicao.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -77,8 +77,13 @@ struct APIServico: APIServicoProtocol {
         return try dadoDecodificado(dado: dado, tipo: T.self)
     }
     
+    /// Essa função busca do servidor, os dados da Pessoa, para que seja possível realizar o Login.
+    /// - Parameter pessoaID: a String que possui o ID da Pessoa.
+    /// - Parameter senha: Senha da Pessoa.
+    /// - Parameter tipo: Tipo da Pessoa, podendo ser Professor ou Estudante.
+    /// - returns: dados do Modelo de Login ou um APIErro.
     internal func getPessoaPeloID(pessoaID: String, senha: String, tipo: String) async -> (LoginModel?, APIErro?) {
-//        let stringURL: String = .getPessoa + "\(estudanteID)" + "\(senha)" + "\(tipo)"
+        //        let stringURL: String = .getPessoa + "\(estudanteID)" + "\(senha)" + "\(tipo)"
         
         if let stringPath = Bundle.main.path(forResource: "getPessoa", ofType: "json") {
             do {
@@ -89,7 +94,28 @@ struct APIServico: APIServicoProtocol {
                 }
             }
         }
+        
+        return (nil, APIErro.URLInvalida)
+    }
     
+    /// Essa função busca do servidor, as disciplinas de uma Pessoa.
+    /// - Parameter pessoaID: a String que possui o ID da Pessoa.
+    /// - Parameter senha: Senha da Pessoa.
+    /// - Parameter tipo: Tipo da Pessoa, podendo ser Professor ou Estudante.
+    /// - returns: dados do Modelo de Login ou um APIErro.
+    internal func getDisciplinasDaPessoa(pessoaID: String, senha: String, tipo: String) async -> ([DisciplinaTituloModel]?, APIErro?) {
+//        let stringURL: String = .getDisciplinas + "\(estudanteID)" + "\(senha)" + "\(tipo)"
+        
+        if let stringPath = Bundle.main.path(forResource: "getDisciplinas", ofType: "json") {
+            do {
+                return (try await getDadoDecodificado(stringURL: stringPath, tipo: [DisciplinaTituloModel].self), nil)
+            } catch (let e) {
+                if let err = e as? APIErro {
+                    return (nil, err)
+                }
+            }
+        }
+        
         return (nil, APIErro.URLInvalida)
     }
     
@@ -98,7 +124,7 @@ struct APIServico: APIServicoProtocol {
     /// - Parameter disciplinaID: String do ID da Disciplina.
     /// - returns: dados do Modelo das Informações do Estudante.
     internal func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async -> (EstudanteInfoModel?, APIErro?) {
-//        let stringURL: String = .getGraficoEstudante + "\(estudanteID)" + "\(disciplinaID)"
+        //        let stringURL: String = .getGraficoEstudante + "\(estudanteID)" + "\(disciplinaID)"
         
         if let stringPath = Bundle.main.path(forResource: "getAutoavaliacoesEstudante", ofType: "json") {
             do {
@@ -109,7 +135,7 @@ struct APIServico: APIServicoProtocol {
                 }
             }
         }
-    
+        
         return (nil, APIErro.URLInvalida)
     }
     
@@ -118,7 +144,7 @@ struct APIServico: APIServicoProtocol {
     /// - Parameter disciplinaID: String do ID da Disciplina.
     /// - returns: dados do Modelo de Criação de uma Autoavaliação.
     internal func getDadosAutoavaliacao(estudanteID: String, disciplinaID: String) async -> (AutoavaliacaoModel?, APIErro?) {
-//        let stringURL: String = .getDadoAutoavaliacao + "\(estudanteID)" + "\(disciplinaID)"
+        //        let stringURL: String = .getDadoAutoavaliacao + "\(estudanteID)" + "\(disciplinaID)"
         
         if let stringPath = Bundle.main.path(forResource: "getAutoavaliacao", ofType: "json") {
             do {

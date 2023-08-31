@@ -16,7 +16,8 @@ struct ContentView: View {
     
     var body: some View {
         if let pessoa = loginViewModel.pessoa {
-//            DisciplinasView(pessoaID: pessoa.id)
+            DisciplinasView(pessoa: pessoa)
+                .environmentObject(loginViewModel)
         } else {
             if loginViewModel.estaBuscando {
                 LoadingView()
@@ -25,11 +26,5 @@ struct ContentView: View {
                     .environmentObject(loginViewModel)
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

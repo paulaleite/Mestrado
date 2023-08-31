@@ -12,6 +12,8 @@ class LoginViewModel: ObservableObject {
     
     /// Source of Truth da Pessoa.
     @Published var pessoa: LoginModel?
+    /// Source of Truth dos Títulos das Disciplinas da Pessoa
+    @Published var disciplinas: [DisciplinaTituloModel]?
     /// Source of Truth de se os dados que estão sendo buscados no Servidor.
     @Published var estaBuscando: Bool = false
     /// Source of Truth de erros que ocorram enquando os dados estão sendo buscados no Servidor.
@@ -27,10 +29,10 @@ class LoginViewModel: ObservableObject {
     
     // MARK: - Funções
     
-    /// Essa função vai buscar no servidor, os dados necessários para construir a Feature de Criação de uma Autoavaliação.
-    /// Para isso, serão buscadas as informações dos Momento Avaliativos de uma Disciplina, bem como os Objetivos de Aprendizado associados a elas.
-    /// - Parameter estudanteID: a String que possui o ID do Estudante.
-    /// - Parameter disciplinaID: a String que possui o ID da Disciplina.
+    /// Essa função vai buscar no servidor, os dados necessários para encontrar uma Pessoa.
+    /// - Parameter pessoaID: a String que possui o ID da Pessoa.
+    /// - Parameter senha: Senha da Pessoa.
+    /// - Parameter tipo: Tipo da Pessoa, podendo ser Professor ou Estudante.
     @MainActor internal func getPessoa(pessoaID: String, senha: String, tipo: String) async {
         estaBuscando = true
         mensagemDeErro = nil
@@ -40,6 +42,24 @@ class LoginViewModel: ObservableObject {
             mensagemDeErro = resultado.1?.descricao
         } else {
             self.pessoa = resultado.0!
+        }
+        
+        self.estaBuscando = false
+    }
+    
+    /// Essa função vai buscar no servidor, as disciplinas de uma Pessoa.
+    /// - Parameter pessoaID: a String que possui o ID da Pessoa.
+    /// - Parameter senha: Senha da Pessoa.
+    /// - Parameter tipo: Tipo da Pessoa, podendo ser Professor ou Estudante.
+    @MainActor internal func getDisciplinasDaPessoa(pessoaID: String, senha: String, tipo: String) async {
+        estaBuscando = true
+        mensagemDeErro = nil
+        
+        let resultado = await servico.getDisciplinasDaPessoa(pessoaID: pessoaID, senha: senha, tipo: tipo)
+        if resultado.1 != nil {
+            mensagemDeErro = resultado.1?.descricao
+        } else {
+            self.disciplinas = resultado.0!
         }
         
         self.estaBuscando = false

@@ -11,4 +11,12 @@ import Foundation
 struct LoginModel: Codable {
     /// Identificador único
     var id: String
+    
+    /// Senha da Pessoa
+    var senha: String
+    
+    /// Identificador do Tipo da Pessoa, podendo ser Professor ou Estudante
+    var tipo: String
+    
+    var disciplinas: [DisciplinaTituloModel]
 }
