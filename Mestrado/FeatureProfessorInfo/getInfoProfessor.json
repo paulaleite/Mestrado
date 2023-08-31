@@ -1,0 +1,96 @@
+{
+    "dadosGrafico": [
+        {
+            "id": "1",
+            "titulo": "Visão Geral",
+            "corCompetencia": "Competencia1",
+            "qtdObjetivos": 25
+        },
+        {
+            "id": "2",
+            "titulo": "Impactos da Área",
+            "corCompetencia": "Competencia2",
+            "qtdObjetivos": 30
+        },
+        {
+            "id": "3",
+            "titulo": "Elementos Essenciais",
+            "corCompetencia": "Competencia3",
+            "qtdObjetivos": 20
+        },
+        {
+            "id": "4",
+            "titulo": "Elementos Técnicos",
+            "corCompetencia": "Competencia4",
+            "qtdObjetivos": 25
+        }
+    ],
+    "estudantesFiltro1": [
+        {
+            "id": "1",
+            "nome": "Katarina de Silva Cardoso",
+            "numObjsForaDoNivel": 12,
+            "numObjsSemAvaliacao": 39
+        },
+        {
+            "id": "2",
+            "nome": "Rebeca da Luz",
+            "numObjsForaDoNivel": 8
+            "numObjsSemAvaliacao": 3
+        },
+        {
+            "id": "1",
+            "nome": "Luiz Miguel Cavalcanti",
+            "numObjsForaDoNivel": 1,
+            "numObjsSemAvaliacao": 0
+        },
+        {
+            "id": "1",
+            "nome": "Maria Cecília Almeida",
+            "numObjsForaDoNivel": 4,
+            "numObjsSemAvaliacao": 1
+        }
+    ],
+    "estudantesFiltro2": [
+        {
+            "id": "1",
+            "nome": "Katarina de Silva Cardoso",
+            "numObjsForaDoNivel": 12,
+            "numObjsSemAvaliacao": 39
+        },
+        {
+            "id": "2",
+            "nome": "Rebeca da Luz",
+            "numObjsForaDoNivel": 8
+            "numObjsSemAvaliacao": 3
+        }
+    ],
+    "estudantesFiltro3": [
+        {
+            "id": "1",
+            "nome": "Katarina de Silva Cardoso",
+            "numObjsForaDoNivel": 12,
+            "numObjsSemAvaliacao": 39
+        },
+        {
+            "id": "2",
+            "nome": "Rebeca da Luz",
+            "numObjsForaDoNivel": 8
+            "numObjsSemAvaliacao": 3
+        },
+        {
+            "id": "1",
+            "nome": "Luiz Miguel Cavalcanti",
+            "numObjsForaDoNivel": 1,
+            "numObjsSemAvaliacao": 0
+        }
+    ],
+    "estudantesFiltro4": [
+        {
+            "id": "2",
+            "nome": "Rebeca da Luz",
+            "numObjsForaDoNivel": 8
+            "numObjsSemAvaliacao": 3
+        }
+    ]
+}
