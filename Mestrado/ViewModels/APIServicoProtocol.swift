@@ -18,6 +18,8 @@ protocol APIServicoProtocol {
     
     // MARK: - Features
     
+    func getPessoaPeloID(pessoaID: String, senha: String, tipo: String) async -> (LoginModel?, APIErro?)
+    
     func getDadosInfoEstudante(estudanteID: String, disciplinaID: String) async -> (EstudanteInfoModel?, APIErro?)
     
     func getDadosAutoavaliacao(estudanteID: String, disciplinaID: String) async -> (AutoavaliacaoModel?, APIErro?)

@@ -57,6 +57,10 @@
 		649E1B512A54BA6100DE4664 /* APIServicoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B502A54BA6100DE4664 /* APIServicoProtocol.swift */; };
 		649E1B532A54BB7000DE4664 /* APIServico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B522A54BB7000DE4664 /* APIServico.swift */; };
 		649E1B572A54C11900DE4664 /* +URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E1B562A54C11900DE4664 /* +URL.swift */; };
+		64B0F6C22AA0C5400066E39B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6C12AA0C5400066E39B /* LoginView.swift */; };
+		64B0F6C62AA0CAE30066E39B /* getPessoa.json in Resources */ = {isa = PBXBuildFile; fileRef = 64B0F6C52AA0CAE30066E39B /* getPessoa.json */; };
+		64B0F6C82AA0CB4D0066E39B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6C72AA0CB4D0066E39B /* LoginViewModel.swift */; };
+		64B0F6CA2AA0CB6D0066E39B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6C92AA0CB6D0066E39B /* LoginModel.swift */; };
 		64C9CD822A9790370083B13F /* AutoavaliacaoEstudanteInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9CD812A9790360083B13F /* AutoavaliacaoEstudanteInfoView.swift */; };
 		64C9CD842A9791A90083B13F /* AutoavaliacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9CD832A9791A90083B13F /* AutoavaliacaoView.swift */; };
 		64C9CD862A9792940083B13F /* FiltroMomentos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9CD852A9792940083B13F /* FiltroMomentos.swift */; };
@@ -123,6 +127,10 @@
 		649E1B502A54BA6100DE4664 /* APIServicoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServicoProtocol.swift; sourceTree = "<group>"; };
 		649E1B522A54BB7000DE4664 /* APIServico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServico.swift; sourceTree = "<group>"; };
 		649E1B562A54C11900DE4664 /* +URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+URL.swift"; sourceTree = "<group>"; };
+		64B0F6C12AA0C5400066E39B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		64B0F6C52AA0CAE30066E39B /* getPessoa.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getPessoa.json; sourceTree = "<group>"; };
+		64B0F6C72AA0CB4D0066E39B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		64B0F6C92AA0CB6D0066E39B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		64C9CD812A9790360083B13F /* AutoavaliacaoEstudanteInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoavaliacaoEstudanteInfoView.swift; sourceTree = "<group>"; };
 		64C9CD832A9791A90083B13F /* AutoavaliacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoavaliacaoView.swift; sourceTree = "<group>"; };
 		64C9CD852A9792940083B13F /* FiltroMomentos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroMomentos.swift; sourceTree = "<group>"; };
@@ -249,6 +257,7 @@
 		64943A9D2A53323100585CA1 /* Mestrado */ = {
 			isa = PBXGroup;
 			children = (
+				64B0F6C02AA0C5100066E39B /* FeatureLogin */,
 				1E7EB6EB2A98249D003415AE /* FeatureEstudanteInfo */,
 				64C9CD802A978EBA0083B13F /* FeatureCriacaoAutoavaliacao */,
 				64943AAC2A535F2F00585CA1 /* Models */,
@@ -318,6 +327,17 @@
 				6459F3E52A560DE800A66AFD /* +Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		64B0F6C02AA0C5100066E39B /* FeatureLogin */ = {
+			isa = PBXGroup;
+			children = (
+				64B0F6C52AA0CAE30066E39B /* getPessoa.json */,
+				64B0F6C92AA0CB6D0066E39B /* LoginModel.swift */,
+				64B0F6C12AA0C5400066E39B /* LoginView.swift */,
+				64B0F6C72AA0CB4D0066E39B /* LoginViewModel.swift */,
+			);
+			path = FeatureLogin;
 			sourceTree = "<group>";
 		};
 		64C9CD802A978EBA0083B13F /* FeatureCriacaoAutoavaliacao */ = {
@@ -411,6 +431,7 @@
 				64943AA62A53323300585CA1 /* Preview Assets.xcassets in Resources */,
 				6469D7A22A9D308900662FDE /* getAutoavaliacao.json in Resources */,
 				64195F4F2A99200400490385 /* getAutoavaliacoesEstudante.json in Resources */,
+				64B0F6C62AA0CAE30066E39B /* getPessoa.json in Resources */,
 				64943AB62A5363B900585CA1 /* Localizable.strings in Resources */,
 				64943AA32A53323300585CA1 /* Assets.xcassets in Resources */,
 			);
@@ -438,6 +459,7 @@
 				649E1B532A54BB7000DE4664 /* APIServico.swift in Sources */,
 				6459F3D02A55A48600A66AFD /* APIErro.swift in Sources */,
 				64195F512A99451000490385 /* EstudanteInfoView.swift in Sources */,
+				64B0F6C22AA0C5400066E39B /* LoginView.swift in Sources */,
 				64943AA12A53323100585CA1 /* ContentView.swift in Sources */,
 				641EB51C2A9E776500D1747B /* CancelarAvaliacaoView.swift in Sources */,
 				648105962A9F6DAA0040EA26 /* ViewModelsAntigas.swift in Sources */,
@@ -447,6 +469,7 @@
 				64195F442A98EACD00490385 /* MomentoAvaliativoTituloModel.swift in Sources */,
 				648FE1972A9FAB4F0043BAC8 /* MomentoAvaliativoModel.swift in Sources */,
 				64195F422A98E94100490385 /* GraficoEstudanteInfoModel.swift in Sources */,
+				64B0F6CA2AA0CB6D0066E39B /* LoginModel.swift in Sources */,
 				64943A9F2A53323100585CA1 /* MestradoApp.swift in Sources */,
 				6469D7A42A9D327C00662FDE /* MomentoCellView.swift in Sources */,
 				64C9CD882A97A8DE0083B13F /* AutoavaliacaoEstudanteInfoTituloView.swift in Sources */,
@@ -460,6 +483,7 @@
 				648105942A9F6D230040EA26 /* ModelosAntigos.swift in Sources */,
 				64195F4D2A99126300490385 /* EstudanteInfoModel.swift in Sources */,
 				6459F3E62A560DE800A66AFD /* +Color.swift in Sources */,
+				64B0F6C82AA0CB4D0066E39B /* LoginViewModel.swift in Sources */,
 				1E7EB6F02A982556003415AE /* ObjetivoEstudanteInfoModel.swift in Sources */,
 				64C9CD842A9791A90083B13F /* AutoavaliacaoView.swift in Sources */,
 				641EB51E2A9E8FB200D1747B /* AdicionarAvaliacaoView.swift in Sources */,

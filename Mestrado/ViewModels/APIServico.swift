@@ -77,6 +77,22 @@ struct APIServico: APIServicoProtocol {
         return try dadoDecodificado(dado: dado, tipo: T.self)
     }
     
+    internal func getPessoaPeloID(pessoaID: String, senha: String, tipo: String) async -> (LoginModel?, APIErro?) {
+//        let stringURL: String = .getPessoa + "\(estudanteID)" + "\(senha)" + "\(tipo)"
+        
+        if let stringPath = Bundle.main.path(forResource: "getPessoa", ofType: "json") {
+            do {
+                return (try await getDadoDecodificado(stringURL: stringPath, tipo: LoginModel.self), nil)
+            } catch (let e) {
+                if let err = e as? APIErro {
+                    return (nil, err)
+                }
+            }
+        }
+    
+        return (nil, APIErro.URLInvalida)
+    }
+    
     /// Essa função busca do servidor, os dados para a criação Tela de Informações do Estudante, permitindo que ele visualize informações sobre o seu estado na disciplina.
     /// - Parameter estudanteID: String do ID do Estudante.
     /// - Parameter disciplinaID: String do ID da Disciplina.

@@ -9,10 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // MARK: Variáveis e Constantes
+    @StateObject var loginViewModel: LoginViewModel = LoginViewModel()
+    
     // MARK: - Body da View
     
     var body: some View {
-        EstudanteInfoView(estudanteID: "1", disciplinaID: "1")
+        if let pessoa = loginViewModel.pessoa {
+//            DisciplinasView(pessoaID: pessoa.id)
+        } else {
+            if loginViewModel.estaBuscando {
+                LoadingView()
+            } else {
+                LoginView()
+                    .environmentObject(loginViewModel)
+            }
+        }
     }
 }
 
