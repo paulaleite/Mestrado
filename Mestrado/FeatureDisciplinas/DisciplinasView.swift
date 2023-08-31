@@ -26,5 +26,6 @@ struct DisciplinasView: View {
                     }
                 }
         }
+        .accentColor(Color.corDeAcao)
     }
 }
