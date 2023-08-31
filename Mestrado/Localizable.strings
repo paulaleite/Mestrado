@@ -44,7 +44,11 @@
 "Titulo.Objetivo.Plural" = "Objetivos de Aprendizado";
 // Competências
 "Titulo.Competencia" = "Competências";
-
+// Login
+"Titulo.Tipo" = "Quem é você?";
+"Titulo.Usuario" = "Usuário";
+"Titulo.Senha" = "Senha";
+"Titulo.Logar" = "Logar";
 
 // MARK: Descrições
 // Sentimentos
@@ -62,6 +66,11 @@
 "Descricao.Momento.Selecao" = "Escolha um Momento";
 "Descricao.Momento.Nao.Selecao" = "Para que seja possível visualizar os Objetivos de Aprendizado que serão avaliados, escolha o Momento Avaliativo em que está. Isso pode ser feito na Seção Momentos.";
 "Descricao.Salvar" = "Para que seja possível criar uma autoavaliação, é necessário informar o Momento Avaliativo e escrever uma Reflexão.";
+// Login
+"Descricao.Tipo" = "Você é professor ou estudante? 🎓";
+"Descricao.Usuario" = "Informe o seu usuário, que foi pré-disponibilizado. 👤";
+"Descricao.Senha" = "Informe a sua senha, que foi pré-disponibilizada. 🤫";
+"Descricao.Login" = "Faça seu Login";
 
 
 // MARK: Alerts

@@ -11,70 +11,28 @@ struct LoginView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: LoginViewModel
     
+    /// Estado que representa quem a Pessoa é, podendo ser Professor ou Estudante.
     @State var tipoSelecionado = ""
+    /// Estado que permite a Pessoa preencher o seu usuário de login.
     @State var usuario = ""
+    /// Estado que permite a Pessoa digitar sua senha.
     @State var senha = ""
-    
-    var tipos: [String] = ["Professor", "Estudante"]
     
     // MARK: - Body da View
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    Picker("Quem é você?", selection: $tipoSelecionado) {
-                        ForEach(tipos, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    .tint(Color.texto2)
-                    .pickerStyle(.menu)
-                    .listRowBackground(Color.fundo2)
-                } header: {
-                    Text("Você é professor ou estudante? 🎓")
-                        .font(.system(size: 14))
-                        .textCase(.none)
-                        .foregroundColor(Color.texto2)
-                }
+                TipoLoginView(tipoSelecionado: $tipoSelecionado)
                 
-                Section {
-                    TextField("Usuário", text: $usuario, axis: .vertical)
-                        .listRowBackground(Color.fundo2)
-                } header: {
-                    Text("Informe o seu usuário, que foi pré-disponibilizado. 👤")
-                        .font(.system(size: 14))
-                        .textCase(.none)
-                        .foregroundColor(Color.texto2)
-                }
+                UsarioLoginView(usuario: $usuario)
                 
-                Section {
-                    SecureField("Senha", text: $senha)
-                        .listRowBackground(Color.fundo2)
-                } header: {
-                    Text("Informe a sua senha, que foi pré-disponibilizada. 🤫")
-                        .font(.system(size: 14))
-                        .textCase(.none)
-                        .foregroundColor(Color.texto2)
-                }
+                SenhaLoginView(senha: $senha)
                 
-                Section {
-                    Button {
-                        Task {
-                            await viewModel.getPessoa(pessoaID: usuario, senha: senha, tipo: tipoSelecionado)
-                        }
-                    } label: {
-                        Text("Logar")
-                            .foregroundColor(Color.texto3)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    }
-                    .buttonStyle(.plain)
-                    .listRowBackground(Color.corDeAcao)
-                }
-                
+                BotaoLoginView(tipoSelecionado: $tipoSelecionado, usuario: $usuario, senha: $senha)
             }
             .scrollContentBackground(.hidden)
             .background(Color.fundo1)
-            .navigationTitle("Faça seu Login")
+            .navigationTitle("Descricao.Login".localized())
             .navigationBarTitleDisplayMode(.large)
         }
     }
