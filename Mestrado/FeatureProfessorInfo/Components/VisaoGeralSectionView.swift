@@ -14,6 +14,9 @@ struct VisaoGeralSectionView: View {
     /// Binding que permite saber qual Filtro está selecionado
     @Binding var filtro: String
     
+    /// Identificador único da Disciplina
+    var disciplinaID: String
+    
     /// Nome dos filtros
     var tituloFiltros: [String] = ["Titulo.Todos".localized(), "Titulo.Sem.Avaliacao".localized(), "Titulo.Abaixo.Nivel".localized(), "Titulo.Acima.Nivel".localized()]
     
@@ -36,7 +39,7 @@ struct VisaoGeralSectionView: View {
                 .listRowBackground(Color.fundo1)
                 .padding(.horizontal, -16)
             
-            EstudantesFiltroView(filtro: $filtro)
+            EstudantesFiltroView(filtro: $filtro, disciplinaID: disciplinaID)
                 .listRowBackground(Color.fundo2)
         } header: {
             Text("Titulo.VisaoGeral".localized())

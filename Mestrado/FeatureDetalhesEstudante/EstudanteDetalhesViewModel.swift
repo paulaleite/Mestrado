@@ -58,7 +58,7 @@ class EstudanteDetalhesViewModel: ObservableObject {
         if resultado.1 != nil {
             mensagemDeErro = resultado.1?.descricao
         } else {
-            self.objetivosForaDoNivelEsperado = resultado.0!.objetivosForaDoNivelEsperado
+            self.objetivosForaDoNivelEsperado = resultado.0!.objetivosForaNivelEsperado
             self.objetivosNaoAvaliados = resultado.0!.objetivosNaoAvaliados
             self.momentosAvaliativos = resultado.0!.momentosAvaliativos
             self.reflexoes = resultado.0!.reflexoes

@@ -10,10 +10,10 @@ import Foundation
 /// Conjunto dos dados utilizados na Tela de Detalhes do Estudante, utilizada pelo Professor.
 struct EstudanteDetalhesModel: Codable {
     /// Objetivos fora do nível esperado do Estudante.
-    var objetivosForaNivelModel: [ObjetivoForaNivelModel]
+    var objetivosForaNivelEsperado: [ObjetivoForaNivelModel]
     
     /// Objetivos não avaliados pelo Estudante.
-    var objetivosNaoAvaliadoModel: [ObjetivoNaoAvaliadoModel]
+    var objetivosNaoAvaliados: [ObjetivoNaoAvaliadoModel]
     
     /// Dados dos Momentos Avaliativos utilizados nessa feature.
     var momentosAvaliativos: [MomentoAvaliativoTituloModel]
