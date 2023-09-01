@@ -10,9 +10,9 @@ import SwiftUI
 /// Visualização mais extensa do Estudante, que o Professor utiliza.
 struct EstudanteDetalhesView: View {
     // MARK: - Variáveis e Constantes
-//    @EnvironmentObject var estudante: EstudanteDetalhesModel
+    @StateObject var viewModel: EstudanteDetalhesViewModel = EstudanteDetalhesviewMode()
     
-//    var estudanteID: String
+    var estudanteID: String
     
     // MARK: - Body da View
     var body: some View {
