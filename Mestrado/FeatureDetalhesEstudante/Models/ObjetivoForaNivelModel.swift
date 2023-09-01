@@ -7,6 +7,17 @@
 
 import Foundation
 
+/// Entidade dos Objetivos de Aprendizado do Estudante que estão fora do nível esperado
 struct ObjetivoForaNivelModel: Codable {
+    /// Título da cor da Competência
+    var corDaCompetencia: String
     
+    /// Descrição do Objetivo de Aprendizado
+    var descricao: String
+    
+    /// Nível esperado pelo Professor daquele Objetivo de Aprendizado
+    var nivelEsperado: Rubrica
+    
+    /// Rubrica selecionada pelo Estudante no Objetivo de Aprendizado
+    var rubricaSelecionada: Rubrica
 }

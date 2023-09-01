@@ -47,23 +47,23 @@ class EstudanteDetalhesViewModel: ObservableObject {
     
     // MARK: - Funções
     
-    /// Essa função vai buscar no servidor, os dados necessários para construir a Feature de Informações do Professor.
-    /// Para isso, serão adquiridas as informações dos dados que ajudarão a construir o gráfico do Professor, bem como os estudantes, filtrados da forma correta.
+    /// Essa função vai buscar no servidor, os dados necessários para construir a Feature de Informações do Estudante, consultada pelo Professor.
+    /// - Parameter estudanteID: String que possui o ID do Estudante.
     /// - Parameter disciplinaID: a String que possui o ID da Disciplina.
-//    @MainActor internal func getDadosInfoProfessor(disciplinaID: String) async {
-//        estaBuscando = true
-//        mensagemDeErro = nil
-//        
-//        let resultado = await servico.getDadosInfoProfessor(disciplinaID: disciplinaID)
-//        if resultado.1 != nil {
-//            mensagemDeErro = resultado.1?.descricao
-//        } else {
-//            self.dadosGrafico = resultado.0!.dadosGrafico
-//            self.estudantesFiltro1 = resultado.0!.estudantesFiltro1
-//            self.estudantesFiltro2 = resultado.0!.estudantesFiltro2
-//            self.estudantesFiltro3 = resultado.0!.estudantesFiltro3
-//            self.estudantesFiltro4 = resultado.0!.estudantesFiltro4
-//        }
-//        self.estaBuscando = false
-//    }
+    @MainActor internal func getDadosDetalhesEstudante(estudanteID: String, disciplinaID: String) async {
+        estaBuscando = true
+        mensagemDeErro = nil
+        
+        let resultado = await servico.getDadosDetalhesEstudante(estudanteID: estudanteID, disciplinaID: disciplinaID)
+        if resultado.1 != nil {
+            mensagemDeErro = resultado.1?.descricao
+        } else {
+            self.objetivosForaDoNivelEsperado = resultado.0!.objetivosForaDoNivelEsperado
+            self.objetivosNaoAvaliados = resultado.0!.objetivosNaoAvaliados
+            self.momentosAvaliativos = resultado.0!.momentosAvaliativos
+            self.reflexoes = resultado.0!.reflexoes
+            self.objetivos = resultado.0!.objetivos
+        }
+        self.estaBuscando = false
+    }
 }
