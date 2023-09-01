@@ -13,6 +13,15 @@ struct GraficoProfessorSectionView: View {
         Section {
             GraficoProfessorView()
                 .padding()
+                .listRowSeparator(.hidden)
+            
+            Text("Descricao.Grafico.Professor".localized())
+                .font(.system(size: 12))
+                .foregroundColor(Color.texto2)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color.fundo1)
+                .listRowBackground(Color.fundo1)
+                .padding(.horizontal, -20)
         } header: {
             Text("Titulo.Estatistica.Plural".localized())
                 .font(.title.bold())

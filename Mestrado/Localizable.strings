@@ -76,6 +76,8 @@
 "Descricao.Usuario" = "Informe o seu usuário.";
 "Descricao.Senha" = "Informe a sua senha.";
 "Descricao.Login" = "Faça seu Login";
+// Outros
+"Descricao.Grafico.Professor" = "Quantidade de objetivos avaliados por competência, contabilizando toda a turma.";
 
 
 // MARK: Alerts
