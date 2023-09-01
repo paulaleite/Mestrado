@@ -8,7 +8,7 @@
 import Foundation
 
 /// Entidades dos Objetivos de Aprendizado não avaliados pelo Estudante.
-struct ObjetivoNaoAvaliadoModel: Codable {
+struct ObjetivoNaoAvaliadoModel: Codable, Hashable {
     /// Título da cor da Competência
     var corDaCompetencia: String
     

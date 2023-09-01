@@ -8,7 +8,7 @@
 import Foundation
 
 /// Entidade dos Objetivos de Aprendizado do Estudante que estão fora do nível esperado
-struct ObjetivoForaNivelModel: Codable {
+struct ObjetivoForaNivelModel: Codable, Hashable {
     /// Título da cor da Competência
     var corDaCompetencia: String
     

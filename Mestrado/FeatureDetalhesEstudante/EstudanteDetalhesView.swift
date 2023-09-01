@@ -20,12 +20,9 @@ struct EstudanteDetalhesView: View {
     // MARK: - Body da View
     var body: some View {
         List {
-            Section {
-                Text("Hello")
-            } header: {
-                Text("Hello")
-            }
+            ObjetivosForaNivelView()
 
         }
+        .environmentObject(viewModel)
     }
 }

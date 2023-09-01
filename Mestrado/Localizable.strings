@@ -42,6 +42,7 @@
 "Titulo.Reflexao.Plural" = "Reflexões";
 // Objetivos de Aprendizado
 "Titulo.Objetivo.Plural" = "Objetivos de Aprendizado";
+"Titulo.Objetivos.Fora.Nivel" = "Objetivos fora do nível esperado";
 // Competências
 "Titulo.Competencia" = "Competências";
 // Disciplina
