@@ -13,16 +13,22 @@ struct EstudanteDetalhesView: View {
     @StateObject var viewModel: EstudanteDetalhesViewModel = EstudanteDetalhesViewModel()
     
     /// Identificador único do Estudnate.
-    var estudanteID: String
+    var estudante: EstudanteFiltroModel
     /// Identificador único da Disciplina
     var disciplinaID: String
     
     // MARK: - Body da View
     var body: some View {
         List {
-            ObjetivosForaNivelView()
-
+            ObjetivosForaNivelSectionView()
+        }
+        .onAppear {
+            Task {
+                await viewModel.getDadosDetalhesEstudante(estudanteID: estudante.id, disciplinaID: disciplinaID)
+            }
         }
         .environmentObject(viewModel)
+        .navigationTitle(estudante.nome)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

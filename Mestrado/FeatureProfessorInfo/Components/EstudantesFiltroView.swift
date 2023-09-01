@@ -47,7 +47,7 @@ struct EstudantesFiltroView: View {
     var body: some View {
         ForEach(estudantes, id: \.self) { estudante in
             NavigationLink {
-                EstudanteDetalhesView(estudanteID: estudante.id, disciplinaID: disciplinaID)
+                EstudanteDetalhesView(estudante: estudante, disciplinaID: disciplinaID)
             } label: {
                 ProfessorEstudanteInfoView(estudante: estudante)
             }
