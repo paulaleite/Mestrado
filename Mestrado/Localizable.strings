@@ -54,6 +54,20 @@
 "Titulo.Deslogar" = "Deslogar";
 // Estatistica
 "Titulo.Estatistica.Plural" = "Estatísticas";
+"Titulo.VisaoGeral" = "Visão Geral";
+// Segmented Control
+"Titulo.Todos" = "Todos";
+"Titulo.Sem.Avaliacao" = "Inexplorado";
+"Titulo.Abaixo.Nivel" = "Abaixo";
+"Titulo.Acima.Nivel" = "Acima";
+"Titulo.Filtro.Todos.Singular" = "estudante.";
+"Titulo.Filtro.Todos.Plural" = "estudantes.";
+"Titulo.Filtro.Sem.Avaliacao.Singular" = "estudante com objetivos sem avaliação.";
+"Titulo.Filtro.Sem.Avaliacao.Plural" = "estudantes com objetivos sem avaliação.";
+"Titulo.Filtro.Abaixo.Nivel.Singular" = "estudante abaixo do nível esperado.";
+"Titulo.Filtro.Abaixo.Nivel.Plural" = "estudantes abaixo do nível esperado.";
+"Titulo.Filtro.Acima.Nivel.Singular" = "estudante acima do nível esperado.";
+"Titulo.Filtro.Acima.Nivel.Plural" = "estudantes acima do nível esperado.";
 
 // MARK: Descrições
 // Sentimentos
@@ -78,7 +92,12 @@
 "Descricao.Login" = "Faça seu Login";
 // Outros
 "Descricao.Grafico.Professor" = "Quantidade de objetivos avaliados por competência, contabilizando toda a turma.";
-
+/// Segmented Control
+"Descricao.Fora.Nivel" = "objetivos fora do nível";
+"Descricao.Sem.Avaliacao" = "objetivos sem avaliação";
+"Descricao.Filtro.Sem.Avaliacao" = "Contemplado a partir de 2 objetivos de aprendizado sem avaliação e, após, pelo menos, 1 auto-avaliação.";
+"Descricao.Filtro.Abaixo.Nivel" = "Cotemplado quando, pelo menos, 2 auto-avaliações de um objetivo de aprendizado foram executadas abaixo do nível esperado.";
+"Descricao.Filtro.Acima.Nivel" = "Contemplado quando, pelo menos, 2 auto-avaliações de um objetivo de aprendizado foram executadas acima do nível esperado.";
 
 // MARK: Alerts
 "Alert.Titulo.Avaliacao.Cancelar" = "Descartar autoavaliação";

@@ -15,10 +15,15 @@ struct ProfessorInfoView: View {
     /// Identificador único da Disciplina selecionada
     var disciplina: DisciplinaTituloModel
     
+    /// Estado que permite saber qual Filtro está selecionado.
+    @State var filtro: String = "Titulo.Todos".localized()
+    
     // MARK: - Body da View
     var body: some View {
         List {
             GraficoProfessorSectionView()
+            
+            VisaoGeralSectionView(filtro: $filtro)
         }
         .listSectionSeparator(.hidden)
         .background(Color.fundo1)
