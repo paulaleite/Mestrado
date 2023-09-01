@@ -21,6 +21,7 @@ struct EstudanteDetalhesView: View {
     var body: some View {
         List {
             ObjetivosForaNivelSectionView()
+            ObjetivosNaoAvaliadosSectionView()
         }
         .onAppear {
             Task {

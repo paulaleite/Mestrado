@@ -58,7 +58,7 @@ struct EstudanteInfoView: View {
                         .listRowBackground(Color.fundo1)
                         .padding(.horizontal, -20)
                     
-                    AutoavaliacaoEstudanteInfoView(viewModel: viewModel, momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+                    AutoavaliacaoEstudanteInfoView(momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
                         .background(Color.fundo1)
                 }
                 .scrollContentBackground(.hidden)
@@ -66,6 +66,7 @@ struct EstudanteInfoView: View {
                 .frame(maxHeight: .infinity)
                 .navigationTitle("Disciplina 1")
                 .background(Color.fundo1)
+                .environmentObject(viewModel)
             }
         }
         .onAppear {

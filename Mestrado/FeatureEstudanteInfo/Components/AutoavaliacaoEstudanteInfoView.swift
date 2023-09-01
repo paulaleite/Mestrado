@@ -12,7 +12,7 @@ struct AutoavaliacaoEstudanteInfoView: View {
     
     // MARK: - Variáveis e Constantes
     
-    @ObservedObject var viewModel: EstudanteInfoViewModel
+    @EnvironmentObject var viewModel: EstudanteInfoViewModel
     
     /// Todos os Objetivos de Aprendizado, filtrados de acordo com o Momento Avaliativo selecionado.
     var objetivos: [ObjetivoEstudanteInfoModel] {
