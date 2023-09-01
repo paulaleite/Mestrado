@@ -159,6 +159,22 @@ struct APIServico: APIServicoProtocol {
         return (nil, APIErro.URLInvalida)
     }
     
+    internal func getDadosInfoProfessor(disciplinaID: String) async -> (ProfessorInfoModel?, APIErro?) {
+//        let stringURL: String = .getInfoProfessor + "\(disciplinaID)"
+        
+        if let stringPath = Bundle.main.path(forResource: "getInfoProfessor", ofType: "json") {
+            do {
+                return (try await getDadoDecodificado(stringURL: stringPath, tipo: ProfessorInfoModel.self), nil)
+            } catch(let e) {
+                if let erro = e as? APIErro {
+                    return (nil, erro)
+                }
+            }
+        }
+        
+        return (nil, APIErro.URLInvalida)
+    }
+    
     internal func postDadosAutoavaliacao(dados: PostAutoavaliacaoModel, disciplinaID: String) async -> (PostAutoavaliacaoModel?, APIErro?) {
         let stringURL: String = .postDadoAutoavaliacao + "\(dados.estudanteID)" + "\(disciplinaID)"
         

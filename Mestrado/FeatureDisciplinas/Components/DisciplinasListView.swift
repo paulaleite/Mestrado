@@ -19,7 +19,7 @@ struct DisciplinasListView: View {
         List(pessoa.disciplinas, id: \.self) { disciplina in
             NavigationLink {
                 if viewModel.pessoa?.tipo == "Professor" {
-                    EmptyView()
+                    ProfessorInfoView(disciplina: disciplina)
                 } else {
                     EstudanteInfoView(estudanteID: pessoa.id, disciplinaID: disciplina.id)
                 }
