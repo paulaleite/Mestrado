@@ -18,7 +18,6 @@ struct ProfessorInfoView: View {
     var body: some View {
         List {
             GraficoProfessorSectionView()
-
         }
         .listSectionSeparator(.hidden)
         .background(Color.fundo1)

@@ -12,6 +12,7 @@ struct GraficoProfessorSectionView: View {
     var body: some View {
         Section {
             GraficoProfessorView()
+                .padding()
         } header: {
             Text("Titulo.Estatistica.Plural".localized())
                 .font(.title.bold())

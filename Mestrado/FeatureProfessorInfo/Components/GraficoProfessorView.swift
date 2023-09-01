@@ -15,17 +15,10 @@ struct GraficoProfessorView: View {
     // MARK: - Body da View
     var body: some View {
         Chart(viewModel.dadosGrafico, id: \.self) { dado in
-            BarMark(x: .value("Competência", dado.titulo), y: .value("Quantidade de Objetivos", dado.qtdObjetivos), width: .fixed(12))
+            BarMark(x: .value("Competência", dado.titulo), y: .value("Quantidade de Objetivos", dado.qtdObjetivos))
                 .foregroundStyle(Color(dado.corCompetencia))
         }
-        .chartLegend(.automatic)
-        .chartXAxis(.automatic)
-//        .chartYAxis {
-//            AxisMarks { _ in
-//                AxisValueLabel()
-//            }
-//        }
-        .frame(maxHeight: 200, alignment: .leading)
+        .frame(maxHeight: 250, alignment: .center)
         .aspectRatio(1, contentMode: .fill)
         .listRowBackground(Color.fundo2)
     }

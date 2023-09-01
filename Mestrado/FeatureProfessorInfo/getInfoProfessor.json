@@ -2,25 +2,25 @@
     "dadosGrafico": [
         {
             "id": "1",
-            "titulo": "Visão Geral",
+            "titulo": "Visão\nGeral",
             "corCompetencia": "Competencia1",
             "qtdObjetivos": 25
         },
         {
             "id": "2",
-            "titulo": "Impactos da Área",
+            "titulo": "Impactos\nda Área",
             "corCompetencia": "Competencia2",
             "qtdObjetivos": 30
         },
         {
             "id": "3",
-            "titulo": "Elementos Essenciais",
+            "titulo": "Elementos\nEssenciais",
             "corCompetencia": "Competencia3",
             "qtdObjetivos": 20
         },
         {
             "id": "4",
-            "titulo": "Elementos Técnicos",
+            "titulo": "Elementos\nTécnicos",
             "corCompetencia": "Competencia4",
             "qtdObjetivos": 25
         }
@@ -35,7 +35,7 @@
         {
             "id": "2",
             "nome": "Rebeca da Luz",
-            "numObjsForaDoNivel": 8
+            "numObjsForaDoNivel": 8,
             "numObjsSemAvaliacao": 3
         },
         {
@@ -61,7 +61,7 @@
         {
             "id": "2",
             "nome": "Rebeca da Luz",
-            "numObjsForaDoNivel": 8
+            "numObjsForaDoNivel": 8,
             "numObjsSemAvaliacao": 3
         }
     ],
@@ -75,7 +75,7 @@
         {
             "id": "2",
             "nome": "Rebeca da Luz",
-            "numObjsForaDoNivel": 8
+            "numObjsForaDoNivel": 8,
             "numObjsSemAvaliacao": 3
         },
         {
@@ -89,8 +89,9 @@
         {
             "id": "2",
             "nome": "Rebeca da Luz",
-            "numObjsForaDoNivel": 8
+            "numObjsForaDoNivel": 8,
             "numObjsSemAvaliacao": 3
         }
     ]
 }
+

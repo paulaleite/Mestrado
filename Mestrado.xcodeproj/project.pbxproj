@@ -24,6 +24,7 @@
 		641EB51A2A9E6E6000D1747B /* MomentoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB5192A9E6E6000D1747B /* MomentoSectionView.swift */; };
 		641EB51C2A9E776500D1747B /* CancelarAvaliacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB51B2A9E776500D1747B /* CancelarAvaliacaoView.swift */; };
 		641EB51E2A9E8FB200D1747B /* AdicionarAvaliacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641EB51D2A9E8FB200D1747B /* AdicionarAvaliacaoView.swift */; };
+		642D389B2AA217BF00BA2485 /* getInfoProfessor.json in Resources */ = {isa = PBXBuildFile; fileRef = 642D389A2AA217BF00BA2485 /* getInfoProfessor.json */; };
 		64388C3B2A5725AF00FDC452 /* RubricaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64388C3A2A5725AF00FDC452 /* RubricaView.swift */; };
 		64388C3D2A5726DF00FDC452 /* Cor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64388C3C2A5726DF00FDC452 /* Cor.xcassets */; };
 		64388C3F2A572F7000FDC452 /* RetangulosCustomizados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64388C3E2A572F7000FDC452 /* RetangulosCustomizados.swift */; };
@@ -69,7 +70,6 @@
 		64B0F6DE2AA0FF9E0066E39B /* DisciplinasListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6DD2AA0FF9E0066E39B /* DisciplinasListView.swift */; };
 		64B0F6E02AA100A10066E39B /* PessoaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6DF2AA100A10066E39B /* PessoaView.swift */; };
 		64B0F6E22AA101F30066E39B /* PessoaBotaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6E12AA101F30066E39B /* PessoaBotaoView.swift */; };
-		64B0F6E72AA121840066E39B /* getInfoProfessor.json in Resources */ = {isa = PBXBuildFile; fileRef = 64B0F6E62AA121840066E39B /* getInfoProfessor.json */; };
 		64B0F6EA2AA126FA0066E39B /* EstudanteFiltroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6E92AA126FA0066E39B /* EstudanteFiltroModel.swift */; };
 		64B0F6EC2AA1285F0066E39B /* GraficoProfessorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6EB2AA1285F0066E39B /* GraficoProfessorModel.swift */; };
 		64B0F6EE2AA129A40066E39B /* ProfessorInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F6ED2AA129A40066E39B /* ProfessorInfoModel.swift */; };
@@ -109,6 +109,7 @@
 		641EB5192A9E6E6000D1747B /* MomentoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentoSectionView.swift; sourceTree = "<group>"; };
 		641EB51B2A9E776500D1747B /* CancelarAvaliacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelarAvaliacaoView.swift; sourceTree = "<group>"; };
 		641EB51D2A9E8FB200D1747B /* AdicionarAvaliacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarAvaliacaoView.swift; sourceTree = "<group>"; };
+		642D389A2AA217BF00BA2485 /* getInfoProfessor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getInfoProfessor.json; sourceTree = "<group>"; };
 		64388C3A2A5725AF00FDC452 /* RubricaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubricaView.swift; sourceTree = "<group>"; };
 		64388C3C2A5726DF00FDC452 /* Cor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Cor.xcassets; sourceTree = "<group>"; };
 		64388C3E2A572F7000FDC452 /* RetangulosCustomizados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetangulosCustomizados.swift; sourceTree = "<group>"; };
@@ -155,7 +156,6 @@
 		64B0F6DD2AA0FF9E0066E39B /* DisciplinasListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplinasListView.swift; sourceTree = "<group>"; };
 		64B0F6DF2AA100A10066E39B /* PessoaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PessoaView.swift; sourceTree = "<group>"; };
 		64B0F6E12AA101F30066E39B /* PessoaBotaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PessoaBotaoView.swift; sourceTree = "<group>"; };
-		64B0F6E62AA121840066E39B /* getInfoProfessor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getInfoProfessor.json; sourceTree = "<group>"; };
 		64B0F6E92AA126FA0066E39B /* EstudanteFiltroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstudanteFiltroModel.swift; sourceTree = "<group>"; };
 		64B0F6EB2AA1285F0066E39B /* GraficoProfessorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficoProfessorModel.swift; sourceTree = "<group>"; };
 		64B0F6ED2AA129A40066E39B /* ProfessorInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorInfoModel.swift; sourceTree = "<group>"; };
@@ -417,10 +417,10 @@
 			isa = PBXGroup;
 			children = (
 				64B0F6F52AA12EAA0066E39B /* Components */,
-				64B0F6E62AA121840066E39B /* getInfoProfessor.json */,
 				64B0F6E82AA126E90066E39B /* Models */,
 				64B0F6EF2AA12A710066E39B /* ProfessorInfoViewModel.swift */,
 				64B0F6F12AA12D2A0066E39B /* ProfessorInfoView.swift */,
+				642D389A2AA217BF00BA2485 /* getInfoProfessor.json */,
 			);
 			path = FeatureProfessorInfo;
 			sourceTree = "<group>";
@@ -528,11 +528,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64B0F6E72AA121840066E39B /* getInfoProfessor.json in Resources */,
 				64388C3D2A5726DF00FDC452 /* Cor.xcassets in Resources */,
 				64943AA62A53323300585CA1 /* Preview Assets.xcassets in Resources */,
 				6469D7A22A9D308900662FDE /* getAutoavaliacao.json in Resources */,
 				64195F4F2A99200400490385 /* getAutoavaliacoesEstudante.json in Resources */,
+				642D389B2AA217BF00BA2485 /* getInfoProfessor.json in Resources */,
 				64B0F6C62AA0CAE30066E39B /* getPessoa.json in Resources */,
 				64943AB62A5363B900585CA1 /* Localizable.strings in Resources */,
 				64943AA32A53323300585CA1 /* Assets.xcassets in Resources */,
