@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Visualização das Informações que o Professor consulta de uma disciplina, sendo as estatísticas e a visão geral.
 struct ProfessorInfoView: View {
     // MARK: - Variáveis e Constantes
     @StateObject var viewModel: ProfessorInfoViewModel = ProfessorInfoViewModel()

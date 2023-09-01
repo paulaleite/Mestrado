@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Classe que possibilita a manipulação dos dados da Tela de Login.
 class LoginViewModel: ObservableObject {
     // MARK: - Variáveis e Constantes
     

@@ -8,6 +8,7 @@
 import SwiftUI
 import Charts
 
+/// Visualização do gráfico que o professor visualiza, tendo a quantidade de objetivos avaliados por grupo de competência, contabilizando toda a turma.
 struct GraficoProfessorView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: ProfessorInfoViewModel
