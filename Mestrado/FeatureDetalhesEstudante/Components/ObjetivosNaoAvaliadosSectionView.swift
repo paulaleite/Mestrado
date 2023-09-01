@@ -12,6 +12,7 @@ struct ObjetivosNaoAvaliadosSectionView: View {
     
     // MARK: - Body da View
     var body: some View {
+        Text("")
 //        AutoavaliacaoEstudanteInfoView(momentoAvaliativoSelecionado: <#T##Binding<String>#>)
     }
 }
