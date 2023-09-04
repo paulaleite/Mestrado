@@ -8,6 +8,7 @@
 
 // MARK: Títulos
 
+"Titulo" = "Título";
 // Ações
 "Titulo.Cancelar" = "Cancelar";
 "Titulo.Continuar" = "Continuar";
@@ -35,6 +36,8 @@
 "Titulo.Momento" = "Momento";
 "Titulo.Momento.Plural" = "Momentos";
 "Titulo.Momentos.Todos" = "Todos os Momentos";
+"Titulo.Momento.Avaliativo.Plural" = "Momentos de Avaliação";
+"Titulo.Momento.Avaliativo" = "Título do Momento de Avaliação";
 // Data
 "Titulo.Data" = "Data";
 // Reflexão
@@ -48,6 +51,7 @@
 "Titulo.Competencia" = "Competências";
 // Disciplina
 "Titulo.Disciplina.Plural" = "Disciplinas";
+"Titulo.Titulo.Disciplina" = "Título da Disciplina";
 // Login
 "Titulo.Tipo" = "Quem é você?";
 "Titulo.Usuario" = "Usuário";
