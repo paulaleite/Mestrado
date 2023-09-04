@@ -83,14 +83,14 @@ class AutoavaliacaoViewModel: ObservableObject {
     }
     
     func atualizarObjetivo(objetivoID: String, rubricaSelecionada: Int) {
-
-            if !objetivosAvaliados.isEmpty {
-                for i in 0 ..< objetivosAvaliados.count {
-                    if objetivoID == objetivosAvaliados[i].objetivoID {
-                        objetivosAvaliados[i].rubricaSelecionada = rubricaSelecionada
-                    }
+        
+        if !objetivosAvaliados.isEmpty {
+            for i in 0 ..< objetivosAvaliados.count {
+                if objetivoID == objetivosAvaliados[i].objetivoID {
+                    objetivosAvaliados[i].rubricaSelecionada = rubricaSelecionada
                 }
             }
+        }
     }
     
     func atualizarAutoavaliacao(estudanteID: String, momentoID: String, data: String, sentimento: Int, descricao: String, objetivos: [ObjetivoAutoavaliacaoModel]) {

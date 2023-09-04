@@ -8,7 +8,7 @@
 import Foundation
 
 /// Entidade que representa o Objetivo de Aprendizado que será utilizado para construir uma Disciplina, fazendo parte de Momentos Avaliativos.
-struct ObjetivosPostDisciplinaModel: Codable {
+struct ObjetivosPostDisciplinaModel: Codable, Hashable {
     /// Identificador único
     var id: String
     

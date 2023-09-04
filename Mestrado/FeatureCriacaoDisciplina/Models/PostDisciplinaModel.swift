@@ -8,7 +8,7 @@
 import Foundation
 
 /// Entidade que representa a Disciplina que está sendo construída pelo Professor.
-struct PostDisciplinaModel {
+struct PostDisciplinaModel: Codable {
     /// Título da Disciplina
     var titulo: String
     

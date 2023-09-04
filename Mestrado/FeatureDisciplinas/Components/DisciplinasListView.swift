@@ -31,5 +31,20 @@ struct DisciplinasListView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color.fundo1)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if viewModel.pessoa?.tipo == "Professor" {
+                    NavigationLink {
+                        PostDisciplinaView()
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(Color.corDeAcao)
+                            .font(.system(size: 20))
+                            .fontWeight(.medium)
+                    }
+
+                }
+            }
+        }
     }
 }

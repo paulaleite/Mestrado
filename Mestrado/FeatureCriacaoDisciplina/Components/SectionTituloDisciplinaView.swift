@@ -11,7 +11,7 @@ import SwiftUI
 struct SectionTituloDisciplinaView: View {
     // MARK: - Variáveis e Constantes
     /// Binding que contém a String do título da disciplina.
-    @Binding var tituloDisciplina: String = "Titulo".localized()
+    @Binding var tituloDisciplina: String
     
     // MARK: - Body da View
     var body: some View {

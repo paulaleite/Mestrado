@@ -10,12 +10,14 @@ import SwiftUI
 /// Visualização da Section dos Momentos Avaliativos.
 struct SectionMomentosAvaliativosDisciplinaView: View {
     // MARK: - Variáveis e Constantes
+    @EnvironmentObject var viewModel: PostDisciplinaViewModel
+    
     /// Binding que contém a String do título do momento avaliativo.
     @Binding var tituloMomento: String
     /// Binding que contém a Data selecionada.
     @Binding var data: Date
     
-//    var momentosAvaliativos: []
+    @State var momentosAvaliativos: [MomentoAvaliativoPostDisciplinaModel] = []
     
     // MARK: - Body da View
     var body: some View {
@@ -28,11 +30,39 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
                     DataCellView(data: $data)
                 }
                 
-                Image(systemName: "plus.circle")
+                Button {
+                    if tituloMomento != "" {
+                        momentosAvaliativos.append(MomentoAvaliativoPostDisciplinaModel(titulo: tituloMomento, data: data.description, objetivos: []))
+                    }
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .foregroundColor(Color.corDeAcao)
+                }
             }
             
             Section {
-                
+                ForEach(momentosAvaliativos, id: \.self) { momento in
+                    NavigationLink {
+//                        ObjetivosMomentoView()
+                        EmptyView()
+                    } label: {
+                        HStack(alignment: .center) {
+                            VStack {
+                                Text(momento.titulo)
+                                    .foregroundColor(Color.texto1)
+                                    .font(.system(size: 17))
+                                
+                                Text(formatarData(data: momento.data), format: .dateTime.day().month().year())
+                                    .foregroundColor(Color.texto2)
+                                    .font(.system(size: 13))
+                            }
+                            
+                            Text("Adicionar algo")
+                                .foregroundColor(Color.texto2)
+                                .font(.system(size: 17))
+                        }
+                    }
+                }
             }
         } header: {
             Text("Titulo.Momento.Avaliativo.Plural".localized())
@@ -40,6 +70,12 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
                 .font(.system(size: 14))
                 .foregroundColor(Color.texto2)
         }
-
+    }
+    
+    func formatarData(data: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let resultado = dateFormatter.date(from: data)!
+        return resultado
     }
 }

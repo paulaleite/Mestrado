@@ -8,7 +8,7 @@
 import Foundation
 
 /// Estrutura que representa o Momento Avaliativo que será determinado pelo Professor.
-struct MomentoAvaliativoPostDisciplinaModel: Codable {
+struct MomentoAvaliativoPostDisciplinaModel: Codable, Hashable {
     /// Título do Momento Avaliativo.
     var titulo: String
     
