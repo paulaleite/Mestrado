@@ -12,7 +12,12 @@ struct ObjetivosNaoAvaliadosSectionView: View {
     
     // MARK: - Body da View
     var body: some View {
-        Text("")
-//        AutoavaliacaoEstudanteInfoView(momentoAvaliativoSelecionado: <#T##Binding<String>#>)
+        Section {
+            ObjetivosNaoAvaliadosView()
+        } header: {
+            Text("Titulo.Objetivos.Nao.Avaliados".localized())
+                .textCase(.uppercase)
+                .font(.system(size: 14))
+        }
     }
 }

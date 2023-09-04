@@ -26,6 +26,7 @@ struct ProfessorInfoView: View {
             VisaoGeralSectionView(filtro: $filtro, disciplinaID: disciplina.id)
         }
         .listSectionSeparator(.hidden)
+        .scrollContentBackground(.hidden)
         .background(Color.fundo1)
         .onAppear {
             Task {

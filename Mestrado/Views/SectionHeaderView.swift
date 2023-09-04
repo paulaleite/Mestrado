@@ -29,7 +29,6 @@ struct SectionHeaderView: View {
             Text(dto.titulo)
                 .textCase(.none)
                 .font(.body)
-                .fontWeight(.semibold)
                 .foregroundColor(Color.texto2)
             
             Spacer()
