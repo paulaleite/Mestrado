@@ -1,6 +1,3 @@
-# URL.postDisciplina
-
-#body
 {
     "titulo": "Disciplina 1",
     "momentoAvaliativo": [
@@ -23,5 +20,3 @@
         }
     ]
 }
-
-#response status 201

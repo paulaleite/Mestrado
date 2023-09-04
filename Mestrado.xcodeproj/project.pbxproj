@@ -301,6 +301,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		645F36352AA61DDD004E5A20 /* FeatureCriacaoDisciplina */ = {
+			isa = PBXGroup;
+			children = (
+				1E7EB6E72A9817CF003415AE /* postDisciplina.geojson */,
+			);
+			path = FeatureCriacaoDisciplina;
+			sourceTree = "<group>";
+		};
 		6469D7952A9D1A8000662FDE /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +365,7 @@
 		64943A9D2A53323100585CA1 /* Mestrado */ = {
 			isa = PBXGroup;
 			children = (
+				645F36352AA61DDD004E5A20 /* FeatureCriacaoDisciplina */,
 				642D38AE2AA27A8700BA2485 /* FeatureDetalhesEstudante */,
 				64B0F6E32AA121310066E39B /* FeatureProfessorInfo */,
 				64B0F6CB2AA0D2A90066E39B /* FeatureDisciplinas */,
@@ -535,7 +544,6 @@
 		64C9CD8F2A97EC660083B13F /* BFF */ = {
 			isa = PBXGroup;
 			children = (
-				1E7EB6E72A9817CF003415AE /* postDisciplina.geojson */,
 				1E7EB6E52A981598003415AE /* getMomentosPorDisciplina.geojson */,
 				1E7EB6E62A98169B003415AE /* getObjetivos.geojson */,
 				1E7EB6E82A981997003415AE /* getTodosEstudantesPorDisciplina.geojson */,
