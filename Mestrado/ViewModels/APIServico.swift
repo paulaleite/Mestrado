@@ -104,7 +104,7 @@ struct APIServico: APIServicoProtocol {
     /// - Parameter tipo: Tipo da Pessoa, podendo ser Professor ou Estudante.
     /// - returns: dados do Modelo de Login ou um APIErro.
     internal func getDisciplinasDaPessoa(pessoaID: String, senha: String, tipo: String) async -> ([DisciplinaTituloModel]?, APIErro?) {
-//        let stringURL: String = .getDisciplinas + "\(estudanteID)" + "\(senha)" + "\(tipo)"
+        //        let stringURL: String = .getDisciplinas + "\(estudanteID)" + "\(senha)" + "\(tipo)"
         
         if let stringPath = Bundle.main.path(forResource: "getDisciplinas", ofType: "json") {
             do {
@@ -160,11 +160,27 @@ struct APIServico: APIServicoProtocol {
     }
     
     internal func getDadosInfoProfessor(disciplinaID: String) async -> (ProfessorInfoModel?, APIErro?) {
-//        let stringURL: String = .getInfoProfessor + "\(disciplinaID)"
+        //        let stringURL: String = .getInfoProfessor + "\(disciplinaID)"
         
         if let stringPath = Bundle.main.path(forResource: "getInfoProfessor", ofType: "json") {
             do {
                 return (try await getDadoDecodificado(stringURL: stringPath, tipo: ProfessorInfoModel.self), nil)
+            } catch(let e) {
+                if let erro = e as? APIErro {
+                    return (nil, erro)
+                }
+            }
+        }
+        
+        return (nil, APIErro.URLInvalida)
+    }
+    
+    internal func getDadosDetalhesEstudante(estudanteID: String, disciplinaID: String) async -> (EstudanteDetalhesModel?, APIErro?) {
+//        let stringURL: String = .getDetalhesEstudante + "\(estudanteID)" + "\(disciplinaID)"
+        
+        if let stringPath = Bundle.main.path(forResource: "getInfoDetalhesEstudante", ofType: "json") {
+            do {
+                return (try await getDadoDecodificado(stringURL: stringPath, tipo: EstudanteDetalhesModel.self), nil)
             } catch(let e) {
                 if let erro = e as? APIErro {
                     return (nil, erro)

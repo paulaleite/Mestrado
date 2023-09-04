@@ -27,5 +27,7 @@ protocol APIServicoProtocol {
     
     func getDadosInfoProfessor(disciplinaID: String) async -> (ProfessorInfoModel?, APIErro?)
     
+    func getDadosDetalhesEstudante(estudanteID: String, disciplinaID: String) async -> (EstudanteDetalhesModel?, APIErro?)
+    
     func postDadosAutoavaliacao(dados: PostAutoavaliacaoModel, disciplinaID: String) async -> (PostAutoavaliacaoModel?, APIErro?)
 }

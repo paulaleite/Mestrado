@@ -38,12 +38,12 @@ struct ObjetivoItemView: View {
                     .font(.body)
                     .foregroundColor(Color("Texto1"))
             }
+            .listRowBackground(Color.fundo2)
             
             HStack {
                 Spacer()
                 RubricaView(corCompetencia: dto.corCompetencia, objetivoNivel: dto.rubricaSelecionada, nivelEsperado: dto.nivelEsperado, tamanho: [30, 10])
             }
         }
-        .listRowBackground(Color.fundo2)
     }
 }

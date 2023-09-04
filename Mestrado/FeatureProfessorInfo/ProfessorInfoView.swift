@@ -23,9 +23,10 @@ struct ProfessorInfoView: View {
         List {
             GraficoProfessorSectionView()
             
-            VisaoGeralSectionView(filtro: $filtro)
+            VisaoGeralSectionView(filtro: $filtro, disciplinaID: disciplina.id)
         }
         .listSectionSeparator(.hidden)
+        .scrollContentBackground(.hidden)
         .background(Color.fundo1)
         .onAppear {
             Task {

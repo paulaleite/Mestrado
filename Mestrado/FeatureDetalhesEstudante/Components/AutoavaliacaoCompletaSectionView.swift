@@ -1,18 +1,18 @@
 //
-//  AutoavaliacaoEstudanteView.swift
+//  ObjetivosTodosSectionView.swift
 //  Mestrado
 //
-//  Created by Paula Leite on 24/08/23.
+//  Created by Paula Leite on 01/09/23.
 //
 
 import SwiftUI
 
-/// Visualização das Informações das Autoavaliações do Estudante. Com ela, é possível visualizar todas as reflexões feitas até o presente Momento, bem como todos os Objetivos de Aprendizado e o níveis selecionados.
-struct AutoavaliacaoEstudanteInfoView: View {
+/// Visualização da Section dos Objetivos não avaliados Estudante.
+struct AutoavaliacaoCompletaSectionView: View {
     
     // MARK: - Variáveis e Constantes
     
-    @EnvironmentObject var viewModel: EstudanteInfoViewModel
+    @EnvironmentObject var viewModel: EstudanteDetalhesViewModel
     
     /// Todos os Objetivos de Aprendizado, filtrados de acordo com o Momento Avaliativo selecionado.
     var objetivos: [ObjetivoEstudanteInfoModel] {
@@ -39,12 +39,29 @@ struct AutoavaliacaoEstudanteInfoView: View {
     /// Estados que representam se as Seções de Reflexão e Objetivos estão expandidas.
     @State var sectionReflexoesExpandida: Bool = true
     @State var sectionObjetivosExpandida: Bool = true
+    @State var sectionMomentosExpandida: Bool = true
+    
+    var dto: FiltroMomentosDTO
     
     /// Binding que informa qual momento avaliativo está selecionado.
     @Binding var momentoAvaliativoSelecionado: String
     
     // MARK: - Body da View
     var body: some View {
+        
+        HStack {
+            Text(momentoAvaliativoSelecionado)
+                .textCase(.uppercase)
+                .font(.system(size: 14))
+                .foregroundColor(Color.texto2)
+            
+            Spacer()
+            
+            FiltroMomentos(dto: FiltroMomentosDTO(titulos: dto.titulos), momentoAvaliativoSelecionado: $momentoAvaliativoSelecionado)
+        }
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color.fundo1)
+        .padding(.bottom, -20)
         
         Section {
             if sectionReflexoesExpandida && reflexoes.count > 0 {
@@ -70,6 +87,5 @@ struct AutoavaliacaoEstudanteInfoView: View {
             SectionHeaderView(dto: SectionHeaderDTO(titulo: "Titulo.Objetivo.Plural".localized(), quantidade: objetivos.count), sectionExpandida: $sectionObjetivosExpandida)
                 .padding(.top, -20)
         }
-        
     }
 }

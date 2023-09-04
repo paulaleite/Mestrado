@@ -1,0 +1,75 @@
+{
+    "objetivosForaNivelEsperado": [
+        {
+            "corDaCompetencia": "Competencia1",
+            "descricao": "Sejam capazes de agir de forma reflexiva na construção de sistemas de computação, compreendendo o seu impacto direto ou indireto sobre as pessoas e a sociedade.",
+            "nivelEsperado": 4,
+            "rubricaSelecionada": 3
+        },
+        {
+            "corDaCompetencia": "Competencia2",
+            "descricao": "Concepção, justificativa e objetivos gerais e específicos do curso, contextualizados em relação às suas inserções institucional, política, geográfica e social.",
+            "nivelEsperado": 4,
+            "rubricaSelecionada": 3
+        },
+        {
+            "corDaCompetencia": "Competencia3",
+            "descricao": "Profissionais dotados da capacidade de atuar de forma empreendedora, abrangente e cooperativa no atendimento às demandas sociais da região onde atua, do Brasil e do mundo.",
+            "nivelEsperado": 4,
+            "rubricaSelecionada": 3
+        },
+        {
+            "corDaCompetencia": "Competencia4",
+            "descricao": "Compreender os fatos essenciais, os conceitos, os princípios e as teorias relacionadas à Ciência da Computação para o desenvolvimento de software e hardware e suas aplicações.",
+            "nivelEsperado": 4,
+            "rubricaSelecionada": 3
+        },
+    ],
+    "objetivosNaoAvaliados": [
+        {
+            "corDaCompetencia": "Competencia1",
+            "descricao": "Identificar e gerenciar os riscos que podem estar envolvidos na operação de equipamentos de computação (incluindo os aspectos de dependabilidade e segurança)."
+        }
+    ],
+    "momentosAvaliativos": [
+        {
+            "titulo": "Momento 1"
+        },
+        {
+            "titulo": "Momento 2"
+        }
+    ],
+    "reflexoes": [
+         {
+             "sentimento": 4,
+             "data": "2023-08-23",
+             "descricao": "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante.",
+             "momentoAvaliativo": "Momento 1"
+         },
+         {
+             "sentimento": 4,
+             "data": "2023-01-22",
+             "descricao": "Essa é a reflexão que o aluno fez no momento específico que está destacado logo acima, então um tamanho grande levaria essa caixa de texto a aumentar um pouco mais, garantindo que tudo aparecesse aqui. Isso vai ser interessante. O tamanho da fonte foi pensado com cuidado, para que funcione de forma.",
+             "momentoAvaliativo": "Momento 2"
+         },
+        
+    ],
+    "objetivos": [
+        {
+            "descricao": "Possuam sólida formação em Ciência da Computação e Matemática que os capacitem a construir aplicativos de propósito geral, ferramentas e infraestrutura de software de sistemas de computação e de sistemas embarcados, gerar conhecimento científico e inovação e que os incentivem a estender suas competências à medida que a área se desenvolve.",
+            "corCompetencia": "Competencia1",
+            "nomeCompetencia": "Visão Geral",
+            "nivelEsperado": 3,
+            "rubricaSelecionada": 2,
+            "momentoAvaliativo": "Momento 1"
+        },
+        {
+            "descricao": "Concepção, justificativa e objetivos gerais e específicos do curso, contextualizados em relação às suas inserções institucional, política, geográfica e social.",
+            "corCompetencia": "Competencia2",
+            "nomeCompetencia": "Impactos da Área",
+            "nivelEsperado": 3,
+            "rubricaSelecionada": 1,
+            "momentoAvaliativo": "Momento 1"
+        },
+    ]
+}

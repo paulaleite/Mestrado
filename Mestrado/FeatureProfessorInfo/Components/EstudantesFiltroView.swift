@@ -15,6 +15,9 @@ struct EstudantesFiltroView: View {
     /// Binding que permite saber qual Filtro está selecionado
     @Binding var filtro: String
     
+    /// Identificador único da Disciplina
+    var disciplinaID: String
+    
     /// Variáveis que representa quais estudantes deveriam aparecer em cada cas
     var estudantes: [EstudanteFiltroModel] {
         var alunos: [EstudanteFiltroModel] = []
@@ -44,7 +47,7 @@ struct EstudantesFiltroView: View {
     var body: some View {
         ForEach(estudantes, id: \.self) { estudante in
             NavigationLink {
-                EstudanteDetalhesView()
+                EstudanteDetalhesView(estudante: estudante, disciplinaID: disciplinaID)
             } label: {
                 ProfessorEstudanteInfoView(estudante: estudante)
             }
