@@ -117,3 +117,6 @@
 
 "Alert.Titulo.Deslogar" = "Deslogar da Conta";
 "Alert.Mensagem.Deslogar" = "Com essa ação, você será deslogado de sua conta.";
+
+"Alert.Titulo.Disciplina.Cancelar" = "Descartar disciplina";
+"Alert.Mensagem.Disciplina.Cancelar" = "Com essa ação, todas as informações inseridas sobre a disciplina serão perdidas.";

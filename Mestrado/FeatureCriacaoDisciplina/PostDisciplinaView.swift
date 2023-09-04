@@ -27,6 +27,15 @@ struct PostDisciplinaView: View {
             SectionEstudantesDisciplinaView()
         }
         .environmentObject(viewModel)
-        .navigationTitle("Titulo.Disciplina.Nova")
+        .navigationTitle("Titulo.Disciplina.Nova".localized())
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                CancelarDisciplinaView()
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+//                AdicionarDisciplinaView(dto: AdcDisciplinaDTO())
+            }
+        }
     }
 }

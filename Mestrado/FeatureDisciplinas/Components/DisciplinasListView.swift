@@ -47,7 +47,6 @@ struct DisciplinasListView: View {
                             .font(.system(size: 20))
                             .fontWeight(.medium)
                     }
-
                 }
             }
         }
