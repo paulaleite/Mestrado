@@ -52,6 +52,7 @@
 // Disciplina
 "Titulo.Disciplina.Plural" = "Disciplinas";
 "Titulo.Titulo.Disciplina" = "Título da Disciplina";
+"Titulo.Disciplina.Nova" = "Nova Disciplina";
 // Login
 "Titulo.Tipo" = "Quem é você?";
 "Titulo.Usuario" = "Usuário";

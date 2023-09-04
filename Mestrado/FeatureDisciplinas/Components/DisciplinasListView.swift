@@ -11,6 +11,8 @@ struct DisciplinasListView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: LoginViewModel
     
+    @State var mostrarTelaCriacaoDisciplina: Bool = false
+    
     /// Identificador único da Pessoa
     var pessoa: LoginModel
     
@@ -31,11 +33,14 @@ struct DisciplinasListView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color.fundo1)
+        .sheet(isPresented: $mostrarTelaCriacaoDisciplina, content: {
+            PostDisciplinaView()
+        })
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 if viewModel.pessoa?.tipo == "Professor" {
-                    NavigationLink {
-                        PostDisciplinaView()
+                    Button {
+                        mostrarTelaCriacaoDisciplina.toggle()
                     } label: {
                         Image(systemName: "plus")
                             .foregroundColor(Color.corDeAcao)

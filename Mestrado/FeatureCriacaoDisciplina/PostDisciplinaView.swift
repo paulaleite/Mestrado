@@ -13,9 +13,9 @@ struct PostDisciplinaView: View {
     @StateObject var viewModel: PostDisciplinaViewModel = PostDisciplinaViewModel()
     
     /// Estado que contém a String do título da disciplina.
-    @State var tituloDisciplina: String = "Titulo".localized()
+    @State var tituloDisciplina: String = ""
     /// Estado que contém a String do título do momento avaliativo.
-    @State var tituloMomento: String = "Titulo.Momento.Avaliativo".localized()
+    @State var tituloMomento: String = ""
     /// Estado que contém a Data selecionada.
     @State var data: Date = .now
     
@@ -27,5 +27,6 @@ struct PostDisciplinaView: View {
             SectionEstudantesDisciplinaView()
         }
         .environmentObject(viewModel)
+        .navigationTitle("Titulo.Disciplina.Nova")
     }
 }
