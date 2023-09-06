@@ -28,54 +28,71 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
                         .listRowBackground(Color.fundo2)
                     
                     DataCellView(data: $data)
+                        .labelsHidden()
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 
                 Button {
-                    if tituloMomento != "" {
-                        momentosAvaliativos.append(MomentoAvaliativoPostDisciplinaModel(titulo: tituloMomento, data: data.description, objetivos: []))
-                    }
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd MMM yyyy"
+                    let dataString = dateFormatter.string(from: data)
+                    viewModel.criarMomentoAvaliativo(titulo: tituloMomento, data: dataString)
+                    tituloMomento = ""
+                    data = .now
                 } label: {
                     Image(systemName: "plus.circle")
                         .foregroundColor(Color.corDeAcao)
                 }
             }
-            
+        } header: {
+            HStack(spacing: 2) {
+                Text("*")
+                    .foregroundColor(.red)
+                    .font(.system(size: 14))
+                    .fontWeight(.bold)
+                
+                Text("Titulo.Info.Momento.Avaliativo".localized())
+                    .textCase(.uppercase)
+                    .font(.system(size: 14))
+                    .foregroundColor(Color.texto2)
+                
+                Spacer()
+            }
+        }
+        
+        if !viewModel.momentoAvaliativo.isEmpty {
             Section {
-                ForEach(momentosAvaliativos, id: \.self) { momento in
+                ForEach(viewModel.momentoAvaliativo, id: \.self) { momento in
                     NavigationLink {
-//                        ObjetivosMomentoView()
+    //                        ObjetivosMomentoView()
                         EmptyView()
                     } label: {
                         HStack(alignment: .center) {
-                            VStack {
+                            VStack(alignment: .leading) {
                                 Text(momento.titulo)
                                     .foregroundColor(Color.texto1)
                                     .font(.system(size: 17))
                                 
-                                Text(formatarData(data: momento.data), format: .dateTime.day().month().year())
+                                Text(momento.data)
                                     .foregroundColor(Color.texto2)
                                     .font(.system(size: 13))
                             }
+                            
+                            Spacer()
                             
                             Text("Adicionar algo")
                                 .foregroundColor(Color.texto2)
                                 .font(.system(size: 17))
                         }
+                        .padding(.vertical, 3)
                     }
                 }
+            } header: {
+                Text("Titulo.Momento.Criado".localized())
+                    .textCase(.uppercase)
+                    .font(.system(size: 14))
+                    .foregroundColor(Color.texto2)
             }
-        } header: {
-            Text("Titulo.Momento.Avaliativo.Plural".localized())
-                .textCase(.uppercase)
-                .font(.system(size: 14))
-                .foregroundColor(Color.texto2)
         }
-    }
-    
-    func formatarData(data: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let resultado = dateFormatter.date(from: data)!
-        return resultado
     }
 }

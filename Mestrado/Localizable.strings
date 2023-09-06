@@ -38,6 +38,9 @@
 "Titulo.Momentos.Todos" = "Todos os Momentos";
 "Titulo.Momento.Avaliativo.Plural" = "Momentos de Avaliação";
 "Titulo.Momento.Avaliativo" = "Título do Momento de Avaliação";
+"Titulo.Info.Momento.Avaliativo" = "Informações Momentos de Avaliação";
+"Titulo.Momento.Criado" = "Momentos de Avaliação Criados";
+
 // Data
 "Titulo.Data" = "Data";
 // Reflexão
