@@ -40,7 +40,8 @@
 "Titulo.Momento.Avaliativo" = "Título do Momento de Avaliação";
 "Titulo.Info.Momento.Avaliativo" = "Informações Momentos de Avaliação";
 "Titulo.Momento.Criado" = "Momentos de Avaliação Criados";
-
+// Estudante
+"Titulo.Estudante.Plural" = "Estudantes";
 // Data
 "Titulo.Data" = "Data";
 // Reflexão
