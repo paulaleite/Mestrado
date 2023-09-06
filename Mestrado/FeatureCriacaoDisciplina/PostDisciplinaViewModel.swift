@@ -10,6 +10,9 @@ import SwiftUI
 /// Classe que possibilita a manipulação dos dados da Tela de Criação de uma disicipflina, que busca dados do servidor para popular a visualização, bem como salva as informações escolhidas pelo Professor.
 class PostDisciplinaViewModel: ObservableObject {
     // MARK: - Variáveis e Constantes
+    /// Source of Truth da Disciplina.
+    @Published var disciplina: PostDisciplinaModel? = nil
+    
     /// Source of Truth do título da Disciplina.
     @Published var titulo: String = ""
     
@@ -67,5 +70,34 @@ class PostDisciplinaViewModel: ObservableObject {
         } else {
             print(resultado.0!)
         }
+    }
+    
+    /// Função que atuailiza o Momento Avaliativo, em relação aos Objetivos.
+    /// - Parameter titulo: Título do Momento Avaliativo.
+    /// - Parameter data: Data em que o Momento Avaliativo vai acontecer.
+    /// - Parameter objetivos: Objetivos que estão sendo adicionados.
+    func atualizarMomentoAvaliativo(titulo: String, data: String, objetivos: [ObjetivosPostDisciplinaModel]) {
+        for i in 0 ..< self.momentoAvaliativo.count {
+            if self.momentoAvaliativo[i].titulo == titulo && self.momentoAvaliativo[i].data == data {
+                self.momentoAvaliativo[i].objetivos = objetivos
+            }
+        }
+    }
+    
+    /// Função que cria o Momento Avaliativo novo, mas não adiciona os Objetivos de Aprendizado.
+    /// - Parameter titulo: Título do Momento Avaliativo.
+    /// - Parameter data: Data em que o Momento Avaliativo vai acontecer.
+    func criarMomentoAvaliativo(titulo: String, data: String) {
+        let momento = MomentoAvaliativoPostDisciplinaModel(titulo: titulo, data: data, objetivos: [])
+        self.momentoAvaliativo.append(momento)
+    }
+    
+    /// Função que atuailiza as variáveis @Published com as informações selecionadas pelo Professor.
+    /// - Parameter titulo: Titulo da Disciplina.
+    /// - Parameter momentosAvaliativos: Momentos Avaliativos criados pelo Professor.
+    /// - Parameter estudantes: Estudantes que vão fazer parte da Disciplina.
+    func atualizarDisciplina(titulo: String) {
+        self.titulo = titulo
+        self.disciplina = PostDisciplinaModel(titulo: titulo, momentoAvaliativo: self.momentoAvaliativo, estudantes: self.estudantes)
     }
 }

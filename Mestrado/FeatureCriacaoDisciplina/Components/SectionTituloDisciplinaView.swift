@@ -19,10 +19,19 @@ struct SectionTituloDisciplinaView: View {
             TextField("Titulo".localized(), text: $tituloDisciplina, axis: .vertical)
                 .listRowBackground(Color.fundo2)
         } header: {
-            Text("Titulo.Titulo.Disciplina".localized())
-                .textCase(.uppercase)
-                .font(.system(size: 14))
-                .foregroundColor(Color.texto2)
+            HStack(spacing: 2) {
+                Text("*")
+                    .foregroundColor(.red)
+                    .font(.system(size: 14))
+                    .fontWeight(.bold)
+                
+                Text("Titulo.Titulo.Disciplina".localized())
+                    .textCase(.uppercase)
+                    .font(.system(size: 14))
+                    .foregroundColor(Color.texto2)
+                
+                Spacer()
+            }
         }
 
     }

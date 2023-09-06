@@ -120,3 +120,6 @@
 
 "Alert.Titulo.Disciplina.Cancelar" = "Descartar disciplina";
 "Alert.Mensagem.Disciplina.Cancelar" = "Com essa ação, todas as informações inseridas sobre a disciplina serão perdidas.";
+
+"Alert.Titulo.Disciplina.Adicionar" = "Savlar disciplina";
+"Alert.Mensagem.Disciplina.Adicionar" = "Com essa ação, a disciplina será criada e não será possível editá-la.";

@@ -10,10 +10,6 @@ import SwiftUI
 struct AdcDisciplinaDTO {
     /// Título da Disciplina
     var tituloDisciplina: String
-    /// Momento Avaliativos criados para a Disciplina.
-    var momentosAvaliativos: [MomentoAvaliativoPostDisciplinaModel]
-    /// Os estudantes que fazem parte da Disciplina.
-    var estudantes: [EstudantePostDisciplinaModel]
 }
 
 /// Com essa visualização, é possível interagir com o botão de Criar uma Disciplina, chamando o Alert de Confirmação.
@@ -36,16 +32,16 @@ struct AdicionarDisciplinaView: View {
             mostrarAlert.toggle()
         } label: {
             Text("Titulo.Concluido".localized())
-                .foregroundColor((dto.tituloDisciplina == "" || dto.momentosAvaliativos.isEmpty || dto.estudantes.isEmpty) ? Color.texto2 : Color.corDeAcao)
+                .foregroundColor((dto.tituloDisciplina == "" || viewModel.momentoAvaliativo.isEmpty || viewModel.estudantes.isEmpty) ? Color.texto2 : Color.corDeAcao)
         }
-        .disabled((dto.tituloDisciplina == "" || dto.momentosAvaliativos.isEmpty || dto.estudantes.isEmpty) ? true : false)
+        .disabled((dto.tituloDisciplina == "" || viewModel.momentoAvaliativo.isEmpty || viewModel.estudantes.isEmpty) ? true : false)
         .alert(isPresented: $mostrarAlert) {
-            Alert(title: Text("Alert.Titulo.Avaliacao.Adicionar".localized()), message: Text("Alert.Mensagem.Avaliacao.Adicionar".localized()), primaryButton: .default(Text("Titulo.Editar".localized())), secondaryButton: .default(Text("Titulo.Salvar".localized())) {
+            Alert(title: Text("Alert.Titulo.Disciplina.Adicionar".localized()), message: Text("Alert.Mensagem.Disciplina.Adicionar".localized()), primaryButton: .default(Text("Titulo.Editar".localized())), secondaryButton: .default(Text("Titulo.Salvar".localized())) {
                 dismiss()
-                viewModel.atualizarAutoavaliacao(estudanteID: dto.estudanteID, momentoID: dto.momentoAvaliativoSelecionado.id, data: dto.data, sentimento: dto.sentimentoSelecionado, descricao: dto.descricaoReflexao, objetivos: dto.objetivos)
+                viewModel.atualizarDisciplina(titulo: dto.tituloDisciplina)
                 Task {
-                    if let autoavaliacao = viewModel.autoavaliacao {
-                        await viewModel.postDadosAutoavaliacao(autoavaliacao: autoavaliacao, disciplinaID: dto.disciplinaID)
+                    if let disciplina = viewModel.disciplina {
+                        await viewModel.postDadosCriacaoDisciplina(dados: PostDisciplinaModel(titulo: disciplina.titulo, momentoAvaliativo: disciplina.momentoAvaliativo, estudantes: disciplina.estudantes))
                     }
                 }
             })

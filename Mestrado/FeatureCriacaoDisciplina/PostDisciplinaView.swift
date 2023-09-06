@@ -18,24 +18,39 @@ struct PostDisciplinaView: View {
     @State var tituloMomento: String = ""
     /// Estado que contém a Data selecionada.
     @State var data: Date = .now
+    /// Estado que informa se a solicitação ocorreu de forma incorreta.
+    @State var mostrarErro: Bool = false
     
     // MARK: - Body da View
     var body: some View {
-        Form {
-            SectionTituloDisciplinaView(tituloDisciplina: $tituloDisciplina)
-            SectionMomentosAvaliativosDisciplinaView(tituloMomento: $tituloMomento, data: $data)
-            SectionEstudantesDisciplinaView()
+        NavigationStack {
+            Form {
+                SectionTituloDisciplinaView(tituloDisciplina: $tituloDisciplina)
+                SectionMomentosAvaliativosDisciplinaView(tituloMomento: $tituloMomento, data: $data)
+                SectionEstudantesDisciplinaView()
+            }
+            .scrollContentBackground(.hidden)
+            .background(Color.fundo1)
+            .navigationTitle("Titulo.Disciplina.Nova".localized())
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    CancelarDisciplinaView()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    AdicionarDisciplinaView(dto: AdcDisciplinaDTO(tituloDisciplina: tituloDisciplina))
+                }
+            }
         }
         .environmentObject(viewModel)
-        .navigationTitle("Titulo.Disciplina.Nova".localized())
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                CancelarDisciplinaView()
+        .onAppear {
+            if viewModel.mensagemDeErro != nil {
+                mostrarErro.toggle()
             }
-            ToolbarItem(placement: .navigationBarTrailing) {
-//                AdicionarDisciplinaView(dto: AdcDisciplinaDTO())
-            }
+        }
+        .alert(isPresented: $mostrarErro) {
+            Alert(title: Text(viewModel.mensagemDeErro!), message: Text("Alert.Mensagem.Erro".localized()), dismissButton:
+                    .cancel(Text("Titulo.OK".localized())))
         }
     }
 }
