@@ -22,12 +22,12 @@ struct SectionTituloDisciplinaView: View {
             HStack(spacing: 2) {
                 Text("*")
                     .foregroundColor(.red)
-                    .font(.system(size: 14))
+                    .font(.system(size: 12))
                     .fontWeight(.bold)
                 
                 Text("Titulo.Titulo.Disciplina".localized())
                     .textCase(.uppercase)
-                    .font(.system(size: 14))
+                    .font(.system(size: 12))
                     .foregroundColor(Color.texto2)
                 
                 Spacer()

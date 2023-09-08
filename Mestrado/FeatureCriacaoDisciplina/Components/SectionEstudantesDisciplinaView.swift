@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+/// Visualização dos Estudantes que foram adicionados na Disciplina.
 struct SectionEstudantesDisciplinaView: View {
+    // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: PostDisciplinaViewModel
     
     @State var selecao: Bool = true
     
+    // MARK: - Body da View
     var body: some View {
         Section {
             NavigationLink {
