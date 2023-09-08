@@ -84,6 +84,23 @@ class PostDisciplinaViewModel: ObservableObject {
         }
     }
     
+    /// Função que permite atualizar a rubrica selecionada do Objetivo de Aaprendizado dentro de um Momento Avaliativo
+    /// - Parameter titulo: Título do Momento Avaliativo.
+    /// - Parameter data: Data em que o Momento Aavaliativo vai acontecer
+    /// - Parameter objetivoID: Identificador único do Objetivo que será atualizado
+    /// - Parameter nivelEsperado: Nível esperado que será atualizado
+    func atualizarObjetivo(titulo: String, data: String, objetivoID: String, nivelEsperado: Rubrica) {
+        for i in 0 ..< self.momentoAvaliativo.count {
+            if self.momentoAvaliativo[i].titulo == titulo && self.momentoAvaliativo[i].data == data {
+                for j in 0 ..< self.momentoAvaliativo[i].objetivos.count {
+                    if self.momentoAvaliativo[i].objetivos[j].id == objetivoID {
+                        self.momentoAvaliativo[i].objetivos[j].nivelEsperado = nivelEsperado.rawValue
+                    }
+                }
+            }
+        }
+    }
+    
     /// Função que cria o Momento Avaliativo novo, mas não adiciona os Objetivos de Aprendizado.
     /// - Parameter titulo: Título do Momento Avaliativo.
     /// - Parameter data: Data em que o Momento Avaliativo vai acontecer.

@@ -29,12 +29,8 @@ struct ObjetivoSelecaoItemView: View {
     
     let dto: ObjetivoSelecaoItemDTO
     
-    // state object do model
-    // id do objetivo
-    
     /// A Rubrica escolhida pelo Estudante para o Objetivo de Aprendizado que está sendo apresentado no elemento da lista ou o Nível escolhido pelo Professor.
     @State var rubricaSelecionada: Rubrica = .naoEstudado
-    
     
     var body: some View {
         

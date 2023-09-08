@@ -28,7 +28,7 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
         
         if !viewModel.momentoAvaliativo.isEmpty {
             Section {
-                MomentosAvaliativosDisciplinaListView()
+                MomentosAvaliativosDisciplinaListView(tituloMomento: $tituloMomento, data: $data)
                     .listRowBackground(Color.fundo2)
             } header: {
                 Text("Titulo.Momento.Criado".localized())
@@ -45,12 +45,16 @@ struct MomentosAvaliativosDisciplinaListView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: PostDisciplinaViewModel
     
+    /// Binding que contém a String do título do momento avaliativo.
+    @Binding var tituloMomento: String
+    /// Binding que contém a Data selecionada.
+    @Binding var data: Date
+    
     // MARK: - Body da View
     var body: some View {
         ForEach(viewModel.momentoAvaliativo, id: \.self) { momento in
             NavigationLink {
-//                        ObjetivosMomentoView()
-                EmptyView()
+                AdicionarObjetivosMomentoView(tituloMomento: $tituloMomento, data: $data)
             } label: {
                 HStack(alignment: .center) {
                     VStack(alignment: .leading) {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E2C23FE2AAB68430001B846 /* SectionTituloObrigatorioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C23FD2AAB68430001B846 /* SectionTituloObrigatorioView.swift */; };
 		1E2C24002AAB6E010001B846 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C23FF2AAB6E010001B846 /* CheckboxToggleStyle.swift */; };
+		1E2C24022AAB73800001B846 /* AdicionarObjetivosMomentoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C24012AAB73800001B846 /* AdicionarObjetivosMomentoView.swift */; };
 		1E7EB6EE2A98254B003415AE /* EstudanteInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7EB6ED2A98254B003415AE /* EstudanteInfoViewModel.swift */; };
 		1E7EB6F02A982556003415AE /* ObjetivoEstudanteInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7EB6EF2A982556003415AE /* ObjetivoEstudanteInfoModel.swift */; };
 		1E7EB6F32A982569003415AE /* ReflexaoEstudanteInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7EB6F22A982569003415AE /* ReflexaoEstudanteInfoModel.swift */; };
@@ -121,6 +122,7 @@
 /* Begin PBXFileReference section */
 		1E2C23FD2AAB68430001B846 /* SectionTituloObrigatorioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTituloObrigatorioView.swift; sourceTree = "<group>"; };
 		1E2C23FF2AAB6E010001B846 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
+		1E2C24012AAB73800001B846 /* AdicionarObjetivosMomentoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarObjetivosMomentoView.swift; sourceTree = "<group>"; };
 		1E7EB6E42A981262003415AE /* postAutoavaliacao.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = postAutoavaliacao.geojson; sourceTree = "<group>"; };
 		1E7EB6E52A981598003415AE /* getMomentosPorDisciplina.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getMomentosPorDisciplina.geojson; sourceTree = "<group>"; };
 		1E7EB6E62A98169B003415AE /* getObjetivos.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getObjetivos.geojson; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			children = (
 				645F36392AA63C43004E5A20 /* SectionTituloDisciplinaView.swift */,
 				645F363B2AA63C58004E5A20 /* SectionMomentosAvaliativosDisciplinaView.swift */,
+				1E2C24012AAB73800001B846 /* AdicionarObjetivosMomentoView.swift */,
 				645F363D2AA63C66004E5A20 /* SectionEstudantesDisciplinaView.swift */,
 				645F36542AA67653004E5A20 /* CancelarDisciplinaView.swift */,
 				645F36562AA67701004E5A20 /* AdicionarDisciplinaView.swift */,
@@ -737,6 +740,7 @@
 				648105962A9F6DAA0040EA26 /* ViewModelsAntigas.swift in Sources */,
 				642D38BA2AA281E900BA2485 /* ObjetivosForaNivelSectionView.swift in Sources */,
 				64943AB22A53625400585CA1 /* Sentimento.swift in Sources */,
+				1E2C24022AAB73800001B846 /* AdicionarObjetivosMomentoView.swift in Sources */,
 				645F36412AA640E6004E5A20 /* MomentoAvaliativoPostDisciplinaModel.swift in Sources */,
 				64388C3B2A5725AF00FDC452 /* RubricaView.swift in Sources */,
 				6459F3E42A560D0E00A66AFD /* ObjetivoItemView.swift in Sources */,

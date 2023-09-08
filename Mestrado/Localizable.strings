@@ -52,6 +52,7 @@
 "Titulo.Objetivo.Plural" = "Objetivos de Aprendizado";
 "Titulo.Objetivos.Fora.Nivel" = "Objetivos fora do nível esperado";
 "Titulo.Objetivos.Nao.Avaliados" = "Objetivos não avaliados";
+"Titulo.Objetivo.Selecionado" = "Objetivos selecionados";
 // Competências
 "Titulo.Competencia" = "Competências";
 // Disciplina
@@ -114,6 +115,8 @@
 "Descricao.Filtro.Acima.Nivel" = "Contemplado quando, pelo menos, 2 auto-avaliações de um objetivo de aprendizado foram executadas acima do nível esperado.";
 // Estudante
 "Descricao.Estudante.Adicionar" = "Adicionar Estudantes";
+// Objetivos
+"Descricao.Objetivo.Adicionar" = "Adicionar Objetivos";
 
 // MARK: Alerts
 "Alert.Titulo.Avaliacao.Cancelar" = "Descartar autoavaliação";

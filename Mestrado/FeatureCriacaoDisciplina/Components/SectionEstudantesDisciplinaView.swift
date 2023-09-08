@@ -72,7 +72,7 @@ struct EstudantesDisciplinaCellListView: View {
                 }
                 .padding(.vertical, 4)
             }
-            .toggleStyle(CheckboxToggleStyle())
+            .toggleStyle(CheckboxToggleStyle(corSelecionada: Color.gray, corDeselecionada: .secondary))
         }
     }
 }

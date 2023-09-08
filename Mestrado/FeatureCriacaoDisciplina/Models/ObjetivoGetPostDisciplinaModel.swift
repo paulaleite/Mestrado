@@ -8,7 +8,7 @@
 import Foundation
 
 /// Entidade que representa o Objetivo de Aprendizado, que será utilizado para estruturar a Tela de Criação de Disciplinas.
-struct ObjetivoGetPostDisciplinaModel: Codable {
+struct ObjetivoGetPostDisciplinaModel: Codable, Hashable {
     /// Identificador único
     var id: String
     
