@@ -8,7 +8,7 @@
 import Foundation
 
 /// Entidade que representa o Estudante, que será utilizado para construir a Tela de Criação de Disciplinas.
-struct EstudanteGetPostDisciplinaModel: Codable {
+struct EstudanteGetPostDisciplinaModel: Codable, Hashable {
     /// Identificador único
     var id: String
     

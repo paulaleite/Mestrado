@@ -23,19 +23,7 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
             MomentosAvaliativosDisciplinaCellView(tituloMomento: $tituloMomento, data: $data)
                 .listRowBackground(Color.fundo2)
         } header: {
-            HStack(spacing: 2) {
-                Text("*")
-                    .foregroundColor(.red)
-                    .font(.system(size: 12))
-                    .fontWeight(.bold)
-                
-                Text("Titulo.Info.Momento.Avaliativo".localized())
-                    .textCase(.uppercase)
-                    .font(.system(size: 12))
-                    .foregroundColor(Color.texto2)
-                
-                Spacer()
-            }
+            SectionTituloObrigatorioView(titulo: "Titulo.Info.Momento.Avaliativo".localized())
         }
         
         if !viewModel.momentoAvaliativo.isEmpty {

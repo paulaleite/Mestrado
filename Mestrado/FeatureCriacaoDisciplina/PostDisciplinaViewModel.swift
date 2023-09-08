@@ -20,7 +20,7 @@ class PostDisciplinaViewModel: ObservableObject {
     @Published var momentoAvaliativo: [MomentoAvaliativoPostDisciplinaModel] = []
     
     /// Source of Truth dos estudantes que fazem parte da Disciplina
-    @Published var estudantes: [EstudantePostDisciplinaModel] = []
+    @Published var estudantes: [EstudanteGetPostDisciplinaModel] = []
     
     /// Source of Truth dos Objetivos de Aprendizado existentes.
     @Published var objetivosDeAprendizadoDisponiveis: [ObjetivoGetPostDisciplinaModel] = []
@@ -98,6 +98,10 @@ class PostDisciplinaViewModel: ObservableObject {
     /// - Parameter estudantes: Estudantes que vão fazer parte da Disciplina.
     func atualizarDisciplina(titulo: String) {
         self.titulo = titulo
-        self.disciplina = PostDisciplinaModel(titulo: titulo, momentoAvaliativo: self.momentoAvaliativo, estudantes: self.estudantes)
+        var estudantesAtualizados: [EstudantePostDisciplinaModel] = []
+        for estudante in estudantes {
+            estudantesAtualizados.append(EstudantePostDisciplinaModel(id: estudante.id))
+        }
+        self.disciplina = PostDisciplinaModel(titulo: titulo, momentoAvaliativo: self.momentoAvaliativo, estudantes: estudantesAtualizados)
     }
 }

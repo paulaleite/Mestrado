@@ -42,6 +42,7 @@
 "Titulo.Momento.Criado" = "Momentos de Avaliação Criados";
 // Estudante
 "Titulo.Estudante.Plural" = "Estudantes";
+"Titulo.Estudante.Adicionado" = "Estudantes Adicionados";
 // Data
 "Titulo.Data" = "Data";
 // Reflexão
@@ -66,6 +67,8 @@
 // Estatistica
 "Titulo.Estatistica.Plural" = "Estatísticas";
 "Titulo.VisaoGeral" = "Visão Geral";
+// Identificacao
+"Titulo.Numero.Identificacao" = "Número de Identificação: ";
 // Segmented Control
 "Titulo.Todos" = "Todos";
 "Titulo.Sem.Avaliacao" = "Inexplorado";
@@ -109,6 +112,8 @@
 "Descricao.Filtro.Sem.Avaliacao" = "Contemplado a partir de 2 objetivos de aprendizado sem avaliação e, após, pelo menos, 1 auto-avaliação.";
 "Descricao.Filtro.Abaixo.Nivel" = "Cotemplado quando, pelo menos, 2 auto-avaliações de um objetivo de aprendizado foram executadas abaixo do nível esperado.";
 "Descricao.Filtro.Acima.Nivel" = "Contemplado quando, pelo menos, 2 auto-avaliações de um objetivo de aprendizado foram executadas acima do nível esperado.";
+// Estudante
+"Descricao.Estudante.Adicionar" = "Adicionar Estudantes";
 
 // MARK: Alerts
 "Alert.Titulo.Avaliacao.Cancelar" = "Descartar autoavaliação";
