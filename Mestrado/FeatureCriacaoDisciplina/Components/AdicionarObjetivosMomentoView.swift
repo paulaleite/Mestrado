@@ -17,12 +17,17 @@ struct AdicionarObjetivosMomentoView: View {
     /// Binding que contém a Data selecionada.
     @Binding var data: Date
     
+    /// Estado que permite determinar se a sheet de seleção de objetivos será apresentada.
+    @State var mostrarLista: Bool = false
+    
+    /// Descricao da Data formatada de acordo com como ela foi enviada para o servidor.
     var dataDescricao: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
         return dateFormatter.string(from: data)
     }
     
+    /// Identificador do momento avaliativo atual que está sendo atualizado.
     var momentoID: Int {
         var id: Int = 0
         for i in 0 ..< viewModel.momentoAvaliativo.count {
@@ -37,13 +42,14 @@ struct AdicionarObjetivosMomentoView: View {
     var body: some View {
         Form {
             Section {
-                NavigationLink {
-                    EmptyView()
+                Button {
+                    mostrarLista.toggle()
                 } label: {
                     Text("Descricao.Objetivo.Adicionar".localized())
                         .foregroundColor(Color.texto1)
                         .font(.body)
                 }
+                .buttonStyle(.plain)
                 .listRowBackground(Color.fundo2)
             }
             
@@ -53,6 +59,7 @@ struct AdicionarObjetivosMomentoView: View {
                         ForEach(viewModel.objetivosDeAprendizadoDisponiveis, id: \.self) { objDisp in
                             if obj.id == objDisp.id {
                                 ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(objDisp.corCompetencia), descricao: objDisp.descricao, objetivoID: obj.id))
+                                    .listRowBackground(Color.fundo2)
                             }
                         }
                     }
@@ -63,6 +70,9 @@ struct AdicionarObjetivosMomentoView: View {
                         .foregroundColor(Color.texto2)
                 }
             }
+        }
+        .sheet(isPresented: $mostrarLista) {
+            EscolherObjetivosMomentoView()
         }
     }
 }
