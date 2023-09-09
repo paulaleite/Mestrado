@@ -35,6 +35,7 @@ struct DisciplinasListView: View {
         .background(Color.fundo1)
         .sheet(isPresented: $mostrarTelaCriacaoDisciplina, content: {
             PostDisciplinaView()
+                .interactiveDismissDisabled(true)
         })
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

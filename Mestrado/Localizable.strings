@@ -135,5 +135,11 @@
 "Alert.Titulo.Disciplina.Cancelar" = "Descartar disciplina";
 "Alert.Mensagem.Disciplina.Cancelar" = "Com essa ação, todas as informações inseridas sobre a disciplina serão perdidas.";
 
-"Alert.Titulo.Disciplina.Adicionar" = "Savlar disciplina";
+"Alert.Titulo.Disciplina.Adicionar" = "Salvar disciplina";
 "Alert.Mensagem.Disciplina.Adicionar" = "Com essa ação, a disciplina será criada e não será possível editá-la.";
+
+"Alert.Titulo.Objetivos.Adicionar.Cancelar" = "Descartar objetivos";
+"Alert.Mensagem.Objetivos.Adicionar.Cancelar" = "Com essa ação, todos os objetivos adicionados serão descartados.";
+
+"Alert.Titulo.Objetivos.Adicionar.Adicionar" = "Adicionar objetivos";
+"Alert.Mensagem.Objetivos.Adicionar.Adicionar" = "Com essa ação, os objetivos serão adicionados no momento avaliativo.";

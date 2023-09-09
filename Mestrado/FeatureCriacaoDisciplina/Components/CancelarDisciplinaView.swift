@@ -15,16 +15,29 @@ struct CancelarDisciplinaView: View {
     /// Estado que permite aparecer o Alert de Cancelamento.
     @State var mostrarConfirmacao = false
     
+    /// Título do Botão que aparece na navegação.
+    var tituloBotao: String
+    /// Título do Alert
+    var tituloAlert: String
+    /// Mensagem do Alert
+    var mensageAlert: String
+    /// Texto botão principal do Alert
+    var tituloBotaoAlert: String
+    /// Texto botão secundário do Alert
+    var tituloBotaoSecundarioAlert: String
+    /// Cor de ação
+    var cor: Color
+    
     // MARK: - Body da View
     var body: some View {
         Button {
             mostrarConfirmacao.toggle()
         } label: {
-            Text("Titulo.Cancelar".localized())
-                .foregroundColor(.red)
+            Text(tituloBotao)
+                .foregroundColor(cor)
         }
         .alert(isPresented: $mostrarConfirmacao) {
-            Alert(title: Text("Alert.Titulo.Disciplina.Cancelar".localized()), message: Text("Alert.Mensagem.Disciplina.Cancelar".localized()), primaryButton: .default(Text("Titulo.Manter".localized())), secondaryButton: .destructive(Text("Titulo.Descartar".localized())) {
+            Alert(title: Text(tituloAlert), message: Text(mensageAlert), primaryButton: .default(Text(tituloBotaoAlert)), secondaryButton: .destructive(Text(tituloBotaoSecundarioAlert)) {
                 dismiss()
             })
         }

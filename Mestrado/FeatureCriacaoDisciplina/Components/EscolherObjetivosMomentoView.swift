@@ -12,6 +12,11 @@ struct EscolherObjetivosMomentoView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: PostDisciplinaViewModel
     
+    /// Binding que contém a String do título do momento avaliativo.
+    @Binding var tituloMomento: String
+    /// Binding que contém a Data selecionada.
+    @Binding var data: Date
+    
     /// Texto da busca que vai ser atualizado sempre que o usuário mudá-lo.
     @State var textoBusca: String = ""
     
@@ -27,20 +32,34 @@ struct EscolherObjetivosMomentoView: View {
     
     // MARK: - Body da View
     var body: some View {
-        List {
-            ForEach(agruparPorCategoria(viewModel.objetivosDeAprendizadoDisponiveis), id: \.0) { par in
-                Section {
-                    ForEach(par.1, id: \.self) { obj in
-                        Text(obj.descricao)
+        NavigationStack {
+            List {
+                ForEach(agruparPorCategoria(resultadoBusca), id: \.0) { par in
+                    Section {
+                        ForEach(par.1, id: \.self) { obj in
+                            ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: false, mostrarPicker: false)
+                        }
+                    } header: {
+                        Text(par.0)
+                            .font(.system(size: 11))
+                            .foregroundColor(Color.texto2)
                     }
-                } header: {
-                    Text(par.0)
-                        .font(.system(size: 11))
-                        .foregroundColor(Color.texto2)
+                }
+            }
+            .searchable(text: $textoBusca)
+            .scrollContentBackground(.hidden)
+            .background(Color.fundo1)
+            .navigationTitle("Titulo.Disciplina.Nova".localized())
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    CancelarDisciplinaView(tituloBotao: "Titulo.Cancelar".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Cancelar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Cancelar".localized(), tituloBotaoAlert: "Titulo.Manter".localized(), tituloBotaoSecundarioAlert: "Titulo.Descartar".localized(), cor: .red)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    CancelarDisciplinaView(tituloBotao: "Titulo.Concluido".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Adicionar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Adicionar".localized(), tituloBotaoAlert: "Titulo.Editar".localized(), tituloBotaoSecundarioAlert: "Titulo.Salvar".localized(), cor: Color.corDeAcao)
                 }
             }
         }
-        .searchable(text: $textoBusca)
         .onAppear {
             Task {
                 await viewModel.getDadosCriacaoDisciplina()

@@ -25,7 +25,7 @@ struct CheckboxToggleStyle: ToggleStyle {
                 configuration.label
             } icon: {
                 Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
-                    .foregroundStyle(configuration.isOn ? corSelecionada : corDeselecionada)
+                    .foregroundStyle(configuration.isOn ? corSelecionada : corSelecionada)
                     .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
                     .imageScale(.large)
             }

@@ -11,6 +11,7 @@
 		1E2C24002AAB6E010001B846 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C23FF2AAB6E010001B846 /* CheckboxToggleStyle.swift */; };
 		1E2C24022AAB73800001B846 /* AdicionarObjetivosMomentoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C24012AAB73800001B846 /* AdicionarObjetivosMomentoView.swift */; };
 		1E2C24042AAB87120001B846 /* EscolherObjetivosMomentoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C24032AAB87120001B846 /* EscolherObjetivosMomentoView.swift */; };
+		1E2C24062AACBFAA0001B846 /* ObjetivoSelecionadoDisciplinaCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2C24052AACBFAA0001B846 /* ObjetivoSelecionadoDisciplinaCellView.swift */; };
 		1E7EB6EE2A98254B003415AE /* EstudanteInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7EB6ED2A98254B003415AE /* EstudanteInfoViewModel.swift */; };
 		1E7EB6F02A982556003415AE /* ObjetivoEstudanteInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7EB6EF2A982556003415AE /* ObjetivoEstudanteInfoModel.swift */; };
 		1E7EB6F32A982569003415AE /* ReflexaoEstudanteInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7EB6F22A982569003415AE /* ReflexaoEstudanteInfoModel.swift */; };
@@ -125,6 +126,7 @@
 		1E2C23FF2AAB6E010001B846 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		1E2C24012AAB73800001B846 /* AdicionarObjetivosMomentoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarObjetivosMomentoView.swift; sourceTree = "<group>"; };
 		1E2C24032AAB87120001B846 /* EscolherObjetivosMomentoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscolherObjetivosMomentoView.swift; sourceTree = "<group>"; };
+		1E2C24052AACBFAA0001B846 /* ObjetivoSelecionadoDisciplinaCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetivoSelecionadoDisciplinaCellView.swift; sourceTree = "<group>"; };
 		1E7EB6E42A981262003415AE /* postAutoavaliacao.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = postAutoavaliacao.geojson; sourceTree = "<group>"; };
 		1E7EB6E52A981598003415AE /* getMomentosPorDisciplina.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getMomentosPorDisciplina.geojson; sourceTree = "<group>"; };
 		1E7EB6E62A98169B003415AE /* getObjetivos.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = getObjetivos.geojson; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				645F36542AA67653004E5A20 /* CancelarDisciplinaView.swift */,
 				645F36562AA67701004E5A20 /* AdicionarDisciplinaView.swift */,
 				1E2C23FD2AAB68430001B846 /* SectionTituloObrigatorioView.swift */,
+				1E2C24052AACBFAA0001B846 /* ObjetivoSelecionadoDisciplinaCellView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				64B0F6CD2AA0D2D30066E39B /* DisciplinasView.swift in Sources */,
 				1E7EB6F32A982569003415AE /* ReflexaoEstudanteInfoModel.swift in Sources */,
 				64B0F6DB2AA0FCF50066E39B /* BotaoLoginView.swift in Sources */,
+				1E2C24062AACBFAA0001B846 /* ObjetivoSelecionadoDisciplinaCellView.swift in Sources */,
 				64388C3F2A572F7000FDC452 /* RetangulosCustomizados.swift in Sources */,
 				64388C412A57302D00FDC452 /* ShapeCustomizada.swift in Sources */,
 				64B0F6E22AA101F30066E39B /* PessoaBotaoView.swift in Sources */,
