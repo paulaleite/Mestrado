@@ -37,7 +37,7 @@ struct EscolherObjetivosMomentoView: View {
                 ForEach(agruparPorCategoria(resultadoBusca), id: \.0) { par in
                     Section {
                         ForEach(par.1, id: \.self) { obj in
-                            ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: false, mostrarPicker: false)
+                            ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), mostrarPicker: false)
                         }
                     } header: {
                         Text(par.0)
@@ -52,9 +52,6 @@ struct EscolherObjetivosMomentoView: View {
             .navigationTitle("Titulo.Disciplina.Nova".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    AlertView(tituloBotao: "Titulo.Cancelar".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Cancelar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Cancelar".localized(), tituloBotaoAlert: "Titulo.Manter".localized(), tituloBotaoSecundarioAlert: "Titulo.Descartar".localized(), cor: .red)
-                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     AlertView(tituloBotao: "Titulo.Concluido".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Adicionar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Adicionar".localized(), tituloBotaoAlert: "Titulo.Editar".localized(), tituloBotaoSecundarioAlert: "Titulo.Salvar".localized(), cor: Color.corDeAcao)
                 }
