@@ -40,6 +40,13 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
     /// Variável que permite saber se deveria mostrar o Picker ou não.
     var mostrarPicker: Bool
     
+    /// Descricao da Data formatada de acordo com como ela foi enviada para o servidor.
+    var dataDescricao: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter.string(from: data)
+    }
+    
     // MARK: - Body da View
     var body: some View {
         Toggle(isOn: $selecao) {
@@ -60,6 +67,13 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
         .toggleStyle(CheckboxToggleStyle(corSelecionada: dto.corCompetencia, corDeselecionada: .secondary))
         .onChange(of: rubricaSelecionada, perform: { newValue in
             viewModel.atualizarObjetivo(titulo: tituloMomento, data: data.description, objetivoID: dto.objetivoID, nivelEsperado: rubricaSelecionada)
+        })
+        .onChange(of: selecao, perform: { newValue in
+            if selecao {
+                viewModel.atualizarMomentoAvaliativo(titulo: tituloMomento, data: dataDescricao, objetivo: ObjetivosPostDisciplinaModel(id: dto.objetivoID, nivelEsperado: rubricaSelecionada.rawValue))
+            } else {
+                viewModel.removerObjetivo(titulo: tituloMomento, data: dataDescricao, objetivoID: dto.objetivoID)
+            }
         })
         .listRowBackground(Color.fundo2)
     }

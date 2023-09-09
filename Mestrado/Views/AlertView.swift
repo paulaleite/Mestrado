@@ -1,5 +1,5 @@
 //
-//  CancelarDisciplinaView.swift
+//  AlertView.swift
 //  Mestrado
 //
 //  Created by Paula Leite on 04/09/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Com essa visualização, é possível interagir com o botão de Cancelar a criação de uma disciplina e abrir o Alert de Confirmação.
-struct CancelarDisciplinaView: View {
+struct AlertView: View {
     // MARK: - Variáveis e Constantes
     @Environment(\.dismiss) var dismiss
     

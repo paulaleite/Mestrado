@@ -67,7 +67,7 @@
 		645F364F2AA6621F004E5A20 /* GetDisciplinaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645F364E2AA6621F004E5A20 /* GetDisciplinaModel.swift */; };
 		645F36512AA66331004E5A20 /* ObjetivoGetPostDisciplinaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645F36502AA66331004E5A20 /* ObjetivoGetPostDisciplinaModel.swift */; };
 		645F36532AA66341004E5A20 /* EstudanteGetPostDisciplinaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645F36522AA66341004E5A20 /* EstudanteGetPostDisciplinaModel.swift */; };
-		645F36552AA67653004E5A20 /* CancelarDisciplinaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645F36542AA67653004E5A20 /* CancelarDisciplinaView.swift */; };
+		645F36552AA67653004E5A20 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645F36542AA67653004E5A20 /* AlertView.swift */; };
 		645F36572AA67701004E5A20 /* AdicionarDisciplinaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645F36562AA67701004E5A20 /* AdicionarDisciplinaView.swift */; };
 		6469D7972A9D1AB600662FDE /* MomentosAvaliativosDetalheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469D7962A9D1AB600662FDE /* MomentosAvaliativosDetalheView.swift */; };
 		6469D79B2A9D29CC00662FDE /* ObjetivoAutoavaliacaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469D79A2A9D29CC00662FDE /* ObjetivoAutoavaliacaoModel.swift */; };
@@ -189,7 +189,7 @@
 		645F364E2AA6621F004E5A20 /* GetDisciplinaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDisciplinaModel.swift; sourceTree = "<group>"; };
 		645F36502AA66331004E5A20 /* ObjetivoGetPostDisciplinaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetivoGetPostDisciplinaModel.swift; sourceTree = "<group>"; };
 		645F36522AA66341004E5A20 /* EstudanteGetPostDisciplinaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstudanteGetPostDisciplinaModel.swift; sourceTree = "<group>"; };
-		645F36542AA67653004E5A20 /* CancelarDisciplinaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelarDisciplinaView.swift; sourceTree = "<group>"; };
+		645F36542AA67653004E5A20 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		645F36562AA67701004E5A20 /* AdicionarDisciplinaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarDisciplinaView.swift; sourceTree = "<group>"; };
 		6469D7962A9D1AB600662FDE /* MomentosAvaliativosDetalheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentosAvaliativosDetalheView.swift; sourceTree = "<group>"; };
 		6469D79A2A9D29CC00662FDE /* ObjetivoAutoavaliacaoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjetivoAutoavaliacaoModel.swift; sourceTree = "<group>"; };
@@ -363,7 +363,6 @@
 				1E2C24012AAB73800001B846 /* AdicionarObjetivosMomentoView.swift */,
 				1E2C24032AAB87120001B846 /* EscolherObjetivosMomentoView.swift */,
 				645F363D2AA63C66004E5A20 /* SectionEstudantesDisciplinaView.swift */,
-				645F36542AA67653004E5A20 /* CancelarDisciplinaView.swift */,
 				645F36562AA67701004E5A20 /* AdicionarDisciplinaView.swift */,
 				1E2C23FD2AAB68430001B846 /* SectionTituloObrigatorioView.swift */,
 				1E2C24052AACBFAA0001B846 /* ObjetivoSelecionadoDisciplinaCellView.swift */,
@@ -487,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				1ED068602A9A6A1C00A05BC9 /* Shapes */,
+				645F36542AA67653004E5A20 /* AlertView.swift */,
 				64C9CD892A97D1F90083B13F /* SectionHeaderView.swift */,
 				64943AAF2A53603D00585CA1 /* ReflexaoItemView.swift */,
 				641EB5132A9E5FFC00D1747B /* ObjetivoSelecaoItemView.swift */,
@@ -787,7 +787,7 @@
 				64195F4D2A99126300490385 /* EstudanteInfoModel.swift in Sources */,
 				6459F3E62A560DE800A66AFD /* +Color.swift in Sources */,
 				64B0F6C82AA0CB4D0066E39B /* LoginViewModel.swift in Sources */,
-				645F36552AA67653004E5A20 /* CancelarDisciplinaView.swift in Sources */,
+				645F36552AA67653004E5A20 /* AlertView.swift in Sources */,
 				642D38C22AA2880800BA2485 /* AutoavaliacaoCompletaSectionView.swift in Sources */,
 				1E7EB6F02A982556003415AE /* ObjetivoEstudanteInfoModel.swift in Sources */,
 				645F36512AA66331004E5A20 /* ObjetivoGetPostDisciplinaModel.swift in Sources */,

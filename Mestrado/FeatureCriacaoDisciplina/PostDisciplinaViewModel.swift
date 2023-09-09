@@ -76,10 +76,24 @@ class PostDisciplinaViewModel: ObservableObject {
     /// - Parameter titulo: Título do Momento Avaliativo.
     /// - Parameter data: Data em que o Momento Avaliativo vai acontecer.
     /// - Parameter objetivos: Objetivos que estão sendo adicionados.
-    func atualizarMomentoAvaliativo(titulo: String, data: String, objetivos: [ObjetivosPostDisciplinaModel]) {
+    func atualizarMomentoAvaliativo(titulo: String, data: String, objetivo: ObjetivosPostDisciplinaModel) {
         for i in 0 ..< self.momentoAvaliativo.count {
             if self.momentoAvaliativo[i].titulo == titulo && self.momentoAvaliativo[i].data == data {
-                self.momentoAvaliativo[i].objetivos = objetivos
+                self.momentoAvaliativo[i].objetivos.append(objetivo)
+            }
+        }
+    }
+    
+    /// Função que remove o Objetivo dos Momentos Avaliativos.
+    /// - Parameter titulo: Títul odo Momento Avaliativo.
+    /// - Parameter data: Data em que o Momento Avaliativo vai acontecer.
+    /// - Parameter objetivoID: Identificador único do objetivo.
+    func removerObjetivo(titulo: String, data: String, objetivoID: String) {
+        for i in 0 ..< self.momentoAvaliativo.count {
+            if self.momentoAvaliativo[i].titulo == titulo && self.momentoAvaliativo[i].data == data {
+                self.momentoAvaliativo[i].objetivos.removeAll {
+                    $0.id == objetivoID
+                }
             }
         }
     }

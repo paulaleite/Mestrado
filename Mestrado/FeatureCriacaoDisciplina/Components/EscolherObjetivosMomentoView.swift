@@ -53,10 +53,10 @@ struct EscolherObjetivosMomentoView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    CancelarDisciplinaView(tituloBotao: "Titulo.Cancelar".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Cancelar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Cancelar".localized(), tituloBotaoAlert: "Titulo.Manter".localized(), tituloBotaoSecundarioAlert: "Titulo.Descartar".localized(), cor: .red)
+                    AlertView(tituloBotao: "Titulo.Cancelar".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Cancelar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Cancelar".localized(), tituloBotaoAlert: "Titulo.Manter".localized(), tituloBotaoSecundarioAlert: "Titulo.Descartar".localized(), cor: .red)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    CancelarDisciplinaView(tituloBotao: "Titulo.Concluido".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Adicionar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Adicionar".localized(), tituloBotaoAlert: "Titulo.Editar".localized(), tituloBotaoSecundarioAlert: "Titulo.Salvar".localized(), cor: Color.corDeAcao)
+                    AlertView(tituloBotao: "Titulo.Concluido".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Adicionar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Adicionar".localized(), tituloBotaoAlert: "Titulo.Editar".localized(), tituloBotaoSecundarioAlert: "Titulo.Salvar".localized(), cor: Color.corDeAcao)
                 }
             }
         }

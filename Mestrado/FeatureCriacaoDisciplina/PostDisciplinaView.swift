@@ -35,7 +35,7 @@ struct PostDisciplinaView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    CancelarDisciplinaView(tituloBotao: "Titulo.Cancelar".localized(), tituloAlert: "Alert.Titulo.Disciplina.Cancelar".localized(), mensageAlert: "Alert.Mensagem.Disciplina.Cancelar".localized(), tituloBotaoAlert: "Titulo.Manter".localized(), tituloBotaoSecundarioAlert: "Titulo.Descartar".localized(), cor: .red)
+                    AlertView(tituloBotao: "Titulo.Cancelar".localized(), tituloAlert: "Alert.Titulo.Disciplina.Cancelar".localized(), mensageAlert: "Alert.Mensagem.Disciplina.Cancelar".localized(), tituloBotaoAlert: "Titulo.Manter".localized(), tituloBotaoSecundarioAlert: "Titulo.Descartar".localized(), cor: .red)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     AdicionarDisciplinaView(dto: AdcDisciplinaDTO(tituloDisciplina: tituloDisciplina))
