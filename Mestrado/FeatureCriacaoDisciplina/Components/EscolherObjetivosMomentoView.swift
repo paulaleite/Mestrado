@@ -49,6 +49,10 @@ struct EscolherObjetivosMomentoView: View {
     }
     
     // MARK: - Funçõoes
+    
+    /// Agrupa os objetivos de acordo com as Competências.
+    /// - Parameter objetivos: Lista de todos os Objetivos de Aprendizado
+    /// - returns: Dicionário de String que representam a Competência e os Objetivos agrupados.
     func agruparPorCategoria(_ objetivos: [ObjetivoGetPostDisciplinaModel]) -> [(String, [ObjetivoGetPostDisciplinaModel])] {
         let agrupado = Dictionary(grouping: objetivos, by: { $0.competencia })
         return agrupado.sorted(by: { $0.key < $1.key })

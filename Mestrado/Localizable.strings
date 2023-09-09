@@ -53,6 +53,8 @@
 "Titulo.Objetivos.Fora.Nivel" = "Objetivos fora do nível esperado";
 "Titulo.Objetivos.Nao.Avaliados" = "Objetivos não avaliados";
 "Titulo.Objetivo.Selecionado" = "Objetivos selecionados";
+"Titulo.Objetivo.Vazio" = "Nenhum objetivo selecionado";
+"Titulo.Objetivo.Adicionar" = "Adicionar Objetivos";
 // Competências
 "Titulo.Competencia" = "Competências";
 // Disciplina

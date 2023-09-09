@@ -20,6 +20,61 @@ struct AdicionarObjetivosMomentoView: View {
     /// Estado que permite determinar se a sheet de seleção de objetivos será apresentada.
     @State var mostrarLista: Bool = false
     
+    // MARK: - Body da View
+    var body: some View {
+        Form {
+            Section {
+                AdicionarObjetivosMomentoCellView(mostrarLista: $mostrarLista)
+                .listRowBackground(Color.fundo2)
+            }
+            
+            
+            ObjetivosMomentoSelecionadosView(tituloMomento: $tituloMomento, data: $data)
+        }
+        .scrollContentBackground(.hidden)
+        .background(Color.fundo1)
+        .sheet(isPresented: $mostrarLista) {
+            EscolherObjetivosMomentoView()
+        }
+        .navigationTitle("Titulo.Objetivo.Adicionar".localized())
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct AdicionarObjetivosMomentoCellView: View {
+    // MARK: - Variáveis e Constantes
+    /// Binding que permite determinar se a sheet de seleção de objetivos será apresentada.
+    @Binding var mostrarLista: Bool
+    
+    // MARK: - Body da View
+    var body: some View {
+        Button {
+            mostrarLista.toggle()
+        } label: {
+            HStack {
+                Text("Descricao.Objetivo.Adicionar".localized())
+                    .foregroundColor(Color.texto1)
+                    .font(.body)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+            }
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+/// Estrutura que representa a Seção para apresentar os Objetivos de Aprendizado selecionados.
+struct ObjetivosMomentoSelecionadosView: View {
+    // MARK: - Variáveis e Constantes
+    @EnvironmentObject var viewModel: PostDisciplinaViewModel
+    
+    /// Binding que contém a String do título do momento avaliativo.
+    @Binding var tituloMomento: String
+    /// Binding que contém a Data selecionada.
+    @Binding var data: Date
+    
     /// Descricao da Data formatada de acordo com como ela foi enviada para o servidor.
     var dataDescricao: String {
         let dateFormatter = DateFormatter()
@@ -40,43 +95,40 @@ struct AdicionarObjetivosMomentoView: View {
     
     // MARK: - Body da View
     var body: some View {
-        Form {
-            Section {
-                Button {
-                    mostrarLista.toggle()
-                } label: {
-                    Text("Descricao.Objetivo.Adicionar".localized())
-                        .foregroundColor(Color.texto1)
-                        .font(.body)
-                }
-                .buttonStyle(.plain)
-                .listRowBackground(Color.fundo2)
-            }
-            
+        Section {
             if !viewModel.momentoAvaliativo[momentoID].objetivos.isEmpty {
-                Section {
-                    ForEach(viewModel.momentoAvaliativo[momentoID].objetivos, id: \.self) { obj in
-                        ForEach(viewModel.objetivosDeAprendizadoDisponiveis, id: \.self) { objDisp in
-                            if obj.id == objDisp.id {
-                                ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(objDisp.corCompetencia), descricao: objDisp.descricao, objetivoID: obj.id))
-                                    .listRowBackground(Color.fundo2)
-                            }
+                ForEach(viewModel.momentoAvaliativo[momentoID].objetivos, id: \.self) { obj in
+                    ForEach(viewModel.objetivosDeAprendizadoDisponiveis, id: \.self) { objDisp in
+                        if obj.id == objDisp.id {
+                            ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(objDisp.corCompetencia), descricao: objDisp.descricao, objetivoID: obj.id))
+                                .listRowBackground(Color.fundo2)
                         }
                     }
-                } header: {
-                    Text("Titulo.Objetivo.Selecionado".localized())
-                        .textCase(.uppercase)
-                        .font(.system(size: 12))
-                        .foregroundColor(Color.texto2)
                 }
+            } else {
+                Text("Titulo.Objetivo.Vazio".localized())
+                    .listRowBackground(Color.fundo2)
             }
-        }
-        .sheet(isPresented: $mostrarLista) {
-            EscolherObjetivosMomentoView()
+        } header: {
+            Text("Titulo.Objetivo.Selecionado".localized())
+                .textCase(.uppercase)
+                .font(.system(size: 12))
+                .foregroundColor(Color.texto2)
         }
     }
 }
 
+/// Variáveis e Constantes que serão utilizadas pelo Item do Objetivo de Aprendizado para construir a visualização.
+struct ObjetivoSelecionadoCellDTO {
+    /// Cor que será utilizada no Círculo que identifica a competência do Objetivo de Aprendizado, bem como na visualização da Rubrica.
+    let corCompetencia: Color
+    /// Detalhamento da descrição do Objetivo de Aprendizado que está sendo apresentado no elemento da lista.
+    let descricao: String
+    /// Objetivo ID
+    var objetivoID: String
+    /// As rubricas disponíveis
+    let rubricas: [Rubrica] = [.naoEstudado, .muitoSatisfeito, .parcialmenteSatisfeito, .nemSatisfeitoNemInsatisfeito, .parcialmenteInsatisfeito, .muitoInsatisfeito]
+}
 
 /// Visualização de um Objetivo de Aprendizado selecionado pelo Professor para fazer parte da Disciplina.
 struct ObjetivoSelecionadoDisciplinaCellView: View {
@@ -113,17 +165,5 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
         })
         .listRowBackground(Color.fundo2)
     }
-}
-
-/// Variáveis e Constantes que serão utilizadas pelo Item do Objetivo de Aprendizado para construir a visualização.
-struct ObjetivoSelecionadoCellDTO {
-    /// Cor que será utilizada no Círculo que identifica a competência do Objetivo de Aprendizado, bem como na visualização da Rubrica.
-    let corCompetencia: Color
-    /// Detalhamento da descrição do Objetivo de Aprendizado que está sendo apresentado no elemento da lista.
-    let descricao: String
-    /// Objetivo ID
-    var objetivoID: String
-    /// As rubricas disponíveis
-    let rubricas: [Rubrica] = [.naoEstudado, .muitoSatisfeito, .parcialmenteSatisfeito, .nemSatisfeitoNemInsatisfeito, .parcialmenteInsatisfeito, .muitoInsatisfeito]
 }
 
