@@ -16,11 +16,13 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
     @Binding var tituloMomento: String
     /// Binding que contém a Data selecionada.
     @Binding var data: Date
+    /// Estado que vai permitir manter o título correto do momento atual.
+    @State var tituloAtual: String = ""
     
     // MARK: - Body da View
     var body: some View {
         Section {
-            MomentosAvaliativosDisciplinaCellView(tituloMomento: $tituloMomento, data: $data)
+            MomentosAvaliativosDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, tituloAtual: $tituloAtual)
                 .listRowBackground(Color.fundo2)
         } header: {
             SectionTituloObrigatorioView(titulo: "Titulo.Info.Momento.Avaliativo".localized())
@@ -28,7 +30,7 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
         
         if !viewModel.momentoAvaliativo.isEmpty {
             Section {
-                MomentosAvaliativosDisciplinaListView(tituloMomento: $tituloMomento, data: $data)
+                MomentosAvaliativosDisciplinaListView(tituloMomento: $tituloAtual, data: $data)
                     .listRowBackground(Color.fundo2)
             } header: {
                 Text("Titulo.Momento.Criado".localized())
@@ -89,6 +91,9 @@ struct MomentosAvaliativosDisciplinaCellView: View {
     /// Binding que contém a Data selecionada.
     @Binding var data: Date
     
+    /// Estado que vai permitir manter o título correto do momento atual.
+    @Binding var tituloAtual: String
+    
     // MARK: - Body da View
     var body: some View {
         HStack {
@@ -106,6 +111,7 @@ struct MomentosAvaliativosDisciplinaCellView: View {
                 dateFormatter.dateFormat = "dd MMM yyyy"
                 let dataString = dateFormatter.string(from: data)
                 viewModel.criarMomentoAvaliativo(titulo: tituloMomento, data: dataString)
+                tituloAtual = tituloMomento
                 tituloMomento = ""
                 data = .now
             } label: {
