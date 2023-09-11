@@ -18,11 +18,13 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
     @Binding var data: Date
     /// Estado que vai permitir manter o título correto do momento atual.
     @State var tituloAtual: String = ""
+    /// Estado que vai permitir manter a data correta do momento atual.
+    @State var dataSelecionada: Date = .now
     
     // MARK: - Body da View
     var body: some View {
         Section {
-            MomentosAvaliativosDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, tituloAtual: $tituloAtual)
+            MomentosAvaliativosDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, tituloAtual: $tituloAtual, dataSelecionada: $dataSelecionada)
                 .listRowBackground(Color.fundo2)
         } header: {
             SectionTituloObrigatorioView(titulo: "Titulo.Info.Momento.Avaliativo".localized())
@@ -30,7 +32,7 @@ struct SectionMomentosAvaliativosDisciplinaView: View {
         
         if !viewModel.momentoAvaliativo.isEmpty {
             Section {
-                MomentosAvaliativosDisciplinaListView(tituloMomento: $tituloAtual, data: $data)
+                MomentosAvaliativosDisciplinaListView(tituloMomento: $tituloAtual, data: $dataSelecionada)
                     .listRowBackground(Color.fundo2)
             } header: {
                 Text("Titulo.Momento.Criado".localized())
@@ -93,6 +95,8 @@ struct MomentosAvaliativosDisciplinaCellView: View {
     
     /// Estado que vai permitir manter o título correto do momento atual.
     @Binding var tituloAtual: String
+    /// Estado que vai permitir manter a data correta do momento atual.
+    @Binding var dataSelecionada: Date
     
     // MARK: - Body da View
     var body: some View {
@@ -110,9 +114,12 @@ struct MomentosAvaliativosDisciplinaCellView: View {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd MMM yyyy"
                 let dataString = dateFormatter.string(from: data)
-                viewModel.criarMomentoAvaliativo(titulo: tituloMomento, data: dataString)
+                if tituloMomento != "" {
+                    viewModel.criarMomentoAvaliativo(titulo: tituloMomento, data: dataString)
+                }
                 tituloAtual = tituloMomento
                 tituloMomento = ""
+                dataSelecionada = data
                 data = .now
             } label: {
                 Image(systemName: "plus.circle")

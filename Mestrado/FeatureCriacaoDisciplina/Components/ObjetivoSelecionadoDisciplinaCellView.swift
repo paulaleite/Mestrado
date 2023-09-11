@@ -32,7 +32,7 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
     let dto: ObjetivoSelecionadoCellDTO
     
     /// Binding que representa a seleção e deseleação do Estudante na Disciplina.
-    @State var selecao: Bool = true
+    @State var selecao: Bool
     
     /// A Rubrica escolhida pelo Estudante para o Objetivo de Aprendizado que está sendo apresentado no elemento da lista ou o Nível escolhido pelo Professor.
     @State var rubricaSelecionada: Rubrica = .naoEstudado

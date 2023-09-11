@@ -30,6 +30,42 @@ struct EscolherObjetivosMomentoView: View {
         }
     }
     
+    /// Descricao da Data formatada de acordo com como ela foi enviada para o servidor.
+    var dataDescricao: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter.string(from: data)
+    }
+    
+    /// Identificador do momento avaliativo atual que está sendo atualizado.
+    var momentoID: Int {
+        var id: Int = 0
+        for i in 0 ..< viewModel.momentoAvaliativo.count {
+            if viewModel.momentoAvaliativo[i].titulo == tituloMomento && viewModel.momentoAvaliativo[i].data == dataDescricao {
+                id = i
+            }
+        }
+        return id
+    }
+    
+    var objetivoSelecionado: Bool {
+        var resultado: Bool = false
+        
+        for par in agruparPorCategoria(resultadoBusca) {
+            for obj in par.1 {
+                for objetivo in viewModel.momentoAvaliativo[momentoID].objetivos {
+                    if obj.id == objetivo.id {
+                        resultado = true
+                    } else {
+                        resultado = false
+                    }
+                }
+            }
+        }
+        
+        return resultado
+    }
+    
     // MARK: - Body da View
     var body: some View {
         NavigationStack {
@@ -37,7 +73,7 @@ struct EscolherObjetivosMomentoView: View {
                 ForEach(agruparPorCategoria(resultadoBusca), id: \.0) { par in
                     Section {
                         ForEach(par.1, id: \.self) { obj in
-                            ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), mostrarPicker: false)
+                            ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: objetivoSelecionado, mostrarPicker: false)
                         }
                     } header: {
                         Text(par.0)

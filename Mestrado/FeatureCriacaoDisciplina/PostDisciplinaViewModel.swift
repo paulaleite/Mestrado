@@ -79,7 +79,13 @@ class PostDisciplinaViewModel: ObservableObject {
     func atualizarMomentoAvaliativo(titulo: String, data: String, objetivo: ObjetivosPostDisciplinaModel) {
         for i in 0 ..< self.momentoAvaliativo.count {
             if self.momentoAvaliativo[i].titulo == titulo && self.momentoAvaliativo[i].data == data {
-                self.momentoAvaliativo[i].objetivos.append(objetivo)
+                if self.momentoAvaliativo[i].objetivos.count != 0 {
+                    if !(self.momentoAvaliativo[i].objetivos.contains(where: { $0.id == objetivo.id })) {
+                        self.momentoAvaliativo[i].objetivos.append(objetivo)
+                    }
+                } else {
+                    self.momentoAvaliativo[i].objetivos.append(objetivo)
+                }
             }
         }
     }
