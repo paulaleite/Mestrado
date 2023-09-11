@@ -73,7 +73,11 @@ struct EscolherObjetivosMomentoView: View {
                 ForEach(agruparPorCategoria(resultadoBusca), id: \.0) { par in
                     Section {
                         ForEach(par.1, id: \.self) { obj in
-                            ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: objetivoSelecionado, mostrarPicker: false)
+                            if viewModel.momentoAvaliativo[momentoID].objetivos.contains(where: { $0.id == obj.id }) {
+                                ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: true, mostrarPicker: false)
+                            } else {
+                                ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: false, mostrarPicker: false)
+                            }
                         }
                     } header: {
                         Text(par.0)

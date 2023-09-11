@@ -31,7 +31,7 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
     
     let dto: ObjetivoSelecionadoCellDTO
     
-    /// Binding que representa a seleção e deseleação do Estudante na Disciplina.
+    /// Estado que representa a seleção e deseleação do Estudante na Disciplina.
     @State var selecao: Bool
     
     /// A Rubrica escolhida pelo Estudante para o Objetivo de Aprendizado que está sendo apresentado no elemento da lista ou o Nível escolhido pelo Professor.
@@ -69,7 +69,7 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
             viewModel.atualizarObjetivo(titulo: tituloMomento, data: data.description, objetivoID: dto.objetivoID, nivelEsperado: rubricaSelecionada)
         })
         .onChange(of: selecao, perform: { newValue in
-            if selecao {
+            if newValue {
                 viewModel.atualizarMomentoAvaliativo(titulo: tituloMomento, data: dataDescricao, objetivo: ObjetivosPostDisciplinaModel(id: dto.objetivoID, nivelEsperado: rubricaSelecionada.rawValue))
             } else {
                 viewModel.removerObjetivo(titulo: tituloMomento, data: dataDescricao, objetivoID: dto.objetivoID)
