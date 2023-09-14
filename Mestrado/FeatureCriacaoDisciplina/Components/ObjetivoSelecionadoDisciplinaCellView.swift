@@ -49,7 +49,23 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
     
     // MARK: - Body da View
     var body: some View {
-        Toggle(isOn: $selecao) {
+        HStack {
+            Toggle(isOn: $selecao) {
+                if !mostrarPicker {
+                    Text("\(dto.descricao)")
+                        .foregroundColor(Color.texto1)
+                        .font(.body)
+                }
+            }
+            .toggleStyle(CheckboxToggleStyle(corSelecionada: dto.corCompetencia, corDeselecionada: .secondary))
+            .onChange(of: selecao, perform: { newValue in
+                if newValue {
+                    viewModel.atualizarMomentoAvaliativo(titulo: tituloMomento, data: dataDescricao, objetivo: ObjetivosPostDisciplinaModel(id: dto.objetivoID, nivelEsperado: rubricaSelecionada.rawValue))
+                } else {
+                    viewModel.removerObjetivo(titulo: tituloMomento, data: dataDescricao, objetivoID: dto.objetivoID)
+                }
+            })
+            
             if mostrarPicker {
                 Picker("\(dto.descricao)", selection: $rubricaSelecionada) {
                     ForEach(dto.rubricas, id: \.self) {
@@ -58,23 +74,11 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
                 }
                 .tint(Color.texto2)
                 .pickerStyle(.menu)
-            } else {
-                Text("\(dto.descricao)")
-                    .foregroundColor(Color.texto1)
-                    .font(.body)
+                .onChange(of: rubricaSelecionada, perform: { newValue in
+                    viewModel.atualizarObjetivo(titulo: tituloMomento, data: data.description, objetivoID: dto.objetivoID, nivelEsperado: rubricaSelecionada)
+                })
             }
         }
-        .toggleStyle(CheckboxToggleStyle(corSelecionada: dto.corCompetencia, corDeselecionada: .secondary))
-        .onChange(of: rubricaSelecionada, perform: { newValue in
-            viewModel.atualizarObjetivo(titulo: tituloMomento, data: data.description, objetivoID: dto.objetivoID, nivelEsperado: rubricaSelecionada)
-        })
-        .onChange(of: selecao, perform: { newValue in
-            if newValue {
-                viewModel.atualizarMomentoAvaliativo(titulo: tituloMomento, data: dataDescricao, objetivo: ObjetivosPostDisciplinaModel(id: dto.objetivoID, nivelEsperado: rubricaSelecionada.rawValue))
-            } else {
-                viewModel.removerObjetivo(titulo: tituloMomento, data: dataDescricao, objetivoID: dto.objetivoID)
-            }
-        })
         .listRowBackground(Color.fundo2)
     }
 }
