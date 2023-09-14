@@ -73,9 +73,19 @@ struct MomentosAvaliativosDisciplinaListView: View {
                     
                     Spacer()
                     
-                    Text("Adicionar algo")
-                        .foregroundColor(Color.texto2)
-                        .font(.system(size: 17))
+                    if momento.objetivos.count == 0 {
+                        Text("Titulo.Objetivo.Adicionar".localized())
+                            .foregroundColor(Color.texto2)
+                            .font(.system(size: 17))
+                    } else if momento.objetivos.count == 1 {
+                        Text("\(momento.objetivos.count) " + "Titulo.Objetivo".localized())
+                            .foregroundColor(Color.texto2)
+                            .font(.system(size: 17))
+                    } else {
+                        Text("\(momento.objetivos.count) " + "Titulo.Objetivos.Plural".localized())
+                            .foregroundColor(Color.texto2)
+                            .font(.system(size: 17))
+                    }
                 }
                 .padding(.vertical, 3)
             }

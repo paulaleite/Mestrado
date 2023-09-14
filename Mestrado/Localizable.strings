@@ -55,6 +55,8 @@
 "Titulo.Objetivo.Selecionado" = "Objetivos selecionados";
 "Titulo.Objetivo.Vazio" = "Nenhum objetivo selecionado";
 "Titulo.Objetivo.Adicionar" = "Adicionar Objetivos";
+"Titulo.Objetivo" = "Objetivo";
+"Titulo.Objetivos.Plural" = "Objetivos";
 // Competências
 "Titulo.Competencia" = "Competências";
 // Disciplina
