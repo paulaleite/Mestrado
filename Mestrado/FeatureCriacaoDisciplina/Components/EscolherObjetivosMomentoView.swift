@@ -11,9 +11,12 @@ import SwiftUI
 struct EscolherObjetivosMomentoView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: PostDisciplinaViewModel
+    @Environment(\.dismiss) var dismiss
     
     /// Texto da busca que vai ser atualizado sempre que o usuário mudá-lo.
     @State var textoBusca: String = ""
+    /// Estado que permite aparecer o Alert de Cancelamento.
+    @State var mostrarConfirmacao = false
     
     /// Momento Avaliativo selecionado.
     var momento: MomentoAvaliativoPostDisciplinaModel
@@ -43,7 +46,19 @@ struct EscolherObjetivosMomentoView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    AlertView(tituloBotao: "Titulo.Concluido".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Adicionar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Adicionar".localized(), tituloBotaoAlert: "Titulo.Editar".localized(), tituloBotaoSecundarioAlert: "Titulo.Salvar".localized(), cor: Color.corDeAcao)
+                    Button {
+                        mostrarConfirmacao.toggle()
+                    } label: {
+                        Text("Titulo.Concluido".localized())
+                            .foregroundColor(Color.corDeAcao)
+                    }
+                    .alert(isPresented: $mostrarConfirmacao) {
+                        Alert(title: Text("Alert.Titulo.Objetivos.Adicionar.Adicionar".localized()), message: Text("Alert.Mensagem.Objetivos.Adicionar.Adicionar".localized()), primaryButton: .cancel(Text("Titulo.Editar".localized())), secondaryButton: .default(Text("Titulo.Salvar".localized())) {
+                            dismiss()
+                        })
+                    }
+                    
+//                    AlertView(tituloBotao: "Titulo.Concluido".localized(), tituloAlert: "Alert.Titulo.Objetivos.Adicionar.Adicionar".localized(), mensageAlert: "Alert.Mensagem.Objetivos.Adicionar.Adicionar".localized(), tituloBotaoAlert: "Titulo.Editar".localized(), tituloBotaoSecundarioAlert: "Titulo.Salvar".localized(), cor: Color.corDeAcao)
                 }
             }
         }
