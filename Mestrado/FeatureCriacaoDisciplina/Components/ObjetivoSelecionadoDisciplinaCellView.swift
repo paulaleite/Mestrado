@@ -25,9 +25,9 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
     @EnvironmentObject var viewModel: PostDisciplinaViewModel
     
     /// Binding que contém a String do título do momento avaliativo.
-    @Binding var tituloMomento: String
+    var tituloMomento: String
     /// Binding que contém a Data selecionada.
-    @Binding var data: Date
+    var data: Date
     
     let dto: ObjetivoSelecionadoCellDTO
     

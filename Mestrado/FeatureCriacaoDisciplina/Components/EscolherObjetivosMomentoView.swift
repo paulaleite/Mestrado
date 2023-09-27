@@ -7,15 +7,48 @@
 
 import SwiftUI
 
+struct EscolherObjetivosMomentoSectionView: View {
+    var momento: MomentoAvaliativoPostDisciplinaModel
+    
+    var par: (String, [ObjetivoGetPostDisciplinaModel])
+    
+    var data: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        guard let dataUnwrapped = dateFormatter.date(from: momento.data) else {
+            return .now
+        }
+        return dataUnwrapped
+    }
+    
+    var body: some View {
+        Section {
+            ForEach(par.1, id: \.self) { obj in
+                if momento.objetivos.contains(where: { $0.id == obj.id }) {
+                    ObjetivoSelecionadoDisciplinaCellView(tituloMomento: momento.titulo, data: data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: true, mostrarPicker: false)
+                } else {
+                    ObjetivoSelecionadoDisciplinaCellView(tituloMomento: momento.titulo, data: data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: false, mostrarPicker: false)
+                }
+            }
+        } header: {
+            Text(par.0)
+                .font(.system(size: 11))
+                .foregroundColor(Color.texto2)
+        }
+    }
+}
+
 /// Visualização que permite o Professor encontrar todos os Objetivos de Aprendizado disponíveis para serem selecionados.
 struct EscolherObjetivosMomentoView: View {
     // MARK: - Variáveis e Constantes
     @EnvironmentObject var viewModel: PostDisciplinaViewModel
     
+    var momento: MomentoAvaliativoPostDisciplinaModel
+    
     /// Binding que contém a String do título do momento avaliativo.
-    @Binding var tituloMomento: String
-    /// Binding que contém a Data selecionada.
-    @Binding var data: Date
+//    @Binding var tituloMomento: String
+//    /// Binding que contém a Data selecionada.
+//    @Binding var data: Date
     
     /// Texto da busca que vai ser atualizado sempre que o usuário mudá-lo.
     @State var textoBusca: String = ""
@@ -31,29 +64,29 @@ struct EscolherObjetivosMomentoView: View {
     }
     
     /// Descricao da Data formatada de acordo com como ela foi enviada para o servidor.
-    var dataDescricao: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy"
-        return dateFormatter.string(from: data)
-    }
+//    var dataDescricao: String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd MMM yyyy"
+//        return dateFormatter.string(from: data)
+//    }
     
     /// Identificador do momento avaliativo atual que está sendo atualizado.
-    var momentoID: Int {
-        var id: Int = 0
-        for i in 0 ..< viewModel.momentoAvaliativo.count {
-            if viewModel.momentoAvaliativo[i].titulo == tituloMomento && viewModel.momentoAvaliativo[i].data == dataDescricao {
-                id = i
-            }
-        }
-        return id
-    }
+//    var momentoID: Int {
+//        var id: Int = 0
+//        for i in 0 ..< viewModel.momentoAvaliativo.count {
+//            if viewModel.momentoAvaliativo[i].titulo == tituloMomento && viewModel.momentoAvaliativo[i].data == dataDescricao {
+//                id = i
+//            }
+//        }
+//        return id
+//    }
     
     var objetivoSelecionado: Bool {
         var resultado: Bool = false
         
         for par in agruparPorCategoria(resultadoBusca) {
             for obj in par.1 {
-                for objetivo in viewModel.momentoAvaliativo[momentoID].objetivos {
+                for objetivo in momento.objetivos {
                     if obj.id == objetivo.id {
                         resultado = true
                     } else {
@@ -71,19 +104,7 @@ struct EscolherObjetivosMomentoView: View {
         NavigationStack {
             List {
                 ForEach(agruparPorCategoria(resultadoBusca), id: \.0) { par in
-                    Section {
-                        ForEach(par.1, id: \.self) { obj in
-                            if viewModel.momentoAvaliativo[momentoID].objetivos.contains(where: { $0.id == obj.id }) {
-                                ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: true, mostrarPicker: false)
-                            } else {
-                                ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(obj.corCompetencia), descricao: obj.descricao, objetivoID: obj.id), selecao: false, mostrarPicker: false)
-                            }
-                        }
-                    } header: {
-                        Text(par.0)
-                            .font(.system(size: 11))
-                            .foregroundColor(Color.texto2)
-                    }
+                    EscolherObjetivosMomentoSectionView(momento: momento, par: par)
                 }
             }
             .searchable(text: $textoBusca)
