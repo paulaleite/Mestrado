@@ -34,7 +34,7 @@ struct AdicionarDisciplinaView: View {
             Text("Titulo.Concluido".localized())
                 .foregroundColor((dto.tituloDisciplina == "" || viewModel.momentoAvaliativo.isEmpty || viewModel.estudantes.isEmpty) ? Color.texto2 : Color.corDeAcao)
         }
-        .disabled((dto.tituloDisciplina == "" || viewModel.momentoAvaliativo.isEmpty || viewModel.estudantes.isEmpty) ? true : false)
+        .disabled(verficiarDisponibilidade())
         .alert(isPresented: $mostrarAlert) {
             Alert(title: Text("Alert.Titulo.Disciplina.Adicionar".localized()), message: Text("Alert.Mensagem.Disciplina.Adicionar".localized()), primaryButton: .default(Text("Titulo.Editar".localized())), secondaryButton: .default(Text("Titulo.Salvar".localized())) {
                 dismiss()
@@ -46,5 +46,21 @@ struct AdicionarDisciplinaView: View {
                 }
             })
         }
+    }
+    
+    func verficiarDisponibilidade() -> Bool {
+        if !viewModel.momentoAvaliativo.isEmpty {
+            for momento in viewModel.momentoAvaliativo {
+                if momento.objetivos.isEmpty {
+                    return true
+                }
+            }
+        }
+        
+        if dto.tituloDisciplina == "" || viewModel.estudantes.isEmpty || viewModel.momentoAvaliativo.isEmpty {
+            return true
+        }
+        
+        return false
     }
 }
