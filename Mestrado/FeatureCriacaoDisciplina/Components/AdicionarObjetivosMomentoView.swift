@@ -102,21 +102,6 @@ struct ObjetivosMomentoSelecionadosView: View {
                     }
                 }
             }
-//            if !viewModel.momentoAvaliativo[momentoID].objetivos.isEmpty {
-//                ForEach(viewModel.momentoAvaliativo[momentoID].objetivos, id: \.self) { obj in
-//                    ForEach(viewModel.objetivosDeAprendizadoDisponiveis, id: \.self) { objDisp in
-//                        if obj.id == objDisp.id {
-//                            ObjetivoSelecionadoDisciplinaCellView(tituloMomento: $tituloMomento, data: $data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(objDisp.corCompetencia), descricao: objDisp.descricao, objetivoID: obj.id), selecao: true, mostrarPicker: true)
-//                                .listRowBackground(Color.fundo2)
-//                        }
-//                    }
-//                }
-//            } else {
-//                Text("Titulo.Objetivo.Vazio".localized())
-//                    .foregroundColor(Color.texto1)
-//                    .font(.body)
-//                    .listRowBackground(Color.fundo2)
-//            }
         } header: {
             Text("Titulo.Objetivo.Selecionado".localized())
                 .textCase(.uppercase)

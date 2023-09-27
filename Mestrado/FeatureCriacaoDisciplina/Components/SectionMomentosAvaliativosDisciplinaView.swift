@@ -51,7 +51,13 @@ struct MomentosAvaliativosDisciplinaListView: View {
     
     // MARK: - Body da View
     var body: some View {
-        ForEach(viewModel.momentoAvaliativo, id: \.self) { momento in
+        ForEach(viewModel.momentoAvaliativo.sorted {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            let data1 = dateFormatter.date(from: $0.data)!
+            let data2 = dateFormatter.date(from: $1.data)!
+            return data1 < data2
+        }, id: \.self) { momento in
             NavigationLink {
                 AdicionarObjetivosMomentoView(momento: momento)
             } label: {
@@ -85,6 +91,13 @@ struct MomentosAvaliativosDisciplinaListView: View {
                 .padding(.vertical, 3)
             }
         }
+        .onDelete(perform: removerItem)
+    }
+    
+    func removerItem(at offsets: IndexSet) {
+        for i in offsets.makeIterator() {
+            viewModel.removerMomentoAvaliativo(momentoAvaliativo: viewModel.momentoAvaliativo[i])
+        }
     }
 }
 
@@ -115,21 +128,26 @@ struct MomentosAvaliativosDisciplinaCellView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
-            Button {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd MMM yyyy"
-                let dataString = dateFormatter.string(from: data)
-                if tituloMomento != "" {
-                    viewModel.criarMomentoAvaliativo(titulo: tituloMomento, data: dataString)
+            VStack {
+                Button {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd MMM yyyy"
+                    let dataString = dateFormatter.string(from: data)
+                    if tituloMomento != "" {
+                        viewModel.criarMomentoAvaliativo(titulo: tituloMomento, data: dataString)
+                    }
+                    tituloAtual = tituloMomento
+                    tituloMomento = ""
+                    dataSelecionada = data
+                    data = .now
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .foregroundColor(Color.corDeAcao)
                 }
-                tituloAtual = tituloMomento
-                tituloMomento = ""
-                dataSelecionada = data
-                data = .now
-            } label: {
-                Image(systemName: "plus.circle")
-                    .foregroundColor(Color.corDeAcao)
+                .buttonStyle(BorderlessButtonStyle())
+
             }
+            
         }
     }
 }

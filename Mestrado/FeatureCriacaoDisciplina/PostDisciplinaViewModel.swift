@@ -104,6 +104,14 @@ class PostDisciplinaViewModel: ObservableObject {
         }
     }
     
+    func removerMomentoAvaliativo(momentoAvaliativo: MomentoAvaliativoPostDisciplinaModel) {
+        
+        self.momentoAvaliativo.removeAll {
+            $0.titulo == momentoAvaliativo.titulo && $0.data == momentoAvaliativo.data
+        }
+             
+    }
+    
     /// Função que permite atualizar a rubrica selecionada do Objetivo de Aaprendizado dentro de um Momento Avaliativo
     /// - Parameter titulo: Título do Momento Avaliativo.
     /// - Parameter data: Data em que o Momento Aavaliativo vai acontecer
@@ -125,8 +133,18 @@ class PostDisciplinaViewModel: ObservableObject {
     /// - Parameter titulo: Título do Momento Avaliativo.
     /// - Parameter data: Data em que o Momento Avaliativo vai acontecer.
     func criarMomentoAvaliativo(titulo: String, data: String) {
-        let momento = MomentoAvaliativoPostDisciplinaModel(titulo: titulo, data: data, objetivos: [])
-        self.momentoAvaliativo.append(momento)
+        if !momentoAvaliativo.isEmpty {
+            for momento in momentoAvaliativo {
+                if momento.titulo == titulo && momento.data == data {
+                    return
+                }
+            }
+            let momento = MomentoAvaliativoPostDisciplinaModel(titulo: titulo, data: data, objetivos: [])
+            self.momentoAvaliativo.append(momento)
+        } else {
+            let momento = MomentoAvaliativoPostDisciplinaModel(titulo: titulo, data: data, objetivos: [])
+            self.momentoAvaliativo.append(momento)
+        }
     }
     
     /// Função que atuailiza as variáveis @Published com as informações selecionadas pelo Professor.
