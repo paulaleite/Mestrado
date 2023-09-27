@@ -145,3 +145,6 @@
 
 "Alert.Titulo.Objetivos.Adicionar.Adicionar" = "Adicionar objetivos";
 "Alert.Mensagem.Objetivos.Adicionar.Adicionar" = "Com essa ação, os objetivos serão adicionados no momento avaliativo.";
+
+"Alert.Titulo.Estudantes.Adicionar" = "Adicionar estudantes";
+"Alert.Mensagem.Objetivos.Adicionar" = "Com essa ação, os estudantes serão adicionados à disciplina.";

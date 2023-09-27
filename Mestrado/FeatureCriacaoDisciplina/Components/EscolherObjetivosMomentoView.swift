@@ -28,24 +28,6 @@ struct EscolherObjetivosMomentoView: View {
         }
     }
     
-    var objetivoSelecionado: Bool {
-        var resultado: Bool = false
-        
-        for par in agruparPorCategoria(resultadoBusca) {
-            for obj in par.1 {
-                for objetivo in momento.objetivos {
-                    if obj.id == objetivo.id {
-                        resultado = true
-                    } else {
-                        resultado = false
-                    }
-                }
-            }
-        }
-        
-        return resultado
-    }
-    
     // MARK: - Body da View
     var body: some View {
         NavigationStack {

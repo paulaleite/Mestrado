@@ -104,12 +104,12 @@ class PostDisciplinaViewModel: ObservableObject {
         }
     }
     
+    /// Função que remove o Momento Avaliativo.
+    /// - Parameter momentoAvaliativo: Momento Avaliativo, no tipo Momento Avaliativo Post Disciplina Model
     func removerMomentoAvaliativo(momentoAvaliativo: MomentoAvaliativoPostDisciplinaModel) {
-        
         self.momentoAvaliativo.removeAll {
             $0.titulo == momentoAvaliativo.titulo && $0.data == momentoAvaliativo.data
         }
-             
     }
     
     /// Função que permite atualizar a rubrica selecionada do Objetivo de Aaprendizado dentro de um Momento Avaliativo
@@ -158,5 +158,28 @@ class PostDisciplinaViewModel: ObservableObject {
             estudantesAtualizados.append(EstudantePostDisciplinaModel(id: estudante.id))
         }
         self.disciplina = PostDisciplinaModel(titulo: titulo, momentoAvaliativo: self.momentoAvaliativo, estudantes: estudantesAtualizados)
+    }
+    
+    /// Função que adiciona um Estudante na lista de Estudantes da Disciplina.
+    /// - Parameter estudante: Estudante do tipo Estudante Get Post Disciplina Model
+    func criarEstudante(estudante: EstudanteGetPostDisciplinaModel) {
+        if !estudantes.isEmpty {
+            for est in estudantes {
+                if est.id == estudante.id {
+                    return
+                }
+            }
+            self.estudantes.append(estudante)
+        } else {
+            self.estudantes.append(estudante)
+        }
+    }
+    
+    /// Função que remove um Estudante na lista de Estudantes da Disciplina.
+    /// - Parameter estudante: Estudante do tipo Estudante Get Post Disciplina Model
+    func removerEstudante(estudante: EstudanteGetPostDisciplinaModel) {
+        self.estudantes.removeAll {
+            $0.id == estudante.id
+        }
     }
 }
