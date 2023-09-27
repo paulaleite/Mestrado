@@ -89,7 +89,7 @@ struct ObjetivosMomentoSelecionadosView: View {
                         ForEach(momentoAvaliativo.objetivos, id: \.self) { obj in
                             ForEach(viewModel.objetivosDeAprendizadoDisponiveis, id: \.self) { objDisp in
                                 if obj.id == objDisp.id {
-                                    ObjetivoSelecionadoDisciplinaCellView(tituloMomento: momentoAvaliativo.titulo, data: data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(objDisp.corCompetencia), descricao: objDisp.descricao, objetivoID: obj.id), selecao: true, mostrarPicker: true)
+                                    ObjetivoSelecionadoDisciplinaCellView(tituloMomento: momentoAvaliativo.titulo, data: data, dto: ObjetivoSelecionadoCellDTO(corCompetencia: Color(objDisp.corCompetencia), descricao: objDisp.descricao, objetivoID: obj.id, rubrica: Rubrica(rawValue: obj.nivelEsperado)), selecao: true, mostrarPicker: true)
                                         .listRowBackground(Color.fundo2)
                                 }
                             }

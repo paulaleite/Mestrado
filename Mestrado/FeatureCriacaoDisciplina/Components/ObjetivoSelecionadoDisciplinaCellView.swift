@@ -15,6 +15,8 @@ struct ObjetivoSelecionadoCellDTO {
     let descricao: String
     /// Objetivo ID
     var objetivoID: String
+    /// Rubrica vindo do banco
+    var rubrica: Rubrica?
     /// As rubricas disponíveis
     let rubricas: [Rubrica] = [.naoEstudado, .muitoSatisfeito, .parcialmenteSatisfeito, .nemSatisfeitoNemInsatisfeito, .parcialmenteInsatisfeito, .muitoInsatisfeito]
 }
@@ -66,6 +68,7 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
                 }
             })
             
+            
             if mostrarPicker {
                 Picker("\(dto.descricao)", selection: $rubricaSelecionada) {
                     ForEach(dto.rubricas, id: \.self) {
@@ -75,8 +78,16 @@ struct ObjetivoSelecionadoDisciplinaCellView: View {
                 .tint(Color.texto2)
                 .pickerStyle(.menu)
                 .onChange(of: rubricaSelecionada, perform: { newValue in
-                    viewModel.atualizarObjetivo(titulo: tituloMomento, data: data.description, objetivoID: dto.objetivoID, nivelEsperado: rubricaSelecionada)
+                    viewModel.atualizarObjetivo(titulo: tituloMomento, data: dataDescricao, objetivoID: dto.objetivoID, nivelEsperado: rubricaSelecionada)
                 })
+            }
+            
+        }
+        .onAppear {
+            if let rubrica = dto.rubrica {
+                if rubrica.rawValue != 0 {
+                    rubricaSelecionada = rubrica
+                }
             }
         }
         .listRowBackground(Color.fundo2)
