@@ -1,0 +1,56 @@
+{
+    "objetivos": [
+        {
+            "id": "1",
+            "descricao": "Possuam sólida formação em Ciência da Computação e Matemática que os capacitem a construir aplicativos de propósito geral, ferramentas e infraestrutura de software de sistemas de computação e de sistemas embarcados, gerar conhecimento científico e inovação e que os incentivem a estender suas competências à medida que a área se desenvolve.",
+            "corCompetencia": "Competencia1",
+            "competencia": "Visão Geral"
+        },
+        {
+            "id": "2",
+            "descricao": "Adquiram visão global e interdisciplinar de sistemas e entendam que esta visão transcende os detalhes de implementação dos vários componentes e os conhecimentos dos domínios de aplicação.",
+            "corCompetencia": "Competencia1",
+            "competencia": "Visão Geral"
+        },
+        {
+            "id": "3",
+            "descricao": " Conheçam a estrutura dos sistemas de computação e os processos envolvidos na sua construção e análise.",
+            "corCompetencia": "Competencia1",
+            "competencia": "Visão Geral"
+        },
+        {
+            "id": "4",
+            "descricao": "Concepção, justificativa e objetivos gerais e específicos do curso, contextualizados em relação às suas inserções institucional, política, geográfica e social.",
+            "corCompetencia": "Competencia2",
+            "competencia": "Elementos Fundamentais"
+        },
+        {
+            "id": "5",
+            "descricao": "Condições objetivas de oferta e a vocação do curso.",
+            "corCompetencia": "Competencia2",
+            "competencia": "Elementos Fundamentais"
+        }
+    ],
+    "estudantes": [
+        {
+            "id": "1",
+            "nome": "Katarina de Silva Cardoso",
+            "numIdentificacao": 72208570
+        },
+        {
+            "id": "2",
+            "nome": "Rebeca da Luz",
+            "numIdentificacao": 12348593
+        },
+        {
+            "id": "3",
+            "nome": "Luiz Miguel Cavalcanti",
+            "numIdentificacao": 12457890
+        },
+        {
+            "id": "4",
+            "nome": "Maria Cecília Almeida",
+            "numIdentificacao": 5466786
+        }
+    ]
+}

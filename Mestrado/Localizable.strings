@@ -8,6 +8,7 @@
 
 // MARK: Títulos
 
+"Titulo" = "Título";
 // Ações
 "Titulo.Cancelar" = "Cancelar";
 "Titulo.Continuar" = "Continuar";
@@ -35,6 +36,13 @@
 "Titulo.Momento" = "Momento";
 "Titulo.Momento.Plural" = "Momentos";
 "Titulo.Momentos.Todos" = "Todos os Momentos";
+"Titulo.Momento.Avaliativo.Plural" = "Momentos de Avaliação";
+"Titulo.Momento.Avaliativo" = "Título do Momento de Avaliação";
+"Titulo.Info.Momento.Avaliativo" = "Informações Momentos de Avaliação";
+"Titulo.Momento.Criado" = "Momentos de Avaliação Criados";
+// Estudante
+"Titulo.Estudante.Plural" = "Estudantes";
+"Titulo.Estudante.Adicionado" = "Estudantes Adicionados";
 // Data
 "Titulo.Data" = "Data";
 // Reflexão
@@ -44,10 +52,17 @@
 "Titulo.Objetivo.Plural" = "Objetivos de Aprendizado";
 "Titulo.Objetivos.Fora.Nivel" = "Objetivos fora do nível esperado";
 "Titulo.Objetivos.Nao.Avaliados" = "Objetivos não avaliados";
+"Titulo.Objetivo.Selecionado" = "Objetivos selecionados";
+"Titulo.Objetivo.Vazio" = "Nenhum objetivo selecionado";
+"Titulo.Objetivo.Adicionar" = "Adicionar Objetivos";
+"Titulo.Objetivo" = "Objetivo";
+"Titulo.Objetivos.Plural" = "Objetivos";
 // Competências
 "Titulo.Competencia" = "Competências";
 // Disciplina
 "Titulo.Disciplina.Plural" = "Disciplinas";
+"Titulo.Titulo.Disciplina" = "Título da Disciplina";
+"Titulo.Disciplina.Nova" = "Nova Disciplina";
 // Login
 "Titulo.Tipo" = "Quem é você?";
 "Titulo.Usuario" = "Usuário";
@@ -57,6 +72,8 @@
 // Estatistica
 "Titulo.Estatistica.Plural" = "Estatísticas";
 "Titulo.VisaoGeral" = "Visão Geral";
+// Identificacao
+"Titulo.Numero.Identificacao" = "Número de Identificação: ";
 // Segmented Control
 "Titulo.Todos" = "Todos";
 "Titulo.Sem.Avaliacao" = "Inexplorado";
@@ -100,6 +117,10 @@
 "Descricao.Filtro.Sem.Avaliacao" = "Contemplado a partir de 2 objetivos de aprendizado sem avaliação e, após, pelo menos, 1 auto-avaliação.";
 "Descricao.Filtro.Abaixo.Nivel" = "Cotemplado quando, pelo menos, 2 auto-avaliações de um objetivo de aprendizado foram executadas abaixo do nível esperado.";
 "Descricao.Filtro.Acima.Nivel" = "Contemplado quando, pelo menos, 2 auto-avaliações de um objetivo de aprendizado foram executadas acima do nível esperado.";
+// Estudante
+"Descricao.Estudante.Adicionar" = "Adicionar Estudantes";
+// Objetivos
+"Descricao.Objetivo.Adicionar" = "Adicionar Objetivos";
 
 // MARK: Alerts
 "Alert.Titulo.Avaliacao.Cancelar" = "Descartar autoavaliação";
@@ -112,3 +133,18 @@
 
 "Alert.Titulo.Deslogar" = "Deslogar da Conta";
 "Alert.Mensagem.Deslogar" = "Com essa ação, você será deslogado de sua conta.";
+
+"Alert.Titulo.Disciplina.Cancelar" = "Descartar disciplina";
+"Alert.Mensagem.Disciplina.Cancelar" = "Com essa ação, todas as informações inseridas sobre a disciplina serão perdidas.";
+
+"Alert.Titulo.Disciplina.Adicionar" = "Salvar disciplina";
+"Alert.Mensagem.Disciplina.Adicionar" = "Com essa ação, a disciplina será criada e não será possível editá-la.";
+
+"Alert.Titulo.Objetivos.Adicionar.Cancelar" = "Descartar objetivos";
+"Alert.Mensagem.Objetivos.Adicionar.Cancelar" = "Com essa ação, todos os objetivos adicionados serão descartados.";
+
+"Alert.Titulo.Objetivos.Adicionar.Adicionar" = "Adicionar objetivos";
+"Alert.Mensagem.Objetivos.Adicionar.Adicionar" = "Com essa ação, os objetivos serão adicionados no momento avaliativo.";
+
+"Alert.Titulo.Estudantes.Adicionar" = "Adicionar estudantes";
+"Alert.Mensagem.Objetivos.Adicionar" = "Com essa ação, os estudantes serão adicionados à disciplina.";

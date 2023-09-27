@@ -176,11 +176,27 @@ struct APIServico: APIServicoProtocol {
     }
     
     internal func getDadosDetalhesEstudante(estudanteID: String, disciplinaID: String) async -> (EstudanteDetalhesModel?, APIErro?) {
-//        let stringURL: String = .getDetalhesEstudante + "\(estudanteID)" + "\(disciplinaID)"
+        //        let stringURL: String = .getDetalhesEstudante + "\(estudanteID)" + "\(disciplinaID)"
         
         if let stringPath = Bundle.main.path(forResource: "getInfoDetalhesEstudante", ofType: "json") {
             do {
                 return (try await getDadoDecodificado(stringURL: stringPath, tipo: EstudanteDetalhesModel.self), nil)
+            } catch(let e) {
+                if let erro = e as? APIErro {
+                    return (nil, erro)
+                }
+            }
+        }
+        
+        return (nil, APIErro.URLInvalida)
+    }
+    
+    internal func getDadosCriacaoDisciplina() async -> (GetDisciplinaModel?, APIErro?) {
+//        let stringURL: String = .getPostDisciplina
+        
+        if let stringPath = Bundle.main.path(forResource: "getPostDisciplina", ofType: "json") {
+            do {
+                return (try await getDadoDecodificado(stringURL: stringPath, tipo: GetDisciplinaModel.self), nil)
             } catch(let e) {
                 if let erro = e as? APIErro {
                     return (nil, erro)
@@ -216,6 +232,54 @@ struct APIServico: APIServicoProtocol {
         
         do {
             return (try await postDadoDecodificado(stringURL: stringURL, dados: autoavaliacaoInfo, tipo: PostAutoavaliacaoModel.self), nil)
+        } catch (let e) {
+            if let erro = e as? APIErro {
+                return (nil, erro)
+            }
+        }
+        
+        return (nil, APIErro.URLInvalida)
+    }
+    
+    internal func postDadosCriacaoDisciplina(dados: PostDisciplinaModel) async -> (PostDisciplinaModel?, APIErro?) {
+        let stringURL: String = .postDadoCriacaoDisciplina
+        
+        var momentos: [[String: Any]] = []
+        var objetivos: [[String: Any]] = []
+        var estudantes: [[String: Any]] = []
+        
+        for momento in dados.momentoAvaliativo {
+            for obj in momento.objetivos {
+                let objs: [String: Any] = [
+                    "id": obj.id,
+                    "nivelEsperado": obj.nivelEsperado
+                ]
+                objetivos.append(objs)
+            }
+            let mom: [String: Any] = [
+                "titulo": momento.titulo,
+                "data": momento.data,
+                "objetivos": objetivos
+            ]
+            momentos.append(mom)
+            objetivos = []
+        }
+        
+        for estudante in dados.estudantes {
+            let estd: [String: Any] = [
+                "id": estudante.id
+            ]
+            estudantes.append(estd)
+        }
+        
+        let disciplinaInfo: [String: Any] = [
+            "titulo": dados.titulo,
+            "momentoAvaliativo": momentos,
+            "estudantes": estudantes
+        ]
+        
+        do {
+            return (try await postDadoDecodificado(stringURL: stringURL, dados: disciplinaInfo, tipo: PostDisciplinaModel.self), nil)
         } catch (let e) {
             if let erro = e as? APIErro {
                 return (nil, erro)
